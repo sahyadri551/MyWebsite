@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Example</title>
+</head>
+<body>
+    <iframe src="Formatting.html" width="600" height="400" title="Formatting Document"></iframe>
+    <!-- iframe attributes -->
+    <p>Attributes of the iframe element:</p>
+    <ul>
+        <li><code>src</code> - Specifies the URL of the document to embed</li>
+        <li><code>width</code> - Specifies the width of the iframe</li>
+        <li><code>height</code> - Specifies the height of the iframe</li>
+        <li><code>frameborder</code> - Specifies whether or not to display a border around the iframe (deprecated)</li>
+        <li><code>allowfullscreen</code> - Specifies that the iframe can be put into full-screen mode</li>
+        <li><code>loading</code> - Specifies whether the iframe should be loaded immediately or lazily (e.g., "lazy")</li>
+        <li><code>sandbox</code> - Applies extra restrictions to the content in the iframe, such as preventing scripts from running or forms from submitting</li>
+        <li><code>title</code> - Provides a title for the iframe content, which is important for accessibility</li>
+        <li><code>allow</code> - Specifies features that the iframe can use, such as "camera", "microphone", or "geolocation"</li>
+        <li><code>referrerpolicy</code> - Specifies the referrer information to be sent when navigating the iframe</li>
+        <li><code>srcdoc</code> - Specifies the HTML content of the iframe directly, instead of a URL</li>
+        <p>allow attributes:</p>
+        <ul>
+            <li><code>camera</code> - Allows access to the camera</li>
+            <li><code>microphone</code> - Allows access to the microphone</li>
+            <li><code>geolocation</code> - Allows access to the geolocation</li>
+            <li><code>payment</code> - Allows access to payment methods</li>
+            <li><code>fullscreen</code> - Allows the iframe to be put into full-screen mode</li>
+            <li><code>clipboard-write</code> - Allows writing to the clipboard</li>
+            <li><code>encrypted-media</code> - Allows playback of encrypted media</li>
+            <li><code>picture-in-picture</code> - Allows the video to be played in picture-in-picture mode</li>
+            <li><code>autoplay</code> - Allows autoplay of media</li>
+            <li><code>xr-spatial-tracking</code> - Allows access to XR spatial tracking</li>
+            <li><code>accelerometer</code> - Allows access to the accelerometer</li>
+            <li><code>gyroscope</code> - Allows access to the gyroscope</li>
+            <li><code>magnetometer</code> - Allows access to the magnetometer</li>
+            <li><code>usb</code> - Allows access to USB devices</li>
+            <li><code>vibrate</code> - Allows access to vibration features</li>
+        </ul>
+    </ul>
+
+    <p>Open Links in iframe</p>
+    <ul>
+        <li>To open links in an iframe, you can set the <code>target</code> attribute of the link to the name of the iframe.</li>
+        <li>Example: <a href="heading.html" target="myIframe">Open Example in iframe</a></li>
+        <li>Make sure the iframe has a <code>name</code> attribute that matches the target.</li>
+    </ul>
+    <iframe name="myIframe" width="600" height="400" title="My Iframe"></iframe>
+
+</body>
+</html>

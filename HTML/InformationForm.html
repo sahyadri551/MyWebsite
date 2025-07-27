@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Form</title>
+</head>
+<body>
+    <h1>Information Form</h1>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Enter your information:</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <br>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br>
+            <br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" required>
+            <br>
+            <br>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+            <br>
+            <label for="qualification">Qualification:</label>
+            <input type="radio" id="qualification" name="qualification" value="graduate">
+            <label for="qualification">Graduate</label>
+            <input type="radio" id="qualification" name="qualification" value="postgraduate">
+            <label for="qualification">Postgraduate</label>
+            <input type="radio" id="qualification" name="qualification" value="phd">
+            <label for="qualification">PhD</label>
+            <br>
+            <br>
+            <label for="interests">Interests:</label>
+            <input type="checkbox" id="interests" name="interests" value="sports" default checked disabled>
+            <label for="interests">Sports</label>
+            <input type="checkbox" id="interests" name="interests" value="music">
+            <label for="interests">Music</label>
+            <input type="checkbox" id="interests" name="interests" value="reading">
+            <label for="interests">Reading</label>
+            <br>
+            <br>
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit" >
+            
+        </fieldset>
+    </form>
+</body>
+</html>
