@@ -1,0 +1,15 @@
+.col {
+    /* This is a comment */
+    color: #bdfa21;
+    background-color: rgb(42, 10, 160);
+}
+div .main {
+    color: aqua;
+    background-color: rgb(231, 9, 9);
+
+}
+
+nav .main{
+    color: rgba(255, 0, 0, 0.5);
+    background-color: hsla(243, 90%, 60%, 0.5);
+}

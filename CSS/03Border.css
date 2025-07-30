@@ -1,0 +1,23 @@
+.main{
+    /* border: 5px solid rgb(221, 49, 170); */
+    /* border-radius: 20px; */
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+    border-top-color: rgba(211, 49, 49, 0.5);
+    border-bottom-color: rgba(27, 35, 185, 0.5);
+    border-left-color: rgba(14, 234, 25, 0.5);
+    border-right-color: rgba(61, 220, 25, 0.5);
+
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+
+    border-left-style: solid;
+    border-right-style: double;
+    border-top-style: dashed;
+    border-bottom-style: ridge;
+}
