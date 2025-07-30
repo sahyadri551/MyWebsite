@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Complete Guide to CSS Selectors 📜</h1>
+    </header>
+
+    <main>
+        <section id="types-of-selectors">
+            <h2>Types of CSS Selectors</h2>
+            <p>Here is a detailed breakdown of the most common types of selectors in CSS.</p>
+
+            <article>
+                <h3>1. Element Selector (or Type Selector)</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Selects all HTML elements based on their element name.</li>
+                    <li><strong>Detailed Information:</strong> This is the most basic selector. It targets every instance of a specific HTML tag on the page.</li>
+                    <li><strong>Syntax:</strong> <code>element</code></li>
+                    <li><strong>Example:</strong>
+                        <pre><code>p {
+    color: blue;
+}</code></pre>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>2. Class Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Selects all elements that have a specific <code>class</code> attribute.</li>
+                    <li><strong>Detailed Information:</strong> Classes are used to apply the same style to multiple, different elements. Targeted with a period (<code>.</code>).</li>
+                    <li><strong>Syntax:</strong> <code>.classname</code></li>
+                    <li><strong>Example:</strong>
+                        <pre><code>.highlight {
+    background-color: yellow;
+}</code></pre>
+                    </li>
+                </ul>
+            </article>
+            
+            <article>
+                <h3>3. ID Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Selects a single, unique element that has a specific <code>id</code> attribute.</li>
+                    <li><strong>Detailed Information:</strong> An <code>id</code> must be unique within an HTML document. Targeted with a hash (<code>#</code>).</li>
+                    <li><strong>Syntax:</strong> <code>#idname</code></li>
+                    <li><strong>Example:</strong>
+                        <pre><code>#header {
+    background-color: #333;
+}</code></pre>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>4. Element-Specific Class Selector </h3>
+                <ul>
+                    <li><strong>Definition:</strong> Selects a specific element that also has a particular class.</li>
+                    <li><strong>Detailed Information:</strong> This is more specific than a general class selector. 
+                        It allows you to style only certain types of elements that have a class, ignoring other elements 
+                        that might share the same class. For example, <code>p.highlight</code> will only style paragraphs 
+                        with the highlight class, not headings or divs with the same class.
+                    </li>
+                    <li><strong>Syntax:</strong> <code>element.classname</code></li>
+                    <li><strong>Example:</strong>
+                        <pre><code>p.highlight {
+    border: 1px solid red;
+}</code></pre></li>
+                </ul>
+            </article>
+            <article>
+                <h3>5. Grouping Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Applies the same set of styles to multiple selectors by listing them in
+                         a comma-separated list.
+                    </li>
+                    <li>
+                        <strong>Detailed Information:</strong> This is a way to avoid repeating code. If you have same styles 
+                        that apply to h1, h2, and h3 elements, you can group them together instead of writing three separate rule sets.
+                    </li>
+                    <li>
+                        <strong>Syntax:</strong> <code>selector1, selector2, selector3</code>
+                    </li>
+                    <li>
+                        <strong>Example:</strong>
+                        <pre><code>h1, h2, p {
+    color: #444;
+    font-family: Arial, sans-serif;
+}</code></pre>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>6. Descendant Selector</h3>
+                <ul>
+                    <li>
+                        <strong>Definition:</strong> Selects an element that is located anywhere inside another element (a descendant).
+                    </li>
+                    <li>
+                        <strong>Detailed Information:</strong> This selector targets nested elements. The selectors are separated by a 
+                        space. For example, div p selects any <code> p </code> element that is inside a <code>div</code>, no matter 
+                        how deeply it is nested (e.g., <code>< div >< section >< p >...< /p ></ section ></ div ></code>).
+                    </li>
+                    <li>
+                        <strong>Syntax:</strong><code>ancestor descendant</code>
+                    </li>
+                    <li>
+                        <strong>Example:</strong>
+                        <pre><code>.container p { /* id or element name can also be used */
+  line-height: 1.5;
+}</code></pre>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>7. Child Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong>Selects an element that is a <b><u>direct child</u></b> of another element.</li>
+                    <li><strong>Detailed Information:</strong> Unlike the descendant selector, this is more strict. It only targets immediate children. </li>
+                    <li><strong>Syntax:</strong><code> parent > child</code></li>
+                    <li><strong>Example:</strong><pre><code>#main-nav > li { /* class or element name can also be used */
+    display: inline-block;
+}</code></pre></li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>8. Adjacent Sibling Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong>Selects an element that is the <b><u>very next sibling</u></b> of another specified element.</li>
+                    <li><strong>Detailed Information:</strong>The two elements must have the same parent, and the second element must come immediately after the first one in the HTML source code. </li>
+                    <li><strong>Syntax:</strong><code>element1 + element2</code></li>
+                    <li><strong>Example:</strong><pre><code>h2 + p {
+    margin-top: 0;
+}</code></pre></li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>9. General Sibling Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Selects all elements that are siblings of a specified element and appear after it in the HTML.</li>
+                    <li><strong>Detailed Information:</strong> his is less strict than the adjacent sibling selector. It selects all siblings that 
+                        follow the first element, not just the one immediately after.</li>
+                    <li><strong>Syntax:</strong><code> element1 ~ element2</code></li>
+                    <li><strong>Example:</strong><pre><code>h2 ~ p {
+    text-indent: 2em;
+}</code></pre></li>
+                </ul>
+            </article>
+            <article>
+                <h3>10. Attribute Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Selects elements based on the presence or value of a given attribute.</li>
+                    <li><strong>Detailed Information:</strong>his is very powerful for targeting elements without needing a class or ID. 
+                        You can select based on whether an attribute exists, its exact value, or even a partial value.</li>
+                    <li><strong>Syntax:</strong>
+                        <ul>
+                            <li><code>[attribute]</code>- Selects elements with the specified attribute.</li>
+                            <li><code>[attribute=value]</code>- Selects elements where the attribute has an exact value.</li>
+                            <li><code>[attribute~=value]</code> - Selects elements where the attribute value is a space-separated list containing the given value.</li>
+                            <li><code>[attribute|=value]</code> - Selects elements where the attribute value starts with the given value in a hyphen-separated list (e.g., <code>lang="en-US"</code>).</li>
+                            <li><code>[attribute^=value]</code> - Selects elements where the attribute value begins with the given value.</li>
+                            <li><code>[attribute$=value]</code> - Selects elements where the attribute value ends with the given value.</li>
+                            <li><code>[attribute*=value]</code> - Selects elements where the attribute value contains the given value.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong><pre><code>/* Selects all a tags with a 'target' attribute */
+a[target] {
+    background-color: powderblue;
+}
+
+/* Selects only a tags that open in a new tab */
+a[target="_blank"] {
+    font-weight: bold;
+}</code></pre></li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>11. Pseudo-class Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Selects elements based on a special state, like being hovered over by the mouse,
+                         being the first child of its parent, or being a visited link.</li>
+                    <li><strong>Detailed Information:</strong> Pseudo-classes behave like a class that is dynamically applied by the
+                         browser in certain conditions. They are attached to a selector using a single colon </li>
+                    <li><strong>Syntax:</strong><code> selector:pseudo-class</code></li>
+                    <li><strong>Example:</strong><pre><code>button:hover {
+    background-color: #555;
+    color: white;
+}</code></pre></li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>12. Pseudo-element Selector</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Styles a specific part of an element, rather than the whole element.</li>
+                    <li><strong>Detailed Information:</strong> Pseudo-elements allow you to style fragments of an element, 
+                        such as the first line of a paragraph or to insert content before or after an element's actual content. 
+                        They are attached to a selector using a double colon (::).</li>
+                    <li><strong>Syntax: </strong><code>selector::pseudo-element</code></li>
+                    <li><strong>Example:</strong><pre><code>p::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+}</code></pre></li>
+                </ul>
+            </article>
+
+            </section>
+
+        <section id="differences">
+            <h2>Selector Differences</h2>
+
+            <article>
+                <h3>Descendant vs. Child Selector</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Descendant Selector (<code>ancestor descendant</code>)</th>
+                            <th>Child Selector (<code>parent > child</code>)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Symbol</strong></td>
+                            <td>A single space (<code> </code>)</td>
+                            <td>A greater-than sign (<code>></code>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Relationship</strong></td>
+                            <td>Selects any descendant, no matter how deeply nested.</td>
+                            <td>Selects only direct children (first-level).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scope</strong></td>
+                            <td>Broad and travels down the entire DOM tree from the ancestor.</td>
+                            <td>Narrow and strict, looks only at the next level.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <article>
+                <h3>Adjacent Sibling vs. General Sibling Selector</h3>
+                <p><strong>Adjacent Sibling (+):</strong> This selector is very specific. It only selects the <strong>single element</strong> that 
+                    comes <em>immediately after</em> the former element. The two must be siblings (share the same parent). If there is any 
+                    other element between them (even a line break that creates a text node), the selector will not match.</p>
+                <p><strong>General Sibling (~):</strong> This selector is more flexible. It selects <strong>all sibling elements</strong> 
+                    that come <em>anywhere after</em> the former element. They must share the same parent, but they don't have to
+                     be immediately next to each other.</p>
+            </article>
+
+        </section>
+
+        <section id="pseudo-classes">
+            <h2>Common Pseudo-class Selectors</h2>
+            <ul>
+                <li><code>:hover</code> - Selects an element when the user mouses over it.</li>
+                <li><code>:active</code> - Selects an element at the moment it is being clicked.</li>
+                <li><code>:focus</code> - Selects an element that has keyboard focus.</li>
+                <li><code>:first-child</code> - Selects an element that is the first child of its parent.</li>
+                <li><code>:last-child</code> - Selects an element that is the last child of its parent.</li>
+                <li><code>:nth-child(n)</code> - Selects an element based on its position among siblings.</li>
+                <li><code>:not(selector)</code> - Selects every element that is not the specified selector.</li>
+            </ul>
+        </section>
+
+        <section id="pseudo-elements">
+            <h2>Common Pseudo-element Selectors</h2>
+            <ul>
+                <li><code>::before</code> - Inserts generated content before an element's content.</li>
+                <li><code>::after</code> - Inserts generated content after an element's content.</li>
+                <li><code>::first-line</code> - Styles the first line of a block-level element.</li>
+                <li><code>::first-letter</code> - Styles the first letter of a block-level element.</li>
+                <li><code>::selection</code> - Styles the portion of text highlighted by the user.</li>
+                <li><code>::placeholder</code> - Styles the placeholder text in an input field.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS Selectors Guide - End of Document.</p>
+    </footer>
+
+</body>
+</html>

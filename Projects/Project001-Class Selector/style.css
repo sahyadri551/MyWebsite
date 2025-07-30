@@ -1,0 +1,104 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4A5568;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 15px;
+    color: #E2E8F0;
+}
+
+section {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 20px;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: #2D3748;
+    font-size: 32px;
+    border-bottom: 3px solid #718096;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+h3 {
+    color: #4A5568;
+    font-size: 24px;
+}
+
+pre {
+    background-color: #2d3748; 
+    color: #e2e8f0; 
+    padding: 15px;
+    border-radius: 5px;
+}
+
+code {
+    font-family: "Fira Code", "Courier New", monospace;
+    font-size: 15px;
+}
+
+p code, li code, td code {
+    background-color: #e2e8f0;
+    color: #2d3748;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #cbd5e0;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #e2e8f0;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f7fafc;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
