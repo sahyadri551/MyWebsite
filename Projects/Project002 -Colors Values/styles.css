@@ -1,0 +1,158 @@
+/* Using the Nord color palette for a clean, beautiful design */
+:root {
+    --bg-main: #2E3440;
+    --bg-secondary: #3B4252;
+    --border-color: #4C566A;
+    --text-primary: #ECEFF4;
+    --text-secondary: #D8DEE9;
+    --accent-blue: #88C0D0;
+    --accent-red: #BF616A;
+    --accent-green: #A3BE8C;
+    --accent-yellow: #EBCB8B;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-secondary);
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+h1, h2, h3 {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--accent-yellow);
+    margin-top: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+strong {
+    color: var(--accent-green);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 3rem 0;
+}
+
+ul {
+    list-style-type: '🎨';
+    padding-left: 2rem;
+}
+
+li {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Code Blocks */
+code {
+    font-family: 'Fira Code', monospace;
+    background-color: var(--bg-main);
+    color: var(--accent-red);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* Example Sections */
+.color-type {
+    margin-bottom: 2rem;
+}
+
+.example-box {
+    background-color: #292e39;
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 4px solid var(--accent-blue);
+}
+
+.result {
+    padding: 1em;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.result p {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Wrapper for demonstrating transparency */
+.result-wrapper {
+    background-image:
+        linear-gradient(45deg, #434c5e 25%, transparent 25%),
+        linear-gradient(-45deg, #434c5e 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #434c5e 75%),
+        linear-gradient(-45deg, transparent 75%, #434c5e 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    margin-top: 1rem;
+}
+.result-wrapper .result {
+    margin-top: 0;
+    padding: 1rem;
+    border: none;
+}

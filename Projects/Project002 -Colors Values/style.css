@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #F8F9FA;
+    color: #212529;
+    margin: 0;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 32px auto;
+    background-color: #FFFFFF;
+    padding: 32px;
+    border: 1px solid #DEE2E6;
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 32px;
+    border-bottom: 1px solid #E9ECEF;
+    padding-bottom: 16px;
+}
+
+
+h1, h2, h3 {
+    color: #005A9C;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 20px;
+    border-bottom: 1px solid #CED4DA;
+    padding-bottom: 4px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+strong {
+    color: #C82333;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.example-box {
+    background-color: #F8F9FA;
+    padding: 16px;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+code {
+    font-family: "Fira Code", "Courier New", monospace;
+    font-size: 15px;
+    background-color: #e2e8f0;
+    color: #2d3748;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+ul{
+    background-color: #e2e8f0;
+    color:#2d3748;
+    padding-left: 30px;
+}
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Values Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <h1>CSS Color Values Guide 🎨</h1>
+        <p class="intro">In CSS, you can specify colors using two primary models: <strong>RGB</strong> (Red, Green, Blue), which mixes light, and <strong>HSL</strong> (Hue, Saturation, Lightness), which is more intuitive for humans. These models are expressed through various syntaxes like named colors, HEX codes, and functional notations like <code>rgb()</code> and <code>hsl()</code>.</p>
+        
+        <hr>
+
+        <section>
+            <h2>How Colors Are Made</h2>
+            <p>Colors on screens are typically created by combining different amounts of primary colors or by adjusting properties like hue and brightness. The two most common models in CSS are RGB and HSL.</p>
+            
+            <h3>RGB Colors</h3>
+            <p>The <strong>RGB (Red, Green, Blue)</strong> model is an <strong>additive</strong> color model. This means it creates a broad spectrum of colors by mixing different intensities of red, green, and blue light. Each color component is defined by an integer value between 0 (no intensity) and 255 (full intensity). When all three components are at their maximum (255), the result is white. When all are at their minimum (0), the result is black.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Additive-color.svg/500px-Additive-color.svg.png" alt="RGB Additive Color Model">
+            
+            <h3>HSL Colors</h3>
+            <p>The <strong>HSL (Hue, Saturation, Lightness)</strong> model is more aligned with how humans perceive color. It represents colors based on three components:</p>
+            <ul>
+                <li><strong>Hue</strong>: The type of color, represented as an angle on the color wheel (0 to 360 degrees). 0 is red, 120 is green, and 240 is blue.</li>
+                <li><strong>Saturation</strong>: The intensity or purity of the color, represented as a percentage (0% is a shade of gray, 100% is the full color).</li>
+                <li><strong>Lightness</strong>: The brightness of the color, also a percentage (0% is black, 50% is the normal color, and 100% is white).</li>
+            </ul>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Hsl-hsv_models.svg/512px-Hsl-hsv_models.svg.png" alt="HSL Color Model Cylinder">
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Methods for Specifying Color in CSS</h2>
+            <ul>
+                <li>Named Colors</li>
+                <li>HEX</li>
+                <li>RGB</li>
+                <li>RGBA</li>
+                <li>HSL</li>
+                <li>HSLA</li>
+                <li>HEXA (HEX with Alpha)</li>
+            </ul>
+        </section>
+        
+        <hr>
+
+        <section>
+            <h2>Color Type Definitions</h2>
+
+            <article class="color-type">
+                <h3>Named Colors</h3>
+                <p><strong>Definition:</strong> The simplest method, using predefined, case-insensitive color names. There are over 140 standard color names supported by modern browsers.</p>
+                <p><strong>Details and Syntax:</strong> You just write the name of the color.</p>
+                <pre><code>color: steelblue;</code></pre>
+                <p><strong>Example:</strong></p>
+                <div class="example-box">
+                    <pre><code>&lt;div style="background-color: lightgray;"&gt;
+  &lt;p style="color: darkslateblue;"&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <div class="result" style="background-color: lightgray; border: 1px solid #4C566A;">
+                        <p style="color: darkslateblue; margin: 0;">This is a paragraph.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="color-type">
+                <h3>HEX Color</h3>
+                <p><strong>Definition:</strong> A hexadecimal representation of an RGB color. It's one of the most common ways to specify colors on the web.</p>
+                <p><strong>Details and Syntax:</strong> The value starts with a <code>#</code> followed by six hexadecimal digits (<code>0-9</code>, <code>a-f</code>). The first two digits represent red, the next two green, and the last two blue (<code>#RRGGBB</code>). A shorthand 3-digit version (<code>#RGB</code>) is also possible if each pair of digits is the same (e.g., <code>#f0c</code> is the same as <code>#ff00cc</code>).</p>
+                <pre><code>/* 6-digit syntax */
+color: #4C566A;
+
+/* 3-digit shorthand */
+color: #FFF; /* same as #FFFFFF */</code></pre>
+                <p><strong>Example:</strong></p>
+                 <div class="example-box">
+                    <pre><code>&lt;div style="background-color: #ECEFF4;"&gt;
+  &lt;p style="color: #BF616A;"&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <div class="result" style="background-color: #ECEFF4; border: 1px solid #4C566A;">
+                        <p style="color: #BF616A; margin: 0;">This is a paragraph.</p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="color-type">
+                <h3>RGB Color</h3>
+                <p><strong>Definition:</strong> Defines a color using the <code>rgb()</code> function, based on the Red-Green-Blue model.</p>
+                <p><strong>Details and Syntax:</strong> The syntax is <code>rgb(red, green, blue)</code>. Each parameter defines the intensity of the color as an integer between <code>0</code> and <code>255</code> or as a percentage from <code>0%</code> to <code>100%</code>.</p>
+                <pre><code>/* Integer values */
+color: rgb(76, 86, 106);
+
+/* Percentage values */
+color: rgb(30%, 34%, 42%);</code></pre>
+                <p><strong>Example:</strong></p>
+                <div class="example-box">
+                    <pre><code>&lt;div style="background-color: rgb(216, 222, 233);"&gt;
+  &lt;p style="color: rgb(143, 188, 187);"&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <div class="result" style="background-color: rgb(216, 222, 233); border: 1px solid #4C566A;">
+                        <p style="color: rgb(143, 188, 187); margin: 0;">This is a paragraph.</p>
+                    </div>
+                </div>
+            </article>
+
+             <article class="color-type">
+                <h3>RGBA Color</h3>
+                <p><strong>Definition:</strong> An extension of RGB that includes an <strong>alpha channel</strong> for opacity.</p>
+                <p><strong>Details and Syntax:</strong> The syntax is <code>rgba(red, green, blue, alpha)</code>. The RGB values are the same as before. The <strong>alpha</strong> parameter is a number between <code>0.0</code> (fully transparent) and <code>1.0</code> (fully opaque).</p>
+                <pre><code>/* 50% transparent color */
+color: rgba(76, 86, 106, 0.5);</code></pre>
+                <p><strong>Example:</strong></p>
+                <div class="example-box">
+                    <pre><code>&lt;div style="background-color: rgba(67, 76, 94, 0.5);"&gt;
+  &lt;p style="color: #ECEFF4;"&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <div class="result-wrapper">
+                        <div class="result" style="background-color: rgba(67, 76, 94, 0.5); border: 1px solid #4C566A;">
+                            <p style="color: #ECEFF4; margin: 0;">This is a paragraph.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="color-type">
+                <h3>HSL Color</h3>
+                <p><strong>Definition:</strong> Defines a color using the <code>hsl()</code> function, based on the Hue-Saturation-Lightness model.</p>
+                <p><strong>Details and Syntax:</strong> The syntax is <code>hsl(hue, saturation, lightness)</code>.</p>
+                 <ul>
+                    <li><strong>Hue:</strong> An integer from <code>0</code> to <code>360</code>.</li>
+                    <li><strong>Saturation & Lightness:</strong> Percentages from <code>0%</code> to <code>100%</code>.</li>
+                </ul>
+                <pre><code>/* A bright, saturated blue */
+color: hsl(221, 23%, 65%);</code></pre>
+                <p><strong>Example:</strong></p>
+                <div class="example-box">
+                    <pre><code>&lt;div style="background-color: hsl(220, 13%, 95%);"&gt;
+  &lt;p style="color: hsl(348, 32%, 58%);"&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <div class="result" style="background-color: hsl(220, 13%, 95%); border: 1px solid #4C566A;">
+                        <p style="color: hsl(348, 32%, 58%); margin: 0;">This is a paragraph.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="color-type">
+                <h3>HSLA Color</h3>
+                <p><strong>Definition:</strong> An extension of HSL that includes an <strong>alpha channel</strong> for opacity.</p>
+                <p><strong>Details and Syntax:</strong> The syntax is <code>hsla(hue, saturation, lightness, alpha)</code>. The HSL values are the same as before, and the <strong>alpha</strong> parameter is a number between <code>0.0</code> (fully transparent) and <code>1.0</code> (fully opaque).</p>
+                <pre><code>/* A 50% transparent, saturated blue */
+color: hsla(221, 23%, 65%, 0.5);</code></pre>
+                <p><strong>Example:</strong></p>
+                 <div class="example-box">
+                    <pre><code>&lt;div style="background-color: hsla(214, 32%, 21%, 0.7);"&gt;
+  &lt;p style="color: #D8DEE9;"&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <div class="result-wrapper">
+                        <div class="result" style="background-color: hsla(214, 32%, 21%, 0.7); border: 1px solid #4C566A;">
+                            <p style="color: #D8DEE9; margin: 0;">This is a paragraph.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="color-type">
+                <h3>HEXA (HEX + Alpha)</h3>
+                <p><strong>Definition:</strong> A hexadecimal representation of an RGBA color.</p>
+                <p><strong>Details and Syntax:</strong> The value starts with a <code>#</code> followed by eight hexadecimal digits (<code>#RRGGBBAA</code>). The first six digits represent the color, and the last two (<code>AA</code>) represent the alpha channel. <code>00</code> is fully transparent and <code>ff</code> is fully opaque. A 4-digit shorthand (<code>#RGBA</code>) is also possible.</p>
+                <pre><code>/* 8-digit syntax for a color with ~50% opacity (80 in hex) */
+color: #4C566A80;
+
+/* 4-digit syntax */
+color: #05a8; /* same as #0055aa88 */</code></pre>
+                <p><strong>Example:</strong></p>
+                <div class="example-box">
+                    <pre><code>&lt;div style="background-color: #88C0D080;"&gt;
+  &lt;p style="color: #2E3440;"&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <div class="result-wrapper">
+                        <div class="result" style="background-color: #88C0D080; border: 1px solid #4C566A;">
+                            <p style="color: #2E3440; margin: 0;">This is a paragraph.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+    </main>
+</body>
+</html>
