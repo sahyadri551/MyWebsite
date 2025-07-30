@@ -1,0 +1,17 @@
+.bg{
+    background-color: #f0f0f0;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-clip: border-box;
+    /* background-position-x: center;
+    background-position-y: center; */
+    background-origin: padding-box;
+    /* background-color: rgba(240, 240, 240, 0.8); */
+    background-blend-mode: normal;
+}
+.bg-2{
+    background: #f0f0f0 url('../images/background2.jpg') no-repeat center center fixed / cover;
+}
