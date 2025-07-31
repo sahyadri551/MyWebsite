@@ -1,7 +1,45 @@
 .main{
-    padding: 20px;
-    width: 600px;
-    height: 600px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     transition: all 0.5s ease-in-out;
+}
+.hw{
+    /* width: 600px;
+    height: 600px; */
+    max-width: 600px;
+    max-height: 600px;
+    min-width: 300px;
+    min-height: 300px;
+    /* width property overrides max and min width and same for height. */
+}
+
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: #da1111;
+    border: 5px solid #b8d60ed1;
+    margin: 50px;
+    padding: 50px;
+
+    outline-style: double ;
+    outline-color: #2005ead1;
+    outline-width: 5px;
+    outline-offset: 5px;
+    /* outline: 5px solid #2005ead1; shorthand for outline-style, outline-color, outline-width; */
+}
+
+.shadow{
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transition: all 2.5s ease-in-out;
+    /* transition-property: box-shadow, transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s; */
+    box-sizing: border-box; /* box-sizing: border-box; makes the width and height include padding and border */
+    /* box-sizing: content-box; makes the width and height exclude padding and border */
+
+}
+
+.shadow2{
+    box-shadow: 3px 3px 4px 10px rgba(0, 0, 0, 0.5),
+                -3px -3px 4px 10px rgba(0, 0, 0, 0.5); /* two shadows to create a 3D effect or diverse visual depth */
 }

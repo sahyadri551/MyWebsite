@@ -11,6 +11,7 @@
     background-origin: padding-box;
     /* background-color: rgba(240, 240, 240, 0.8); */
     background-blend-mode: normal;
+    opacity: 1;
 }
 .bg-2{
     background: #f0f0f0 url('../images/background2.jpg') no-repeat center center fixed / cover;
