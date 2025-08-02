@@ -1,0 +1,39 @@
+a{
+    color: #1a0dab;
+    text-decoration: none;
+}
+/* 
+Below Sequence must be followed for link styling:
+1. a:link
+2. a:visited
+3. a:hover
+4. a:active
+5. a:focus
+*/
+a:link{
+    color: #f0f04a;
+    text-decoration: underline;
+    background-color: aqua;
+}
+a:visited{
+    color: #609;
+    text-decoration: none;
+    background-color: #f0f04a;
+}
+a:hover{
+    color: #d14836;
+    text-decoration: underline;
+    background-color: #f0f04a;
+}
+a:active{
+    color: rgb(7, 232, 48);
+    text-decoration: none;
+}
+a:focus{
+    color: #0ae4e8;
+    text-decoration: underline;
+}
+/* a:focus:hover{ 
+    color: #0ae4e8;
+    text-decoration: underline;
+} */
