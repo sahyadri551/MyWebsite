@@ -1,0 +1,74 @@
+/* Class Selector */
+.class{
+    color: #000;
+}
+
+/* ID Selector */
+#id{
+    color: #000;
+}
+
+/* Universal Selector */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Element Selector */
+p{
+    color: #333;
+}
+
+/* Element-Specific Class Selector */
+p.class{
+    color: #555;
+}
+
+/* Grouping Selector */
+p,h1,h2{
+    color: #333;
+}
+
+/* Descendant Selector */
+.container p { /* id or element name can also be used */
+  line-height: 1.5;
+}
+
+/* Child Selector */
+#main-nav > li { /* class or element name can also be used */
+    display: inline-block;
+}
+
+/* Adjacent Sibling Selector */
+h2 + p {
+    margin-top: 0;
+}
+
+/* General Sibling Selector */
+h2 ~ p {
+    text-indent: 2em;
+}
+
+/* Attribute Selector */
+/* Selects all a tags with a 'target' attribute */
+a[target] {
+    background-color: powderblue;
+}
+
+/* Selects only a tags that open in a new tab */
+a[target="_blank"] {
+    font-weight: bold;
+}
+
+/* Pseudo-class Selector */
+button:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Pseudo-element Selector */
+p::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+}
