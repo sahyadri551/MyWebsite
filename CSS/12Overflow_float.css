@@ -1,0 +1,47 @@
+.class{
+    overflow: scroll;/*Syntax: [ visible | hidden | clip | scroll | auto ]*/
+    /* overflow-x: auto;  Controls the horizontal overflow of content. */
+    /* overflow-y: hidden; Controls the vertical overflow of content. */
+    text-overflow: ellipsis;
+    white-space: nowrap;/* Prevents text from wrapping to the next line.Syntax: normal | pre | pre-wrap | pre-line | <'white-space-collapse'> || <'text-wrap-mode'> */
+    word-wrap: normal;/* Prevents long words from breaking onto the next line.Syntax: normal | break-word */
+    word-break: normal;/* Specifies how to break lines within words.Syntax: normal | break-all | keep-all */
+     /* overflow-anchor: auto;  Controls the scroll anchoring behavior of the element. */
+     overflow-block: auto; /* Controls the overflow of content in block containers. */
+    overflow-inline: auto; /* Controls the overflow of content in inline containers. */
+    
+}
+
+/* overflow: visible;  Content is not clipped and may overflow the element's box. */
+/* overflow: hidden;   Content is clipped and not visible outside the element's box. */ 
+/* overflow: scroll;   Content is clipped, but a scrollbar is added to view the content. */
+/* overflow: auto;    Content is clipped, but a scrollbar is added only if necessary. */
+/* overflow: clip;    Content is clipped, but no scrollbar is added. */
+
+.float{
+    float: left; /* Syntax: left | right | none | inline-start | inline-end */
+    /* float: right; */
+    /* float: none; */
+    /* float: inline-start; */
+    /* float: inline-end; */
+
+
+    clear: both; /* Syntax: none | left | right | both | inline-start | inline-end */
+    /* clear: left; */
+    /* clear: right; */
+    /* clear: both; */
+    /* clear: inline-start; */
+    /* clear: inline-end; */
+
+
+    display: block; /* Syntax: inline | block | inline-block | flex | grid | table | table-cell | table-caption | list-item | run-in */
+    /* display: inline; */
+    /* display: block; */
+    /* display: flex; */
+    /* display: grid; */
+    /* display: table; */
+    /* display: table-cell; */
+    /* display: table-caption; */
+    /* display: list-item; */
+    /* display: run-in; */
+}
