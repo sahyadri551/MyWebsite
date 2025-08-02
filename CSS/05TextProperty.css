@@ -7,13 +7,22 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: larger;
     font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: underline;
+    /*text-decoration: underline wavy darkblue 2px; Syntax: <'text-decoration-line'> || <'text-decoration-style'> || <'text-decoration-color'> || <'text-decoration-thickness'> */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-decoration-color: darkblue;
-    text-decoration-style: wavy;
-    text-overflow: clip;
-    white-space: nowrap;
+    text-decoration-color: darkblue;/*Specifies the color of text decoration (underlines overlines, and line-throughs) set on the element with text-decoration-line. */
+    text-decoration-style: wavy;/*Syntax: solid | double | dotted | dashed | wavy */
+    text-decoration-thickness: 2px; /*Specifies the thickness of the text decoration line. Syntax: auto | <length> */
+    text-decoration-line: underline; /*Specifies the type of text decoration to apply. Syntax: none | underline | overline | line-through | blink */
+    text-indent: 20px; /*Indents the first line of text in a block. Syntax: <length> | <percentage> | hanging | each-line | initial | inherit */
+    text-align-last: center; /*Specifies how the last line of a block or a line right before a forced line break is aligned. Syntax: auto | start | end | left | right | center | justify */
+    text-justify: inter-word; /*Specifies the justification method used when text-align is set to 'justify'. Syntax: auto | inter-word | inter-character | none */
+    text-transform: capitalize; /*Transforms the text to have the first letter of each word in uppercase. Syntax: none | capitalize | uppercase | lowercase */
+    text-orientation: upright; /*Specifies the orientation of the text in a line. Syntax: mixed | upright | sideways */
+    text-combine-upright: all; /*Combines multiple characters into a single upright character. Syntax: none | all | digits | numerals */
+    text-decoration-skip-ink: auto; /*Specifies whether the text decoration should skip over the descenders of characters. Syntax: auto | none | all | objects | spaces */
+    text-overflow: clip;/* Text can overflow for example when it is prevented from wrapping. Syntax: [ clip | ellipsis | <string> ] */
+    white-space: nowrap; /* Prevents text from wrapping. Syntax: normal | pre | pre-wrap | pre-line | */
+    overflow: hidden; /* Hides any overflow text.Shorthand for setting 'overflow-x' and 'overflow-y'. Syntax: [ visible | hidden | clip | scroll | auto ] */
 
 
 }
