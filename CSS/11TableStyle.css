@@ -1,0 +1,14 @@
+.table-border{
+    border: 2px solid #000;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-image: url('border-image.png') 30 stretch;
+
+    table-layout: auto; /* Controls the algorithm used to layout the table cells, rows, and columns. */
+    vertical-align: middle; /* Sets the vertical alignment of the content in a cell. Syntax: baseline | sub | super | text-top | text-bottom | middle | top | bottom | <percentage> | <length> */
+
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Applies a background color to even rows */
+}
+
