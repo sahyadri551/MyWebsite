@@ -1,0 +1,15 @@
+.lst{
+    list-style: none; /* Syntax: <'list-style-type'> || <'list-style-position'> || <'list-style-image'> */
+    list-style-type:armenian; /* Values: disc, circle, square, decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, armenian, georgian, hebrew */
+    list-style-position: inside; /* Values: inside, outside */
+    list-style-image: url('image.png'); /* Syntax: <'url'> */
+    /* list-style: inside url('image.png') armenian; */
+}
+.lst2{
+    list-style-type: symbols('•', '◦', '▪', '▢', '▣', '▤', '▥'); /* Custom symbols for list items */
+}
+
+.lst3{
+    list-style-type:"❤️"; /* Custom symbols for list items */
+}
+
