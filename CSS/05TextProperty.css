@@ -23,6 +23,12 @@
     text-overflow: clip;/* Text can overflow for example when it is prevented from wrapping. Syntax: [ clip | ellipsis | <string> ] */
     white-space: nowrap; /* Prevents text from wrapping. Syntax: normal | pre | pre-wrap | pre-line | */
     overflow: hidden; /* Hides any overflow text.Shorthand for setting 'overflow-x' and 'overflow-y'. Syntax: [ visible | hidden | clip | scroll | auto ] */
-
+    font-variant: small-caps; /*Renders text in small capital letters. Syntax: normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps */
+    font-variant-caps: small-caps; /*Specifies the capitalization of text. Syntax: normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps */
+    font-variant-ligatures: contextual; /*Controls the use of ligatures in text. Syntax: normal | none | common-ligatures | no-common-ligatures | discretionary-ligatures | no-discretionary-ligatures | historical-ligatures | no-historical-ligatures | contextual | no-contextual */
+    font-variant-numeric: normal; /*Controls the use of numeric features in text. Syntax: normal | lining-nums | oldstyle-nums | proportional-nums | tabular-nums | diagonal-fractions | stacked-fractions | ordinal | slashed-zero */
+    font-variant-east-asian: normal; /*Controls the use of East Asian typographic features in text. Syntax: normal | full-width | proportional-width | ruby | simplified | traditional | full-width-kana | half-width-kana */
+    font-variant-alternates: normal; /*Controls the use of alternate glyphs in text. Syntax: normal | stylistic | historical-forms | styleset | character-variant | swash | ornament | annotation */
+    font-variant-position: normal; /*Controls the positioning of text in a line. Syntax: normal | sub | super | all-small-caps | petite-caps | unicase | titling-caps */
     /* Align Syntax: auto | start | end | left | right | center | justify */
 }
