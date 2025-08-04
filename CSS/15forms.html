@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="15forms.css">
+</head>
+<body>
+    <header>
+        <h1>Registration Form</h1>
+    </header>
+    <form action="/submit" method="post" class="registration-form">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <div class="row">
+                <div class="col-25">
+                    <label for="first-name">First Name:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-25">
+                    <label for="last-name">Last Name:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-25">
+                    <label for="dob">Date of Birth:</label>
+                </div>
+                <div class="col-75">
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-25">
+                    <label for="gender">Gender:</label>
+                </div>
+                <div class="col-75">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Country:</label>
+                </div>
+                <div class="col-75">
+                    <select id="country" name="country" required>
+                        <option value="">Select</option>
+                        <option value="usa">USA</option>
+                        <option value="canada">Canada</option>
+                        <option value="mexico">Mexico</option>
+                <option value="uk">UK</option>
+                <option value="australia">Australia</option>
+                <option value="india">India</option>
+            </select>
+            <br><br>
+        </fieldset>
+        <!-- ---------------------------------------- -->
+        <fieldset>
+            <legend>Contact Information</legend>
+            <div class="row">
+                <div class="col-25">
+                    <label for="phone">Phone:</label>
+                </div>
+                <div class="col-75">
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+            <br><br>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="address">Address:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="address" name="address" required>
+                </div>
+            </div>
+            <br><br>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="Pincode">Pincode:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="Pincode" name="Pincode" required>
+                </div>
+            </div>
+            <br><br>
+        </fieldset>
+        <!-- ---------------------------------------- -->
+        <fieldset>
+            <legend>Education</legend>
+            <div class="row">
+                <div class="col-25">
+                    <label for="highest-qualification">Highest Qualification:</label>
+                </div>
+                <select id="highest-qualification" name="highest-qualification" required>
+                    <option value="">Select</option>
+                    <option value="high-school">High School</option>
+                    <option value="bachelor">Bachelor's Degree</option>
+                    <option value="master">Master's Degree</option>
+                    <option value="phd">PhD</option>
+                </select>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-25">
+                    <label for="field-of-study">Field of Study:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="field-of-study" name="field-of-study" required>
+                </div>
+            </div>
+            <br><br>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="graduation-year">Year of Graduation:</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" id="graduation-year" name="graduation-year" min="1900" max="2100" required>
+                </div>
+            </div>
+            <br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Registration Information</legend>
+            <div class="row">
+                <div class="col-25">
+                    <label for="username">Username:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="username" name="username" required>
+                </div>
+            </div>
+            <br><br>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            <br><br>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="password">Password:</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="password" name="password" required>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-25">
+                    <label for="confirm_password">Confirm Password:</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+            </div>
+            <br><br>
+
+        <button type="submit" class="btn">Register</button>
+</body>
+</html>
