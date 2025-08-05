@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>CSS Units</h1>
+
+        <h2>Definition</h2>
+        <p>CSS units specify the size of properties for elements, such as `width`, `height`, `margin`, `padding`, and `font-size`. They are categorized into absolute and relative units.</p>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p><b>Absolute units</b> are fixed and do not change based on the parent element or viewport size. They are useful for print layouts or when exact dimensions are required.</p>
+        <p><b>Relative units</b> are flexible and scale in relation to another value, like the parent's font size or the viewport size. They are essential for creating responsive designs.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><b>Absolute Units:</b> 
+            <ul>
+                <li><code>px</code>: Pixels (1px = 1/96th of 1in)</li>
+                <li><code>pt</code>: Points (1pt = 1/72th of 1in)</li>
+                <li><code>pc</code>: Picas (1pc = 12pt)</li>
+                <li><code>in</code>: Inches</li>
+                <li><code>cm</code>: Centimeters</li>
+                <li><code>mm</code>: Millimeters</li>
+            </ul>
+            </li>
+            <li><b>Relative Units:</b> 
+            <ul>
+                <li><code>%</code>: Percentage of the parent element's size</li>
+                <li><code>em</code>: Relative to the font size of the element (1em = current font size)</li>
+                <li><code>rem</code>: Relative to the font size of the root element (1rem = root font size)</li>
+                <li><code>vw</code>: Viewport width (1vw = 1% of the viewport width)</li>
+                <li><code>vh</code>: Viewport height (1vh = 1% of the viewport height)</li>
+                <li><code>vmin</code>: Minimum of viewport width or height (1vmin = 1% of the smaller dimension)</li>
+                <li><code>vmax</code>: Maximum of viewport width or height (1vmax = 1% of the larger dimension)</li>
+                <li><code>ch</code>: Width of the "0" (zero) character in the element's font</li>
+                <li><code>ex</code>: Height of the letter "x" in the element's font</li>
+            </ul>
+</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This <code>div</code> demonstrates various units. Its width is relative to the viewport, its font size is relative to the root, and its padding is relative to its own font size.</p>
+        <pre><code>.units-box {
+  width: 50vw; /* 50% of the viewport width */
+  font-size: 1.2rem; /* 1.2 times the root font size */
+  padding: 2em; /* 2 times its own font size */
+  background-color: #e0f7fa;
+  border: 2px solid #00796b;
+}</code></pre>
+        <div class="example-div" style="width: 50vw; font-size: 1.2rem; padding: 2em; background-color: #e0f7fa; border: 2px solid #00796b; box-sizing: border-box;">
+            This div's width is 50% of the viewport width. Its font size is 1.2 times the root font size, and its padding is twice its own font size.
+        </div>
+    </div>
+</body>
+</html>

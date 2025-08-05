@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Paragraph & Layout Properties</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Paragraph & Layout Properties</h1>
+
+        <h2>Definition</h2>
+        <p>These properties control the layout and spacing of blocks of text and other elements, managing aspects like line height, character spacing, and how elements interact with each other in the document flow.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>letter-spacing</code>: Adjusts the space between characters.</li>
+            <li><code>word-spacing</code>: Adjusts the space between words.</li>
+            <li><code>line-height</code>: Sets the distance between lines of text (e.g., <code>1.6</code>, <code>24px</code>).</li>
+            <li><code>white-space</code>: Controls how white space is handled (<code>normal</code>, <code>nowrap</code>, <code>pre</code>).</li>
+            <li><code>overflow</code>: Manages content that overflows its container (<code>visible</code>, <code>hidden</code>, <code>scroll</code>, <code>auto</code>).</li>
+            <li><code>overflow-x</code> / <code>overflow-y</code>: Controls overflow on the horizontal and vertical axes independently.</li>
+            <li><code>float</code>: Places an element on the left or right, allowing text to wrap around it (<code>left</code>, <code>right</code>).</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This example combines several layout and spacing properties.</p>
+        <pre><code>.float-left {
+  float: left;
+  margin-right: 15px;
+}
+.paragraph-example {
+  overflow: auto;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+}</code></pre>
+        <div class="example-div" style="padding: 15px; height: 160px; border: 1px solid #3e2723; background-color: #d7ccc8; overflow: auto; line-height: 1.6; letter-spacing: 0.5px; word-spacing: 2px;">
+            <img src="image/download2.jpg" alt="placeholder" style="float: left; margin-right: 15px; margin-bottom: 5px;">
+            This text demonstrates paragraph properties. Notice the increased line height for readability and the wider letter spacing. The image on the left is floated, so this text wraps around it. This entire container is set to 'auto' for overflow, so if the content gets too big, scrollbars will appear.
+        </div>
+    </div>
+</body>
+</html>

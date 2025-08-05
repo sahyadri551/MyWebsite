@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Margin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Margin Property</h1>
+
+        <h2>Definition</h2>
+        <p>Margin is the transparent space <em>outside</em> an element's border. It separates the element from other elements on the page.</p>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p>Margins are used to control the spacing between elements. Unlike padding, an element's background does not extend into the margin. A key feature is "margin collapsing," where the vertical margins of adjacent block-level elements combine into a single, larger margin.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>margin</code>: Shorthand for all four sides. Accepts 1 to 4 values.</li>
+            <li><code>margin-top</code>: Sets the top margin.</li>
+            <li><code>margin-right</code>: Sets the right margin.</li>
+            <li><code>margin-bottom</code>: Sets the bottom margin.</li>
+            <li><code>margin-left</code>: Sets the left margin.</li>
+            <li><b>Possible Values:</b> <code>&lt;length&gt;</code> (e.g., <code>20px</code>), <code>&lt;percentage&gt;</code>, <code>auto</code> (useful for centering).</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This <code>div</code> has a 30px margin, creating a visible gap around it.</p>
+        <pre><code>.margin-box {
+  width: 300px;
+  padding: 20px;
+  border: 2px solid #2e7d32;
+  background-color: #c8e6c9;
+  margin: 30px;
+}</code></pre>
+        <div class="example-div" style="width: 300px; padding: 20px; border: 2px solid #2e7d32; background-color: #c8e6c9; margin: 30px; box-sizing: border-box;">
+            This box has a 30px margin on all sides, creating a gap between it and any neighboring elements.
+        </div>
+        <div class="note example-div" style=" width:340px; margin-top: 20px; padding: 10px; background-color: #fff3e0; border: 1px solid #ff9800;">
+            <p><strong>Note:</strong> Margins can collapse, meaning if two vertical margins meet, they will combine into the larger of the two instead of adding together.</p>
+            <p><strong>Note:</strong> Margins are transparent, allowing the background of parent elements to show through.</p>
+        </div>
+    </div>
+</body>
+</html>

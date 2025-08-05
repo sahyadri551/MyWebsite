@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overflow Property</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body class="theme-overflow">
+
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Overflow Property</h1>
+
+        <section>
+            <h2>Definition</h2>
+            <p>The <code>overflow</code> property specifies what should happen if content overflows an element's box. It controls whether to clip the content, render scrollbars, or simply let the content spill out of its container.</p>
+        </section>
+
+        <section>
+            <h2>Details (with Usage and properties)</h2>
+            <p>Overflow occurs when an element's content is too large to fit within its designated size (a specific <code>width</code> and <code>height</code>). The <code>overflow</code> property is a shorthand that sets the desired behavior for both the horizontal and vertical directions.</p>
+            <p>It's crucial for creating scrollable areas on a webpage and for preventing content from breaking the layout when its size is unpredictable.</p>
+        </section>
+
+        <section>
+            <h2>List of all possible CSS properties and their possible Values</h2>
+            <ul>
+                <li><code>overflow</code>: A shorthand property that sets both <code>overflow-x</code> and <code>overflow-y</code>.</li>
+                <li><code>overflow-x</code>: Specifies the handling of overflow only for the horizontal (left and right) edges.</li>
+                <li><code>overflow-y</code>: Specifies the handling of overflow only for the vertical (top and bottom) edges.</li>
+            </ul>
+            <h3>Possible Values</h3>
+            <ul>
+                <li><code>visible</code> (Default): The content is not clipped and may be rendered outside the element's box.</li>
+                <li><code>hidden</code>: The content is clipped, and the rest of the content is invisible. There are no scrollbars.</li>
+                <li><code>scroll</code>: The content is clipped, and scrollbars are added to allow the user to see the rest of the content. Scrollbars will be present even if the content does not overflow.</li>
+                <li><code>auto</code>: The content is clipped, and scrollbars are added <em>only when necessary</em> (i.e., when the content actually overflows). This is the most commonly used value.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Example illustration on a div element with its effect</h2>
+            <p>Below is a div with a fixed size. Try changing the <code>overflow</code> property in your browser's developer tools to see the effect of each value.</p>
+            
+            <h3>overflow: scroll;</h3>
+            <pre><code>.overflow-demo {
+    width: 400px;
+    height: 150px;
+    overflow: scroll; /* Change this to hidden, visible, or auto */
+    /* Other styling for visualization */
+    padding: 15px;
+    border: 2px dashed #0d47a1;
+    background-color: #bbdefb;
+}</code></pre>
+            <div class="example-box">
+                <div class="overflow-demo" style="overflow: scroll;">
+                    This is a long line of text inside a fixed-size container. Because the content is too long to fit, the 'overflow' property comes into play. With 'scroll', you will always see both a horizontal and vertical scrollbar, regardless of whether the content actually overflows in that direction. This text will overflow horizontally, and if you add more lines, it will overflow vertically as well, demonstrating how scrollbars let you access the hidden content.
+                </div>
+            </div>
+
+            <h3>overflow: auto;</h3>
+            <div class="example-box">
+                <div class="overflow-demo" style="overflow: auto;">
+                    This box uses <code>overflow: auto</code>. Notice that only a vertical scrollbar appears because the content only overflows in that direction. A horizontal scrollbar wouldonly appear if more lines were added. This is generally preferred over <code>scroll</code>.
+                </div>
+            </div>
+
+            <h3>overflow: hidden;</h3>
+            <div class="example-box">
+                <div class="overflow-demo" style="overflow: hidden;">
+                   With <code>overflow: hidden</code>, any content that does not fit within the box is simply clipped and becomes invisible. There is no way for the user to access the clipped content.For example, if you add more text here, it will not be visible outside the box, and no scrollbars will appear.
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Shadow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Box Shadow Property</h1>
+
+        <h2>Definition</h2>
+        <p>The <code>box-shadow</code> property adds shadow effects around an element's frame, which can be used to give an element a sense of depth or to highlight it.</p>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p>A shadow is defined by X and Y offsets, a blur radius, a spread radius, and a color. You can also specify an <code>inset</code> keyword to make the shadow an inner shadow. Multiple shadows can be applied to one element by separating them with commas.</p>
+        
+        <h2>List of CSS Values</h2>
+        <ul>
+            <li><code>inset</code> (optional): Changes the shadow to an inner shadow.</li>
+            <li><code>offset-x</code>: Horizontal offset.</li>
+            <li><code>offset-y</code>: Vertical offset.</li>
+            <li><code>blur-radius</code> (optional): The larger the value, the more blurred the shadow.</li>
+            <li><code>spread-radius</code> (optional): Positive values expand the shadow; negative values shrink it.</li>
+            <li><code>color</code>: The color of the shadow.</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This <code>div</code> has a soft, gray drop shadow.</p>
+        <pre><code>.shadow-example {
+  padding: 25px;
+  margin: 30px;
+  background-color: white;
+  border-radius: 8px;
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}</code></pre>
+        <div class="example-div" style="padding: 25px; margin: 30px; background-color: white; border-radius: 8px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);">
+            This box has a soft drop shadow that is offset by 10px horizontally and vertically, with a 15px blur.
+        </div>
+    </div>
+</body>
+</html>

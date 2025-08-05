@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D Transform Property</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific styles for demonstration clarity */
+        .transform-card-container { height: 380px; }
+    </style>
+</head>
+<body class="theme-2d">
+    <div class="container">
+        <h1>2D Transform Properties</h1>
+
+        <section>
+            <h2>Definition</h2>
+            <p>2D transformations alter elements on a two-dimensional plane defined by the X (horizontal) and Y (vertical) axes. These functions are passed as values to the <code>transform</code> property to change an element's position, rotation, and shape without disrupting the normal document flow.</p>
+        </section>
+
+        <section>
+            <h2>List all transformation types</h2>
+            <p>The following are the core 2D transform functions. Each example will apply the transform on hover with a <code>200ms</code> delay.</p>
+        </section>
+
+        <section>
+            <h3>translateY()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Moves an element vertically along the Y-axis.</li>
+                <li><strong>Syntax:</strong> <code>transform: translateY(ty);</code></li>
+                <li><strong>Property Values:</strong> Accepts a length (<code>px</code>, <code>em</code>) or percentage (<code>%</code>). Positive values move it down, negative values move it up.</li>
+                <li><strong>Example:</strong> Hover over the card to move it down by 50 pixels.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: translateY(50px); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="translateY-demo">
+                        <img src="https://via.placeholder.com/300x150/880e4f/fff?text=Image" alt="Placeholder Image">
+                        <p>Translate Y (Vertical)</p>
+                    </div>
+                </div>
+            </div>
+            <style>#translateY-demo:hover { transform: translateY(50px); }</style>
+        </section>
+        
+        <section>
+            <h3>translateX()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Moves an element horizontally along the X-axis.</li>
+                <li><strong>Syntax:</strong> <code>transform: translateX(tx);</code></li>
+                <li><strong>Property Values:</strong> Accepts a length (<code>px</code>, <code>em</code>) or percentage (<code>%</code>). Positive values move it right, negative values move it left.</li>
+                <li><strong>Example:</strong> Hover over the card to move it 50 pixels to the right.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: translateX(50px); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="translateX-demo">
+                        <img src="https://via.placeholder.com/300x150/880e4f/fff?text=Image" alt="Placeholder Image">
+                        <p>Translate X (Horizontal)</p>
+                    </div>
+                </div>
+            </div>
+            <style>#translateX-demo:hover { transform: translateX(50px); }</style>
+        </section>
+
+        <section>
+            <h3>rotate()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Rotates an element around its origin point (by default, the center).</li>
+                <li><strong>Syntax:</strong> <code>transform: rotate(angle);</code></li>
+                <li><strong>Property Values:</strong> Accepts an angle unit like degrees (<code>deg</code>), gradians (<code>grad</code>), radians (<code>rad</code>), or turns (<code>turn</code>). Positive values rotate clockwise, negative values rotate counter-clockwise.</li>
+                <li><strong>Example:</strong> Hover to rotate the card 15 degrees clockwise.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: rotate(15deg); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="rotate-demo">
+                        <img src="https://via.placeholder.com/300x150/880e4f/fff?text=Image" alt="Placeholder Image">
+                        <p>Rotate</p>
+                    </div>
+                </div>
+            </div>
+            <style>#rotate-demo:hover { transform: rotate(15deg); }</style>
+        </section>
+
+        <section>
+            <h3>scale()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Resizes an element. It can take one value to scale uniformly or two values to scale the width and height independently.</li>
+                <li><strong>Syntax:</strong> <code>transform: scale(sx, sy);</code> or <code>transform: scale(s);</code></li>
+                <li><strong>Property Values:</strong> A unitless number. <code>1</code> is the original size. Values greater than 1 enlarge the element, while values between 0 and 1 shrink it.</li>
+                <li><strong>Example:</strong> Hover to make the card 20% larger.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: scale(1.2); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="scale-demo">
+                        <img src="https://via.placeholder.com/300x150/880e4f/fff?text=Image" alt="Placeholder Image">
+                        <p>Scale</p>
+                    </div>
+                </div>
+            </div>
+            <style>#scale-demo:hover { transform: scale(1.2); }</style>
+        </section>
+
+        <section>
+            <h3>skew()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Skews or distorts an element along the X and/or Y axes.</li>
+                <li><strong>Syntax:</strong> <code>transform: skew(ax, ay);</code></li>
+                <li><strong>Property Values:</strong> An angle (e.g., <code>deg</code>). The first value skews along the X-axis, the second along the Y-axis. If only one value is given, it only skews the X-axis.</li>
+                <li><strong>Example:</strong> Hover to skew the card by 10 degrees horizontally and 5 degrees vertically.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: skew(10deg, 5deg); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="skew-demo">
+                        <img src="https://via.placeholder.com/300x150/880e4f/fff?text=Image" alt="Placeholder Image">
+                        <p>Skew</p>
+                    </div>
+                </div>
+            </div>
+            <style>#skew-demo:hover { transform: skew(10deg, 5deg); }</style>
+        </section>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>CSS Box Model</h1>
+        
+        <h2>Definition and Details</h2>
+        <p>In CSS, every HTML element is a rectangular box. The CSS Box Model defines how these boxes are composed, describing the layout and space an element occupies. It consists of layers: content, padding, border, and margin.</p>
+        
+        <img src="image/download.png"alt="CSS Box Model Diagram">
+        
+        <hr>
+
+        <h2>Box Model Components:</h2>
+        <ul>
+            <li><strong>Content:</strong> The actual content of the box, where text and images appear. Its dimensions are defined by <code>width</code> and <code>height</code> properties.</li>
+            <li><strong>Padding:</strong> The transparent area around the content, inside the border. It creates space between the content and the border.</li>
+            <li><strong>Border:</strong> A line that goes around the padding and content. It has properties for style, width, and color.</li>
+            <li><strong>Margin:</strong> The transparent area outside the border. It creates space between this box and other elements.</li>
+            <li><strong>Box Sizing:</strong> The <code>box-sizing</code> property determines how the width and height of an element are calculated, either including or excluding padding and border.</li>
+        </ul>
+
+        <hr>
+        
+        
+        <h2>Content (Width and Height)</h2>
+        <p>The content area holds the element's primary content. Its size is controlled by <code>width</code> and <code>height</code> properties.</p>
+        <pre><code>.content-box {
+  width: 300px;
+  height: 150px;
+  background-color: #e0f7fa;
+  border: 2px solid #00796b;
+}</code></pre>
+        <div class="example-div" style="width: 300px; height: 150px; background-color: #e0f7fa; border: 2px solid #00796b; box-sizing: content-box;">
+            This box has a content width of 300px and a height of 150px.
+        </div>
+        
+        <hr>
+        
+        <h2>Box Sizing</h2>
+        <p>The <code>box-sizing</code> property changes how total width/height are calculated. <code>border-box</code> is the modern standard, making layouts more intuitive by including padding and border in the element's defined <code>width</code> and <code>height</code>.</p>
+        <pre><code>.box {
+  width: 300px;
+  padding: 20px;
+  border: 5px solid #6a1b9a;
+}
+.content-box-sizing {
+  box-sizing: content-box; /* Total width: 300 + 40 + 10 = 350px */
+}
+.border-box-sizing {
+  box-sizing: border-box; /* Total width: 300px */
+}</code></pre>
+        <div class="example-div" style="width: 300px; padding: 20px; border: 5px solid #6a1b9a; background-color: #ce93d8; box-sizing: content-box; margin-bottom: 10px;">I use content-box. My total width is 350px.</div>
+        <div class="example-div" style="width: 300px; padding: 20px; border: 5px solid #6a1b9a; background-color: #8e24aa; color: white; box-sizing: border-box;">I use border-box. My total width is 300px.</div>
+    </div>
+</body>
+</html>

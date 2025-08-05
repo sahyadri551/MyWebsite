@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Properties</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Text Properties</h1>
+
+        <h2>Definition</h2>
+        <p>Text properties are used to style the text content within an element. They control appearance aspects like color, alignment, decoration, and spacing, but not the font face itself.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>color</code>: Sets the color of the text.</li>
+            <li><code>text-align</code>: Specifies the horizontal alignment of text (<code>start</code>,<code>end</code>,<code>auto</code>,<code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>).</li>
+            <li><code>text-decoration</code>: Adds decoration lines to text (<code>underline</code>, <code>overline</code>, <code>line-through</code>).</li>
+            <li><code>text-decoration-line</code>: Specifies the type of line (<code>underline</code>, <code>overline</code>, <code>line-through</code>,).</li>
+            <li><code>text-decoration-color</code>: Sets the color of the decoration line.</li>
+            <li><code>text-decoration-style</code>: Sets the style of the line (<code>solid, wavy, dotted, dashed, double</code>).</li>
+            <li><code>text-decoration-thickness</code>: Sets the thickness of the line.</li>
+            <li><code>text-transform</code>: Controls the capitalization of text (<code>uppercase</code>, <code>lowercase</code>, <code>capitalize</code>).</li>
+            <li><code>text-shadow</code>: Adds a shadow to the text(similar to box-shadow).</li>
+            <li><code>text-indent</code>: Indents the first line of a text block.</li>
+            <li><code>text-align-last</code>: Sets the alignment of the last line of a justified text block.</li>
+            <li><code>text-justify</code>: Specifies the justification method when text-align is justify(<code>auto,inter-word,inter-character,distribute,newspaper</code>).</li>
+            <li><code>text-orientation</code>: Defines the orientation of text in a line (for vertical writing modes).Possible values are:<code>mixed,upright,sideways,sideways-right</code>.</li>
+            <li><code>text-overflow</code>: Specifies how to signal truncated text (<code>clip</code>, <code>ellipsis</code>).</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This example demonstrates multiple text properties applied to a block of text.</p>
+        <pre><code>.text-example {
+  color: #4a148c;
+  text-align: justify;
+  text-transform: uppercase;
+  text-decoration-line: underline;
+  text-decoration-color: #e91e63;
+  text-decoration-style: wavy;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}</code></pre>
+        <div class="example-div" style="padding: 20px; background-color: #f3e5f5; border: 1px solid #7b1fa2; color: #4a148c; text-align: justify; text-transform: uppercase; text-decoration-line: underline; text-decoration-color: #e91e63; text-decoration-style: wavy; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
+            This is an example of text styling. This line is justified. The text is uppercase with a wavy pink underline and a subtle shadow.
+        </div>
+    </div>
+</body>
+</html>

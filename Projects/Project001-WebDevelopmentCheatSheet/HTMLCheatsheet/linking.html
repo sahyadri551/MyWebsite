@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Linking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>HTML Linking</h1>
+
+        <h2>Definition</h2>
+        <p>Linking connects web resources using the anchor <code>&lt;a&gt;</code> tag. Links can be internal (to the same site) or external (to another site).</p>
+        
+        <h2>Anchor Tag Attributes</h2>
+        <ul>
+            <li><code>href</code>: Specifies the destination URL. This is the most important attribute.</li>
+            <li><code>target</code>: Defines where to open the link. 
+                <ul>
+                    <li><code>_blank</code>: Opens the link in a new tab or window.</li>
+                    <li><code>_self</code>: Opens the link in the same frame (default).</li>
+                    <li><code>_parent</code>: Opens the link in the parent frame.</li>
+                    <li><code>_top</code>: Opens the link in the full body of the window.</li>
+                </ul>
+            </li>
+            <li><code>title</code>: Provides extra information, shown as a tooltip on hover.</li>
+            <li><code>mailto:</code>: Used in the <code>href</code> to create a link that opens the user's email client. use <code>subject=</code> and <code>body=</code> after <code>?</code> to specify the email subject and body. Example: <code>mailto:someone@example.com?subject=Hello&body=Message</code></li>
+        </ul>
+
+        <h2>Absolute vs. Relative Paths</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Absolute Path</th>
+                    <th>Relative Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Format</td>
+                    <td>Full URL including protocol (e.g., <code>https://</code>) and domain.</td>
+                    <td>Path relative to the current file's location (e.g., <code>about.html</code> or <code>../images/pic.jpg</code>).</td>
+                </tr>
+                <tr>
+                    <td>Definition</td>
+                    <td>A full URL including protocol (<code>https://</code>) and domain.</td>
+                    <td>A partial path relative to the current file's location.</td>
+                </tr>
+                <tr>
+                    <td>Use Case</td>
+                    <td>Linking to external websites.</td>
+                    <td>Linking to other pages within your own site.</td>
+                </tr>
+                <tr>
+                    <td>Example</td>
+                    <td><code>https://www.google.com</code></td>
+                    <td><code>about.html</code> or <code>../images/pic.jpg</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Example Illustration</h2>
+        <p>Here are different types of links in action.</p>
+        <pre><code>&lt;!-- External link to another website --&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;Go to Google&lt;/a&gt;
+
+&lt;!-- Internal link to another page on this site --&gt;
+&lt;a href="index.html" title="Back to Home"&gt;Back to Home&lt;/a&gt;
+
+&lt;!-- A mailto link to open an email client --&gt;
+&lt;a href="mailto:someone@example.com"&gt;Contact Us&lt;/a&gt;</code></pre>
+        <div class="example-div">
+            <ul>
+                <li>External Link: <a href="https://www.google.com" target="_blank">Go to Google</a></li>
+                <li>Internal Link: <a href="index.html" title="Back to Home">Back to Home</a></li>
+                <li>Mailto Link: <a href="mailto:someone@example.com">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

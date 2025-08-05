@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform Property</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body class="theme-transform">
+
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Transform Property</h1>
+
+        <section>
+            <h2>Definition</h2>
+            <p>The <code>transform</code> CSS property lets you modify the coordinate space of the CSS visual formatting model. In simpler terms, it allows you to rotate, scale, skew, or translate (move) an element, without affecting the position of surrounding elements.</p>
+            <p>The <code>transition-delay</code> property specifies a delay (in seconds or milliseconds) for the start of a transition effect.</p>
+        </section>
+
+        <section>
+            <h2>Details (with Usage and properties)</h2>
+            <p>Transforms are powerful for creating visual effects and animations. Unlike changing layout properties like <code>margin</code> or <code>top</code>, transforms are typically handled by the computer's graphics processor (GPU), which results in smoother animations that are less likely to slow down the page.</p>
+            <p>When you apply a transform, the element keeps its original space in the document flow. Other elements are not pushed or moved to accommodate the transformed element's new appearance.</p>
+        </section>
+        
+        <section>
+            <h2>Give description on 2D and 3D transformation</h2>
+            <h3>2D Transformations</h3>
+            <p>These transformations operate on a two-dimensional plane (X and Y axes). They allow you to move an element left/right and up/down, rotate it clockwise or counter-clockwise, and scale or skew it within that 2D plane.</p>
+            <h3>3D Transformations</h3>
+            <p>These transformations add a third dimension, the Z-axis, which represents depth (closer to or further from the viewer). This allows for effects like flipping elements over, rotating them in 3D space, and creating a sense of perspective.</p>
+        </section>
+
+        <section>
+            <h2>List all transformation types and short note on them</h2>
+            <ul>
+                <li><code>translate()</code>: Moves an element along the X and Y axes from its current position.</li>
+                <li><code>rotate()</code>: Rotates an element clockwise or counter-clockwise around a given point.</li>
+                <li><code>scale()</code>: Changes the size of an element, making it larger or smaller.</li>
+                <li><code>skew()</code>: Skews or distorts an element along the X and Y axes.</li>
+                <li><code>matrix()</code>: A powerful function that combines all 2D transforms into one mathematical expression.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>List of all possible CSS properties and their possible Values</h2>
+            <ul>
+                <li><code>transform</code>: Applies a 2D or 3D transformation to an element. Its values are one or more transform functions, like <code>rotate(45deg)</code> or <code>scale(1.5)</code>.</li>
+                <li><code>transition-delay</code>: Sets a time to wait before a transition effect starts. Its value is a time unit, such as <code>0.5s</code> (seconds) or <code>200ms</code> (milliseconds).</li>
+                <li><code>transform-origin</code>: Changes the position of the origin point around which a transformation is applied. The default is <code>50% 50%</code> (the center of the element). Values can be keywords (<code>left</code>, <code>top</code>, <code>center</code>) or length/percentage values.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Example illustration on a div element containing a paragraph and image with its effect</h2>
+            <p>Hover over the card below. After a <code>200ms</code> delay (set by <code>transition-delay</code>), it will rotate and scale up slightly. Notice how it does not push the text around it.</p>
+            <pre><code>/* Add this style on :hover */
+.transform-card-container:hover .transform-card {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.transform-card {
+    transition-property: transform;
+    transition-delay: 0.2s;
+}
+</code></pre>
+            <div class="example-box">
+                <div class="transform-card-container">
+                    <div class="transform-card">
+                        <img src="image/download2.jpg" alt="Placeholder Image">
+                        <p>Hover me! I have a transform with a transition delay.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

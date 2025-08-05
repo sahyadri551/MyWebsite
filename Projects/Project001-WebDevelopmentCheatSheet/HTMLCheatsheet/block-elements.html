@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Block Elements</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Block Elements</h1>
+
+        <h2>Definition</h2>
+        <p>A block-level element always starts on a new line and takes up the full width available to it. It creates a "block" on the page and is used for structuring the main parts of your content.</p>
+        <h2>Characteristics of Block Elements:</h2>
+        <ul>
+            <li>Start on a new line.</li>
+            <li>Take up the full width of their parent container.</li>
+            <li>Can contain other block elements and inline elements.</li>
+            <li>Commonly used for layout and structure.</li>
+            <li>All block-level elements have a "box model," meaning you can set their <code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code>, and <code>border</code> properties.</li>
+        </ul>
+        
+        <h2>List of Common Block Elements</h2>
+        <ul>
+            <li><code>&lt;div&gt;</code>, <code>&lt;pre&gt;</code>: A generic container for flow content.</li>
+            <li><code>&lt;p&gt;</code>: A paragraph of text.</li>
+            <li><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>: Heading levels.</li>
+            <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>: List elements.</li>
+            <li><code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>: Semantic layout tags.</li>
+            <li><code>&lt;form&gt;</code>: A container for form controls.</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>The following code shows two block elements. Notice how each one occupies its own line.</p>
+        <pre><code>&lt;div style="border: 1px solid blue;"&gt;
+    This div takes up the full width.
+&lt;/div&gt;
+&lt;p style="border: 1px solid red;"&gt;
+    This paragraph starts on a new line.
+&lt;/p&gt;</code></pre>
+        <div class="example-div">
+            <div style="border: 1px solid blue; padding: 10px; margin-bottom: 10px;">
+                This div takes up the full width.
+            </div>
+            <p style="border: 1px solid red; padding: 10px; margin: 0;">
+                This paragraph starts on a new line.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

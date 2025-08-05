@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Background Image</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Background Image Property</h1>
+
+        <h2>Definition</h2>
+        <p>The <code>background-image</code> property sets one or more background images for an element.</p>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p>By default, a background image is placed at the top-left corner and repeated. Associated properties like <code>background-repeat</code>, <code>background-position</code>, and <code>background-size</code> give you full control over its behavior. The <code>background</code> shorthand property can set all of these at once.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>background-image</code>: Sets the image using <code>url('path/to/image.jpg')</code>.</li>
+            <li><code>background-repeat</code>: Controls repetition (<code>repeat</code>, <code>no-repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>).</li>
+            <li><code>background-position</code>: Sets the starting position (<code>center</code>, <code>top left</code>, <code>50% 50%</code>).</li>
+            <li><code>background-size</code>: Sets the size (<code>auto</code>, <code>cover</code>, <code>contain</code>, <code>100px 50px</code>).</li>
+            <li><code>background-attachment</code>: Sets scrolling behavior (<code>scroll</code>, <code>fixed</code>).</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This <code>div</code> has a background image that is centered, does not repeat, and covers the entire area.</p>
+        <pre><code>.bg-image-example {
+  height: 250px;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  background-image: url('https://via.placeholder.com/600x300');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}</code></pre>
+        <div class="example-div" style="height: 250px; padding: 20px; color: white; text-shadow: 2px 2px 4px black; background-image: url('image/download2.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover; display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box;">
+            <h2>Text Over Image</h2>
+            <p>This text appears over the background image.</p>
+        </div>
+    </div>
+</body>
+</html>

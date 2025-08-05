@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Size Properties</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Box Size Properties</h1>
+
+        <h2>Definition</h2>
+        <p>Box sizing properties define the width and height of an element. This includes `width`, `height`, `min-width`, `max-width`, `min-height`, `max-height`, and the `box-sizing` property.</p>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p>These properties control an element's dimensions. `min-*` and `max-*` properties provide constraints for flexible layouts. The `box-sizing` property determines how the final dimensions are calculated, either including or excluding padding and border.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>width</code>, <code>height</code>, <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, <code>max-height</code>: Accept `<length>`, `<percentage>`, `auto`, `max-content`, `min-content`, or `fit-content()`.</li>
+            <li><code>box-sizing</code>: `content-box` (default) or `border-box`.</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This <code>div</code> has a `width` of 300px but is constrained by `max-width`. With `box-sizing: border-box`, its padding and border are included in the total width.</p>
+        <pre><code>.sizing-box {
+  width: 300px;
+  max-width: 80%;
+  padding: 20px;
+  border: 5px solid #388e3c;
+  background-color: #e8f5e9;
+  box-sizing: border-box;
+}</code></pre>
+        <div class="example-div" style="width: 300px; max-width: 80%; padding: 20px; border: 5px solid #388e3c; background-color: #e8f5e9; box-sizing: border-box;">
+            This div has a width of 300px, but will not exceed 80% of its parent's width. Due to <code>box-sizing: border-box;</code>, the padding and border are included within the 300px width.
+        </div>
+    </div>
+</body>
+</html>

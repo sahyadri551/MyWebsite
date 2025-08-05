@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Outline</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Outline Property</h1>
+
+        <h2>Definition</h2>
+        <p>An outline is a line drawn <em>outside</em> an element's border. It is visually similar to a border but differs in key ways, most notably that it does not take up space in the layout.</p>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p>The main purpose of the outline is to highlight an element, often for accessibility (e.g., showing which element has keyboard focus). Unlike a border, an outline does not affect the element's dimensions or push other elements away.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>outline</code>: Shorthand for <code>outline-width</code>, <code>outline-style</code>, and <code>outline-color</code>.</li>
+            <li><code>outline-width</code>: Sets the thickness of the outline (e.g., <code>2px</code>, <code>thin</code>).</li>
+            <li><code>outline-style</code>: Sets the line style (e.g., <code>solid</code>, <code>dotted</code>, <code>dashed</code>, <code>auto</code>).</li>
+            <li><code>outline-color</code>: Sets the color of the outline.</li>
+            <li><code>outline-offset</code>: Sets the space between the outline and the border. Can be positive or negative.</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This <code>div</code> has a blue outline that is offset from the border.</p>
+        <pre><code>.outline-example {
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid #1565c0;
+  background-color: #bbdefb;
+  outline: 4px dashed #0d47a1;
+  outline-offset: 8px;
+}</code></pre>
+        <div class="example-div" style="padding: 20px; margin: 20px; border: 2px solid #1565c0; background-color: #bbdefb; outline: 4px dashed #0d47a1; outline-offset: 8px;">
+            This box has a border, and an outline is drawn 8px outside of that border. Notice the outline doesn't push other elements away.
+        </div>
+    </div>
+</body>
+</html>

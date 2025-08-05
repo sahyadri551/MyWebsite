@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Property</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body class="theme-display">
+
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Display Property (Excluding Flex)</h1>
+
+        <section>
+            <h2>Definition</h2>
+            <p>The <code>display</code> property is one of the most fundamental concepts in CSS. It specifies the type of rendering box used for an element, which determines how it behaves in the page layout (e.g., whether it starts on a new line, respects width/height, etc.).</p>
+        </section>
+
+        <section>
+            <h2>Details (with Usage and properties)</h2>
+            <p>Every HTML element has a default display value. For example, <code>&lt;div&gt;</code> and <code>&lt;p&gt;</code> are block-level elements, while <code>&lt;span&gt;</code> and <code>&lt;a&gt;</code> are inline. The <code>display</code> property allows you to override these defaults to achieve different layouts.</p>
+        </section>
+
+        <section>
+            <h2>List of all possible CSS properties and their possible Values</h2>
+            <ul>
+                <li><code>display</code>: Sets the element's inner and outer display types.</li>
+                <li><code>visibility</code>: A related property that specifies whether an element is visible or hidden. Unlike <code>display: none</code>, a hidden element still takes up space in the layout.</li>
+            </ul>
+            <h3>Possible Values for `display` (common values, excluding flex)</h3>
+            <ul>
+                <li><code>block</code>: The element generates a block-level box. It starts on a new line and stretches to fill the available width of its container. It respects <code>width</code>, <code>height</code>, <code>margin</code>, and <code>padding</code>.</li>
+                <li><code>inline</code>: The element generates an inline-level box. It does not start on a new line and only takes up as much width as its content. It does <strong>not</strong> respect <code>width</code>, <code>height</code>, or vertical <code>margin</code>/<code>padding</code>.</li>
+                <li><code>inline-block</code>: A hybrid of the two. The element flows along with text like an inline element, but it can have a set <code>width</code> and <code>height</code> and respects all margins and padding, just like a block element.</li>
+                <li><code>none</code>: The element is completely removed from the document flow. It is not rendered and takes up no space.</li>
+            </ul>
+             <h3>Possible Values for `visibility`</h3>
+            <ul>
+                <li><code>visible</code> (Default): The element is visible.</li>
+                <li><code>hidden</code>: The element is invisible, but it still affects the layout by taking up its original space.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Example illustration on a div element with its effect</h2>
+            <p>Here are examples of the primary display values applied to <code>&lt;span&gt;</code> elements.</p>
+            <div class="example-box display-demo-area">
+                <span class="d-inline">This is an inline span.</span>
+                <span class="d-inline">This is another inline span. It stays on the same line.</span>
+                <span class="d-block">This is a block span. It starts on a new line and takes the full width.</span>
+                <span class="d-inline-block" style="width: 200px; height: 60px;">This is an inline-block span with a set width and height.</span>
+                <span class="d-inline">This span comes after the inline-block element.</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>State difference between visibility:hidden and display:none with suitable illustration</h2>
+            <p>This is a critical distinction in CSS. While both properties can make an element disappear, they do so in fundamentally different ways.</p>
+            <ul>
+                <li><code>display: none;</code> removes the element entirely from the page. The browser acts as if the element doesn't exist in the HTML, and it takes up no space. Other elements will shift to fill its void.</li>
+                <li><code>visibility: hidden;</code> simply makes the element invisible. It's like painting it with transparent paint. The element is still there, occupying its original space in the layout, leaving a blank gap where it used to be.</li>
+            </ul>
+            <div class="example-box display-demo-area">
+                <p><strong>Demonstration:</strong> The middle element in each sentence is styled differently.</p>
+                <p>
+                    <span class="d-inline">Element 1.</span>
+                    <span class="d-inline" style="display: none;">[I am set to display:none]</span>
+                    <span class="d-inline">Element 3. Notice there is no gap.</span>
+                </p>
+                <p>
+                    <span class="d-inline">Element A.</span>
+                    <span class="d-inline" style="visibility: hidden;">[I am set to visibility:hidden]</span>
+                    <span class="d-inline">Element C. Notice the empty space I still occupy.</span>
+                </p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

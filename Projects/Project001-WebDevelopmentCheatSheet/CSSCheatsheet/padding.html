@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Padding</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Padding Property</h1>
+
+        <h2>Definition</h2>
+        <p>Padding is the space between an element's content and its border. It is transparent and is affected by the element's <code>background-color</code>.</p>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p>Padding is used to create "breathing room" for the content inside an element. You can set padding for all four sides at once using the <code>padding</code> shorthand, or individually with <code>padding-top</code>, <code>padding-right</code>, etc.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>padding</code>: Shorthand for all four sides. Accepts 1 to 4 values.</li>
+            <li><code>padding-top</code>: Sets the top padding.</li>
+            <li><code>padding-right</code>: Sets the right padding.</li>
+            <li><code>padding-bottom</code>: Sets the bottom padding.</li>
+            <li><code>padding-left</code>: Sets the left padding.</li>
+            <li><b>Possible Values:</b> <code>&lt;length&gt;</code> (e.g., <code>20px</code>, <code>1em</code>), <code>&lt;percentage&gt;</code>.</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>This <code>div</code> has 25 pixels of padding on all sides, pushing the text away from the border.</p>
+        <pre><code>.padding-box {
+  width: 300px;
+  padding: 25px;
+  background-color: #fff9c4;
+  border: 2px solid #fbc02d;
+}</code></pre>
+        <div class="example-div" style="width: 300px; padding: 25px; background-color: #fff9c4; border: 2px solid #fbc02d; box-sizing: border-box;">
+            This content is pushed away from the border by 25 pixels of padding on all sides. Notice the background color extends into the padding area.
+        </div>
+    </div>
+
+    
+</body>
+</html>

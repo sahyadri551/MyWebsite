@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Property</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Position Property</h1>
+
+        <h2>Definition</h2>
+        <p>The <code>position</code> property can take one of five values, each altering the element's behavior within the page layout:</p>
+        <ul>
+            <li><code>static</code>: The default value. The element is positioned according to the normal flow of the document. The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>z-index</code> properties have no effect.</li>
+            <li><code>relative</code>: The element is positioned according to the normal flow of the document, and then offset relative to itself based on the values of <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>. The space it would have occupied in the normal flow is preserved.</li>
+            <li><code>absolute</code>: The element is removed from the normal document flow, and no space is created for it in the page layout. It is positioned relative to its nearest positioned ancestor (i.e., an ancestor with a position value other than static). If no positioned ancestor exists, it is positioned relative to the initial containing block (often the <code>&lt;html&gt;</code> element).</li>
+            <li><code>fixed</code>: The element is removed from the normal document flow and is positioned relative to the viewport. It remains in the same position even when the page is scrolled.</li>
+            <li><code>sticky</code>: The element is treated as <code>relative</code> until it crosses a specified threshold, at which point it becomes <code>fixed</code>. It's often used for headers that should stick to the top of the screen after scrolling down.</li>
+        </ul>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p>The `position` property alters an element's behavior in the page layout. It can remove an element from the normal flow, allowing it to be placed relative to its parent or the viewport.</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>position</code>: 
+                <ul>
+                    <li><code>static</code></li>
+                    <li><code>relative</code></li>
+                    <li><code>absolute</code></li>  
+                    <li><code>fixed</code></li>
+                    <li><code>sticky</code></li>
+                </ul>
+            </li>
+            <li><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>: Accept length values (e.g., <code>px</code>, <code>em</code>, <code>%</code>) or <code>auto</code>.</li>
+            <li><code>z-index</code>: Accepts an integer or <code>auto</code> to control the stacking order.</li>
+        </ul>
+        
+        <h2>Example Illustration</h2>
+        <p>The outer <code>div</code> has `position: relative`, which creates a positioning context for its children. The inner <code>div</code> has `position: absolute`, placing it relative to the outer div.</p>
+        <pre><code>.parent-box {
+  position: relative;
+  height: 200px;
+  border: 2px solid #c2185b;
+}
+.absolute-child {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: #fce4ec;
+  border: 1px solid #e91e63;
+}</code></pre>
+        <div class="example-div" style="position: relative; height: 200px; border: 2px solid #c2185b;">
+            <div style="position: absolute; top: 20px; right: 20px; width: 100px; height: 100px; background-color: #fce4ec; border: 1px solid #e91e63; padding: 10px; box-sizing: border-box;">
+                Absolutely positioned
+            </div>
+            This is the parent div with relative positioning.
+        </div>
+    </div>
+</body>
+</html>

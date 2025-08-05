@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Border</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Border Property</h1>
+
+        <h2>Definition</h2>
+        <p>A border is a line drawn around the padding of an element. It visually separates the element from its surroundings.</p>
+        
+        <h2>Details (Usage and properties)</h2>
+        <p>Borders are defined by their width, style, and color. The <code>border</code> shorthand property is often used to set all three values for all four sides at once. You can also target individual sides (e.g., <code>border-top</code>) or properties (e.g., <code>border-color</code>).</p>
+        
+        <h2>List of CSS Properties and Possible Values</h2>
+        <ul>
+            <li><code>border</code>: Shorthand for <code>border-width</code>, <code>border-style</code>, and <code>border-color</code>.</li>
+            <li><code>border-width</code>: Sets the thickness of the border (e.g., <code>5px</code>, <code>thin</code>, <code>medium</code>).</li>
+            <li><code>border-style</code>: Sets the line style. Possible values: <code>solid</code>, <code>dotted</code>, <code>dashed</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>, <code>none</code>.</li>
+            <li><code>border-color</code>: Sets the color of the border (e.g., <code>red</code>, <code>#ff0000</code>).</li>
+            <li><code>border-radius</code>: Used to create rounded corners.</li>
+        </ul>
+
+        <p><strong>Note:</strong> Border can also be defined using individual properties for each side (e.g., <code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, <code>border-left</code>).</p>
+
+        <h2>Example Illustration</h2>
+        <p>This <code>div</code> has a thick, dashed, red border.</p>
+        <pre><code>.border-box {
+  width: 300px;
+  padding: 20px;
+  border: 5px dashed #c62828;
+  background-color: #ffcdd2;
+}</code></pre>
+        <div class="example-div" style="width: 300px; padding: 20px; border: 5px dashed #c62828; background-color: #ffcdd2; box-sizing: border-box;">
+            This box is enclosed by a 5px, dashed, red border. The border sits outside the padding but inside the margin.
+        </div>
+    </div>
+</body>
+</html>
