@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Showcase</title>
+    <!-- Base styles from previous examples -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- New animation-specific styles -->
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>CSS Animation Showcase</h1>
+        <p class="note">A collection of 10 common and useful animation patterns created with CSS and a touch of JavaScript for interactivity.</p>
+
+        <!-- ====================================================== -->
+        <!-- 1. Hover Effect -->
+        <!-- ====================================================== -->
+        <h2>1. Hover Effect</h2>
+        <p>A simple effect that provides feedback when a user hovers over an interactive element. It uses the <code>:hover</code> pseudo-class and the <code>transition</code> property.</p>
+        <div class="hover-card">
+            <h3>Hover Over Me</h3>
+            <p>Notice the smooth lift and shadow effect.</p>
+        </div>
+        <pre><code>/* CSS */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}</code></pre>
+
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 2. Loading Spinners -->
+        <!-- ====================================================== -->
+        <h2>2. Loading Spinners</h2>
+        <p>Visual indicators used to show that content is being loaded. These are created with looping <code>@keyframes</code> animations.</p>
+        <div class="spinner-container">
+            <div class="spinner-border"></div>
+            <div class="spinner-dots">
+                <div class="dot-1"></div>
+                <div class="dot-2"></div>
+                <div class="dot-3"></div>
+            </div>
+        </div>
+        <pre><code>/* CSS */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+.spinner-border {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
+.spinner-dots div {
+    animation: bounce 1.4s infinite ease-in-out both;
+}</code></pre>
+
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 3. Parallax Scrolling -->
+        <!-- ====================================================== -->
+        <h2>3. Parallax Scrolling</h2>
+        <p>A simple but effective parallax effect can be achieved with pure CSS by using a fixed background attachment. As you scroll, the content moves over the static background.</p>
+    </div> <!-- Close main container to allow full-width section -->
+    
+    <div class="parallax-section">
+        <div class="parallax-content">
+            <h2>Parallax Effect</h2>
+            <p>The background stays put!</p>
+        </div>
+    </div>
+
+    <div class="container"> <!-- Re-open container -->
+        <pre><code>/* CSS */
+.parallax-section {
+    background-image: url(...);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}</code></pre>
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 4. Modal/Lightbox Entrance/Exit -->
+        <!-- ====================================================== -->
+        <h2>4. Modal/Lightbox Entrance/Exit</h2>
+        <p>Animating the appearance and disappearance of a modal window. This requires JavaScript to toggle a class, but the animation is handled by CSS transitions.</p>
+        <button class="modal-open-btn">Open Modal</button>
+        
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <h3>Modal Title</h3>
+                <p>This is the content of the modal. It appears with a smooth fade and scale animation. Click the button or outside to close.</p>
+                <button class="modal-close-btn">Close</button>
+            </div>
+        </div>
+        <pre><code>/* CSS */
+.modal-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal-content {
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+.modal-overlay.is-open .modal-content {
+    transform: scale(1);
+}</code></pre>
+
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 5. Hero Section Animation -->
+        <!-- ====================================================== -->
+        <h2>5. Hero Section Animation</h2>
+        <p>Animate text elements on page load to create an engaging entrance for a key section of your site. This uses a <code>@keyframes</code> animation that runs once.</p>
+    </div> <!-- Close main container -->
+    
+    <div class="hero-section">
+        <h1>Animated Hero Title</h1>
+        <p>This text slides in with a slight delay.</p>
+    </div>
+
+    <div class="container"> <!-- Re-open container -->
+        <pre><code>/* CSS */
+@keyframes slide-up {
+    to { transform: translateY(0); }
+}
+.hero-section h1 {
+    transform: translateY(100%);
+    animation: slide-up 0.8s ease forwards;
+}
+.hero-section p {
+    transform: translateY(100%);
+    animation: slide-up 0.8s 0.3s ease forwards; /* With delay */
+}</code></pre>
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 6. Navigation Menu Transition -->
+        <!-- ====================================================== -->
+        <h2>6. Navigation Menu Transition</h2>
+        <p>A common pattern for mobile navigation. A hamburger icon animates to an 'X' and a menu smoothly slides into view. This also uses a class toggle via JavaScript.</p>
+        <div class="nav-header">
+            <h3>My Website</h3>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <pre><code>/* CSS */
+.main-nav {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.nav-header.nav-open .main-nav {
+    transform: translateX(0);
+}</code></pre>
+
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 7. Image Carousel/Slider -->
+        <!-- ====================================================== -->
+        <h2>7. Image Carousel/Slider</h2>
+        <p>A simple, auto-playing image slider made with only CSS. It uses a <code>@keyframes</code> animation to change the <code>transform</code> property of a container element.</p>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item"><img src="https://placehold.co/600x300/3498db/ffffff?text=Slide+1" alt="Slide 1"></div>
+                <div class="carousel-item"><img src="https://placehold.co/600x300/e74c3c/ffffff?text=Slide+2" alt="Slide 2"></div>
+                <div class="carousel-item"><img src="https://placehold.co/600x300/2ecc71/ffffff?text=Slide+3" alt="Slide 3"></div>
+                <div class="carousel-item"><img src="https://placehold.co/600x300/f1c40f/ffffff?text=Slide+4" alt="Slide 4"></div>
+            </div>
+        </div>
+        <pre><code>/* CSS */
+@keyframes slide {
+    0%, 20% { transform: translateX(0%); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 95% { transform: translateX(-300%); }
+    100% { transform: translateX(0%); }
+}
+.carousel-inner {
+    display: flex;
+    width: 400%; /* Number of images */
+    animation: slide 16s infinite;
+}</code></pre>
+
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 8. Interactive Form -->
+        <!-- ====================================================== -->
+        <h2>8. Interactive Form</h2>
+        <p>Enhance user experience in forms with animated labels. This effect uses the <code>:focus</code> and <code>:valid</code> pseudo-classes to trigger a transition on the label.</p>
+        <form>
+            <div class="form-group">
+                <input type="text" id="name" class="form-input" required>
+                <label for="name" class="form-label">Your Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" class="form-input" required>
+                <label for="email" class="form-label">Your Email</label>
+            </div>
+        </form>
+        <pre><code>/* CSS */
+.form-label {
+    transition: all 0.3s ease;
+}
+.form-input:focus + .form-label,
+.form-input:valid + .form-label {
+    top: -15px;
+    font-size: 0.8em;
+    color: #3498db;
+}</code></pre>
+
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 9. Scroll-Triggered Animation -->
+        <!-- ====================================================== -->
+        <h2>9. Scroll-Triggered Animation</h2>
+        <p>Make elements animate into view as the user scrolls down the page. This uses the JavaScript <code>IntersectionObserver</code> API to add a class when the element is visible, which then triggers a CSS transition.</p>
+        <div class="scroll-animate">
+            <h3>Scroll Down to See Me</h3>
+            <p>I was hidden until I entered the viewport.</p>
+        </div>
+        <div class="scroll-animate">
+            <h3>I Animate Too!</h3>
+            <p>This is a great way to draw attention to content.</p>
+        </div>
+        <pre><code>/* CSS */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}</code></pre>
+
+        <hr>
+
+        <!-- ====================================================== -->
+        <!-- 10. SVG Animation -->
+        <!-- ====================================================== -->
+        <h2>10. SVG Animation</h2>
+        <p>Animate the strokes of an SVG to create a "drawing" effect. This is done by manipulating the <code>stroke-dasharray</code> and <code>stroke-dashoffset</code> properties with a <code>@keyframes</code> animation.</p>
+        <div class="svg-container">
+            <svg class="animated-check" viewBox="0 0 52 52">
+                <circle class="circle" cx="26" cy="26" r="25" fill="none" stroke="#2ecc71" stroke-width="4"/>
+                <path class="check" fill="none" stroke="#2ecc71" stroke-width="4" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+        <pre><code>/* CSS */
+@keyframes draw {
+    to { stroke-dashoffset: 0; }
+}
+.circle {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s 0.5s ease-in-out forwards;
+}
+.check {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw 1s 1.5s ease-in-out forwards;
+}</code></pre>
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <!-- ====================================================== -->
+    <script>
+        // --- 4. Modal Logic ---
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const openModalBtn = document.querySelector('.modal-open-btn');
+        const closeModalBtn = document.querySelector('.modal-close-btn');
+
+        openModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('is-open');
+        });
+        closeModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.remove('is-open');
+        });
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) {
+                modalOverlay.classList.remove('is-open');
+            }
+        });
+
+        // --- 6. Navigation Menu Logic ---
+        const navToggle = document.querySelector('.nav-toggle');
+        const navHeader = document.querySelector('.nav-header');
+        navToggle.addEventListener('click', () => {
+            navHeader.classList.toggle('nav-open');
+        });
+
+        // --- 9. Scroll-Triggered Animation Logic ---
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        scrollElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

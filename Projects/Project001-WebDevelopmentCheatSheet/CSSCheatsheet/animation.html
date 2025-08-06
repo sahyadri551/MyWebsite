@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Notes: Animations</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .animation-box {
+            background-color: #9b59b6;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+            max-width: 300px;
+        }
+        .animation-box p { margin: 0; }
+        .animation-box img { max-width: 150px; margin-top: 10px; }
+
+        @keyframes fadeInAndSlide {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes spinAndColor {
+            0%   { transform: rotate(0deg); background-color: #9b59b6; }
+            50%  { background-color: #3498db; }
+            100% { transform: rotate(360deg); background-color: #9b59b6; }
+        }
+
+        .ex-name-duration {
+            animation-name: fadeInAndSlide;
+            animation-duration: 2s;
+            animation-fill-mode: forwards; 
+        }
+        .ex-timing-function {
+            animation-name: fadeInAndSlide;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+        }
+        .ex-delay {
+            animation-name: fadeInAndSlide;
+            animation-duration: 2s;
+            animation-delay: 1s;
+        }
+        .ex-iteration {
+            animation-name: spinAndColor;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        .ex-direction {
+            animation-name: fadeInAndSlide;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        .ex-fill-mode {
+            animation-name: fadeInAndSlide;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        .ex-play-state {
+            animation-name: spinAndColor;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-play-state: running; 
+        }
+        .ex-play-state:hover {
+            animation-play-state: paused; 
+        }
+        .ex-shorthand {
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: spinAndColor 4s ease-in-out 0s infinite normal none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Animations</h1>
+        
+        <h2>Definition</h2>
+        <p><strong>CSS Animations</strong> make it possible to animate transitions from one CSS style configuration to another. An animation consists of two components: a style describing the CSS animation and a set of <strong>keyframes</strong> that indicate the start and end states of the animation's style, as well as possible intermediate waypoints.</p>
+        
+        <hr>
+
+        <h2>Details (with Usage and properties)</h2>
+        <p>The power of CSS animations lies in the <code>@keyframes</code> at-rule. This rule allows you to define the stages and styles of the animation sequence. Once the keyframes are defined, you apply the animation to an element using the <code>animation</code> property (or its sub-properties).</p>
+        <ol>
+            <li>Define the animation's sequence using <code>@keyframes</code>.</li>
+            <li>Apply the animation to an element using <code>animation-name</code> and <code>animation-duration</code>.</li>
+            <li>Use other <code>animation-*</code> properties to customize timing, delay, iteration, etc.</li>
+        </ol>
+
+        <hr>
+
+        <h2>Explain @keyframe</h2>
+        <ul>
+            <li><strong>Definition:</strong> The <code>@keyframes</code> at-rule lets you specify the animation code. It creates a series of "stops" during the animation sequence.</li>
+            <li><strong>Usage:</strong> Inside the <code>@keyframes</code> rule, you define styles for specific points in time using percentages (<code>0%</code> to <code>100%</code>) or the keywords <code>from</code> (for 0%) and <code>to</code> (for 100%).</li>
+        </ul>
+        <h4>Example Keyframe Definition:</h4>
+        <pre><code>@keyframes fadeInAndSlide {
+  from { /* or 0% */
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { /* or 100% */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</code></pre>
+
+        <hr>
+
+        <h2>List of all possible CSS properties</h2>
+        <table>
+            <thead><tr><th>Property</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td><code>animation-name</code></td><td>Specifies the name of the <code>@keyframes</code> at-rule.</td></tr>
+                <tr><td><code>animation-duration</code></td><td>Specifies how long one cycle of the animation takes.</td></tr>
+                <tr><td><code>animation-timing-function</code></td><td>Specifies the speed curve of the animation (e.g., <code>ease</code>, <code>linear</code>).</td></tr>
+                <tr><td><code>animation-delay</code></td><td>Specifies a delay for the start of an animation.</td></tr>
+                <tr><td><code>animation-iteration-count</code></td><td>Specifies the number of times an animation should be played (e.g., <code>3</code>, <code>infinite</code>).</td></tr>
+                <tr><td><code>animation-direction</code></td><td>Specifies whether an animation should play forwards, backwards, or in alternate cycles.</td></tr>
+                <tr><td><code>animation-fill-mode</code></td><td>Specifies what styles apply to the element when the animation is not playing.</td></tr>
+                <tr><td><code>animation-play-state</code></td><td>Specifies whether an animation is running or paused.</td></tr>
+                <tr><td><code>animation</code></td><td>A shorthand property for all the animation properties above.</td></tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Property Explanations and Illustrations</h2>
+        
+        <div>
+            <h3><code>animation-name</code> and <code>animation-duration</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> <code>animation-name</code> specifies which <code>@keyframes</code> to use. <code>animation-duration</code> specifies how long the animation takes. Both are required for an animation to run.</li>
+            </ul>
+            <h4>Example:</h4>
+            <div class="animation-box ex-name-duration">
+                <p>I fade in and slide up over 2 seconds.</p>
+                <img src="image/download2.jpg" alt="placeholder">
+            </div>
+        </div>
+
+        <div>
+            <h3><code>animation-iteration-count</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Defines how many times the animation cycle should repeat.</li>
+                <li><strong>Value:</strong> A number or <code>infinite</code>.</li>
+            </ul>
+            <h4>Example: <code>animation-iteration-count: infinite;</code></h4>
+            <div class="animation-box ex-iteration">
+                <p>I will spin and change color forever!</p>
+                <img src="image/download2.jpg" alt="placeholder">
+            </div>
+        </div>
+
+        <div>
+            <h3><code>animation-direction</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Sets whether an animation should play forwards, backwards, or alternate.</li>
+                <li><strong>Value:</strong> <code>normal</code>, <code>reverse</code>, <code>alternate</code>, <code>alternate-reverse</code>.</li>
+            </ul>
+            <h4>Example: <code>animation-direction: alternate;</code></h4>
+            <p>The animation plays forwards, then backwards, and repeats.</p>
+            <div class="animation-box ex-direction">
+                <p>I go up and down!</p>
+                <img src="image/download2.jpg" alt="placeholder">
+            </div>
+        </div>
+        
+        <div>
+            <h3><code>animation-play-state</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Allows you to pause and resume an animation.</li>
+                <li><strong>Value:</strong> <code>running</code> (default), <code>paused</code>.</li>
+            </ul>
+            <h4>Example: <code>animation-play-state: paused;</code> on hover</h4>
+            <p>Hover over the box below to pause the animation.</p>
+            <div class="animation-box ex-play-state">
+                <p>Hover me to pause!</p>
+                <img src="image/download2.jpg" alt="placeholder">
+            </div>
+        </div>
+        
+        <div>
+            <h3><code>animation</code> (Shorthand)</h3>
+            <ul>
+                <li><strong>Definition:</strong> A shorthand property to set all animation properties in one declaration.</li>
+            </ul>
+            <h4>Example: <code>animation: spinAndColor 4s ease-in-out infinite;</code></h4>
+            <p>This box uses the shorthand property to configure its animation.</p>
+            <div class="animation-box ex-shorthand">
+                <p>I am animated with shorthand!</p>
+                <img src="image/download2.jpg" alt="placeholder">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

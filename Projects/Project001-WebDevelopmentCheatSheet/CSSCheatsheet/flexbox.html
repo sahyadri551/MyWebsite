@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Notes: Flexbox</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .example-container {
+            display: flex; 
+            border: 2px solid #3498db;
+            background-color: #ecf0f1;
+            padding: 10px;
+            min-height: 150px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .item {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 3px;
+            text-align: center;
+        }
+        .item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 5px;
+        }
+        .ex-direction-column { flex-direction: column; }
+        .ex-justify-between { justify-content: space-between; }
+        .ex-align-center { align-items: center; }
+        .ex-wrap { flex-wrap: wrap; }
+        .ex-align-content-center { flex-wrap: wrap; align-content: center; }
+        .ex-gap { gap: 20px; }
+        .ex-grow .item-2 { flex-grow: 1; background-color: #2ecc71; }
+        .ex-shrink { width: 400px; }
+        .ex-shrink .item { flex-shrink: 1; width: 200px; }
+        .ex-shrink .item-1 { flex-shrink: 0; }
+        .ex-basis .item-2 { flex-basis: 50%; background-color: #2ecc71; }
+        .ex-flex .item-2 { flex: 2 1 150px; background-color: #2ecc71; }
+        .ex-align-self { align-items: flex-start; }
+        .ex-align-self .item-2 { align-self: flex-end; background-color: #2ecc71; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Display: Flex Property</h1>
+        
+        <h2>Definition</h2>
+        <p>The CSS <strong>Flexbox Layout</strong> (Flexible Box) module is a <strong>one-dimensional layout model</strong> that offers an efficient way to lay out, align, and distribute space among items in a container, even when their size is unknown or dynamic. The main idea is to give the container the ability to alter its items' width, height, and order to best fill the available space.</p>
+        
+        <hr>
+
+        <h2>Details (with Usage and properties)</h2>
+        <p>Using Flexbox involves two main components: the <strong>flex container</strong> (the parent element) and the <strong>flex items</strong> (the direct children). You activate Flexbox by setting the <code>display</code> property of a parent element to <code>flex</code> or <code>inline-flex</code>. Once enabled, you use a set of properties on the container and the items to control the layout.</p>
+        
+        <hr>
+
+        <h2>List of all possible CSS properties</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Applies to</th>
+                    <th>Possible Values</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>display</code></td><td>Container</td><td><code>flex</code> | <code>inline-flex</code></td></tr>
+                <tr><td><code>flex-direction</code></td><td>Container</td><td><code>row</code> | <code>row-reverse</code> | <code>column</code> | <code>column-reverse</code></td></tr>
+                <tr><td><code>flex-wrap</code></td><td>Container</td><td><code>nowrap</code> | <code>wrap</code> | <code>wrap-reverse</code></td></tr>
+                <tr><td><code>flex-flow</code></td><td>Container</td><td>Shorthand for <code>flex-direction</code> and <code>flex-wrap</code>.</td></tr>
+                <tr><td><code>justify-content</code></td><td>Container</td><td><code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code> | <code>space-evenly</code></td></tr>
+                <tr><td><code>align-items</code></td><td>Container</td><td><code>stretch</code> | <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>baseline</code></td></tr>
+                <tr><td><code>align-content</code></td><td>Container</td><td><code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code> | <code>stretch</code></td></tr>
+                <tr><td><code>gap</code></td><td>Container</td><td>One or two length values (e.g., <code>10px</code>).</td></tr>
+                <tr><td><code>flex-grow</code></td><td>Items</td><td>A unitless number (e.g., <code>1</code>).</td></tr>
+                <tr><td><code>flex-shrink</code></td><td>Items</td><td>A unitless number (e.g., <code>1</code>).</td></tr>
+                <tr><td><code>flex-basis</code></td><td>Items</td><td>A length (e.g., <code>20%</code>, <code>100px</code>) or <code>auto</code>.</td></tr>
+                <tr><td><code>flex</code></td><td>Items</td><td>Shorthand for <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>.</td></tr>
+                <tr><td><code>align-self</code></td><td>Items</td><td><code>auto</code> | <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>baseline</code> | <code>stretch</code></td></tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Property Explanations</h2>
+
+        <div class="note">
+            <p><strong>Base HTML for all examples:</strong></p>
+            <pre><code>&lt;div class="container"&gt;
+  &lt;div class="item item-1"&gt;...&lt;/div&gt;
+  &lt;div class="item item-2"&gt;...&lt;/div&gt;
+  &lt;div class="item item-3"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        
+        <div>
+            <h3><code>display</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Defines a flex container, enabling a flex context for all its direct children.</li>
+                <li><strong>Syntax:</strong> <code>display: value;</code></li>
+                <li><strong>Values:</strong> <code>flex</code> (block-level), <code>inline-flex</code> (inline-level).</li>
+            </ul>
+            <h4>Example: <code>display: flex;</code></h4>
+            <p><strong>Effect:</strong> The child items align horizontally in a row instead of their default block behavior of stacking vertically.</p>
+            <div class="example-container">
+                <div class="item item-1"><p>Item 1</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-2"><p>Item 2</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-3"><p>Item 3</p><img src="image/download2.jpg" alt="placeholder"></div>
+            </div>
+        </div>
+
+        <div>
+            <h3><code>flex-direction</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Establishes the main-axis, defining the direction flex items are placed.</li>
+                <li><strong>Syntax:</strong> <code>flex-direction: value;</code></li>
+                <li><strong>Values:</strong> <code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>.</li>
+            </ul>
+            <h4>Example: <code>flex-direction: column;</code></h4>
+            <p><strong>Effect:</strong> The items stack vertically from top to bottom.</p>
+            <div class="example-container ex-direction-column">
+                <div class="item item-1"><p>Item 1</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-2"><p>Item 2</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-3"><p>Item 3</p><img src="image/download2.jpg" alt="placeholder"></div>
+            </div>
+        </div>
+
+        <div>
+            <h3><code>justify-content</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Defines alignment along the main axis. It distributes extra free space.</li>
+                <li><strong>Syntax:</strong> <code>justify-content: value;</code></li>
+                <li><strong>Values:</strong> <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>.</li>
+            </ul>
+            <h4>Example: <code>justify-content: space-between;</code></h4>
+            <p><strong>Effect:</strong> Items are evenly distributed; the first item is flush left, the last is flush right.</p>
+            <div class="example-container ex-justify-between">
+                <div class="item item-1"><p>Item 1</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-2"><p>Item 2</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-3"><p>Item 3</p><img src="image/download2.jpg" alt="placeholder"></div>
+            </div>
+        </div>
+
+        <div>
+            <h3><code>align-items</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Defines alignment along the cross axis (perpendicular to the main axis).</li>
+                <li><strong>Syntax:</strong> <code>align-items: value;</code></li>
+                <li><strong>Values:</strong> <code>stretch</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>.</li>
+            </ul>
+            <h4>Example: <code>align-items: center;</code></h4>
+            <p><strong>Effect:</strong> Items are centered along the cross-axis (vertically in a row, horizontally in a column).</p>
+            <div class="example-container ex-align-center">
+                <div class="item item-1"><p>Item 1</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-2"><p>Item 2</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-3"><p>Item 3</p><img src="image/download2.jpg" alt="placeholder"></div>
+            </div>
+        </div>
+        
+        <div>
+            <h3><code>flex-grow</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion.</li>
+                <li><strong>Syntax:</strong> <code>flex-grow: number;</code></li>
+                <li><strong>Values:</strong> A non-negative number (default <code>0</code>).</li>
+            </ul>
+            <h4>Example: <code>.item-2 { flex-grow: 1; }</code></h4>
+            <p><strong>Effect:</strong> Item 2 (green) will take up all available space in the container, while the other items remain at their natural size.</p>
+            <div class="example-container ex-grow">
+                <div class="item item-1"><p>Item 1</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-2"><p>Item 2</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-3"><p>Item 3</p><img src="image/download2.jpg" alt="placeholder"></div>
+            </div>
+        </div>
+
+        <div>
+            <h3><code>align-self</code></h3>
+            <ul>
+                <li><strong>Definition:</strong> Allows the default alignment (or the one specified by <code>align-items</code>) to be overridden for individual flex items.</li>
+                <li><strong>Syntax:</strong> <code>align-self: value;</code></li>
+                <li><strong>Values:</strong> <code>auto</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>.</li>
+            </ul>
+            <h4>Example: <code>.item-2 { align-self: flex-end; }</code></h4>
+            <p><strong>Effect:</strong> While the container aligns items to the top (<code>flex-start</code>), Item 2 (green) overrides this and aligns itself to the bottom of the cross-axis.</p>
+            <div class="example-container ex-align-self">
+                <div class="item item-1"><p>Item 1</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-2"><p>Item 2</p><img src="image/download2.jpg" alt="placeholder"></div>
+                <div class="item item-3"><p>Item 3</p><img src="image/download2.jpg" alt="placeholder"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

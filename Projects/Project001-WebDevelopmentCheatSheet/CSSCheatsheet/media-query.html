@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Notes: Media Queries</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .responsive-box {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            background-color: #3498db; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border: 3px solid #2980b9;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: all 0.5s ease; 
+        }
+
+        .responsive-box img {
+            margin-top: 15px;
+            border: 2px solid white;
+            border-radius: 4px;
+        }
+
+        
+        @media screen and (min-width: 768px) {
+            .responsive-box {
+                flex-direction: row; 
+                justify-content: space-around;
+                background-color: #2ecc71; 
+                border-color: #27ae60;
+            }
+            .responsive-box img {
+                margin-top: 0;
+            }
+        }
+
+        .color-scheme-box {
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border: 3px solid;
+        }
+        
+        .color-scheme-box {
+            background: #eaf2f8;
+            color: #34495e;
+            border-color: #3498db;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .color-scheme-box {
+                background: #34495e;
+                color: #ecf0f1;
+                border-color: #9b59b6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Media Query</h1>
+
+        <h2>Definition</h2>
+        <p>A <strong>Media Query</strong> is a CSS technique that uses the <code>@media</code> rule to include a block of CSS properties only if a certain condition is true. These conditions typically relate to the characteristics of the device rendering the content, such as its screen width, height, or orientation. Media queries are the cornerstone of <strong>Responsive Web Design (RWD)</strong>.</p>
+        
+        <hr>
+
+        <h2>Details (with Usage and properties)</h2>
+        <p>Media queries allow you to tailor your site's presentation to specific "breakpoints" or device features. The syntax consists of an optional media type (<code>screen</code>, <code>print</code>, <code>all</code>) and any number of media feature expressions, which test for specific conditions.</p>
+        <pre><code>@media media-type and (media-feature) {
+  /* CSS rules to apply when the condition is met */
+  .selector {
+    property: value;
+  }
+}</code></pre>
+
+        <hr>
+
+        <h2>List of all possible CSS features</h2>
+        <table>
+            <thead>
+                <tr><th>Feature</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>width</code></td><td>The width of the viewport. Can be prefixed with <code>min-</code> or <code>max-</code>.</td></tr>
+                <tr><td><code>height</code></td><td>The height of the viewport. Can be prefixed with <code>min-</code> or <code>max-</code>.</td></tr>
+                <tr><td><code>aspect-ratio</code></td><td>The ratio of the viewport's width to its height.</td></tr>
+                <tr><td><code>orientation</code></td><td>The orientation of the viewport (<code>portrait</code> or <code>landscape</code>).</td></tr>
+                <tr><td><code>prefers-color-scheme</code></td><td>Detects if the user has requested a light (<code>light</code>) or dark (<code>dark</code>) color theme.</td></tr>
+                <tr><td><code>prefers-reduced-motion</code></td><td>Detects if the user has requested the system minimize non-essential motion.</td></tr>
+                <tr><td><code>hover</code></td><td>Checks if the primary input mechanism allows the user to hover over elements.</td></tr>
+                <tr><td><code>pointer</code></td><td>Checks the presence and accuracy of a pointing device (<code>none</code>, <code>coarse</code>, <code>fine</code>).</td></tr>
+                <tr><td><code>resolution</code></td><td>The pixel density of the output device (e.g., in <code>dpi</code>).</td></tr>
+            </tbody>
+        </table>
+        
+        <hr>
+
+        <h2>List All logical operators</h2>
+        <table>
+            <thead>
+                <tr><th>Operator</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong><code>and</code></strong></td><td>Combines multiple media features. All conditions must be true.</td></tr>
+                <tr><td><strong><code>,</code> (comma)</strong></td><td>Acts as an <strong>OR</strong> operator. Applies styles if any of the queries are true.</td></tr>
+                <tr><td><strong><code>not</code></strong></td><td>Negates a media query, reversing its meaning.</td></tr>
+                <tr><td><strong><code>only</code></strong></td><td>Used to hide styles from older browsers. Has no effect on modern browsers.</td></tr>
+            </tbody>
+        </table>
+
+        <hr>
+        
+        <h2>Example Illustrations</h2>
+
+        <h3>Example 1: Responsive Layout with <code>min-width</code></h3>
+        <p>This example demonstrates the most common use of media queries: changing a layout based on screen width. Resize your browser window to see the effect.</p>
+        <div class="note">
+            <p><strong>Effect:</strong>
+            <br> - On screens <strong>narrower than 768px</strong>, the box is blue and its content is stacked vertically.
+            <br> - On screens <strong>768px or wider</strong>, the box turns green and the content is arranged side-by-side.
+            </p>
+        </div>
+        <div class="responsive-box">
+            <p>I change my layout and color when the screen is wider than 768px!</p>
+            <img src="image/download2.jpg" alt="placeholder">
+        </div>
+
+        <h3>Example 2: Adapting to User Preference with <code>prefers-color-scheme</code></h3>
+        <p>This example shows how to respect a user's operating system setting for light or dark mode.</p>
+        <div class="note">
+            <p><strong>Effect:</strong>
+            <br> - If your OS is in Light Mode, the box will have a light background.
+            <br> - If your OS is in Dark Mode, the box will have a dark background.
+            </p>
+        </div>
+        <div class="color-scheme-box">
+            <p>My color scheme adapts to your system's Light/Dark mode setting!</p>
+        </div>
+
+    </div>
+</body>
+</html>
