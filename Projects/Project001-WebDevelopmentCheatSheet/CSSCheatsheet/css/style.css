@@ -37,6 +37,13 @@ header h1 {
     color: brown;
 }
 
+footer a {
+    color: #61dafb;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+}
+
 footer{
     text-align: center;
     padding: 20px;
