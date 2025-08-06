@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 3D Transform Property</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .transform-card-container { 
+            height: 380px; 
+            perspective: 800px; 
+        }
+    </style>
+</head>
+<body class="theme-3d">
+    <div class="container">
+        <a href="transform.html">&larr; Go Back</a>
+        <h1>3D Transform Property</h1>
+
+        <section>
+            <h2>Definition</h2>
+            <p>3D transformations modify an element's position and shape in a three-dimensional space, defined by the X (horizontal), Y (vertical), and Z (depth) axes. The <code>transform</code> property, combined with a <code>perspective</code> on a parent element, allows for creating depth and rotating elements in 3D space. These transformations do not affect the document's layout flow.</p>
+        </section>
+
+        <section>
+            <h2>List all transformation types</h2>
+            <p>The following are the core 3D transform functions. Each example will apply the transform on hover with a <code>200ms</code> delay as styled in the CSS. To properly view the 3D effect, a <code>perspective</code> property is applied to the container of each card.</p>
+        </section>
+
+        <section>
+            <h3>translateX()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Moves an element horizontally along the X-axis.</li>
+                <li><strong>Syntax:</strong> <code>transform: translateX(tx);</code></li>
+                <li><strong>Property Values:</strong> Accepts a length (<code>px</code>, <code>em</code>) or percentage (<code>%</code>). A positive value moves the element to the right, and a negative value moves it to the left.</li>
+                <li><strong>Example:</strong> Hover over the card to move it 50 pixels to the right.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: translateX(50px); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="translateX-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Translate X (Horizontal)</p>
+                    </div>
+                </div>
+            </div>
+            <style>#translateX-demo:hover { transform: translateX(50px); }</style>
+        </section>
+
+        <section>
+            <h3>translateY()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Moves an element vertically along the Y-axis.</li>
+                <li><strong>Syntax:</strong> <code>transform: translateY(ty);</code></li>
+                <li><strong>Property Values:</strong> Accepts a length (<code>px</code>, <code>em</code>) or percentage (<code>%</code>). A positive value moves the element down, while a negative value moves it up.</li>
+                <li><strong>Example:</strong> Hover over the card to move it up by 50 pixels.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: translateY(-50px); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="translateY-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Translate Y (Vertical)</p>
+                    </div>
+                </div>
+            </div>
+            <style>#translateY-demo:hover { transform: translateY(-50px); }</style>
+        </section>
+
+        <section>
+            <h3>translateZ()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Moves an element along the Z-axis, creating the illusion of depth. A parent element must have the <code>perspective</code> property for this effect to be visible.</li>
+                <li><strong>Syntax:</strong> <code>transform: translateZ(tz);</code></li>
+                <li><strong>Property Values:</strong> Accepts a length unit (e.g., <code>px</code>). A positive value moves the element "closer" to the viewer, while a negative value moves it "further" away.</li>
+                <li><strong>Example:</strong> Hover over the card to bring it 100 pixels closer.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: translateZ(100px); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="translateZ-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Translate Z (Depth)</p>
+                    </div>
+                </div>
+            </div>
+            <style>#translateZ-demo:hover { transform: translateZ(100px); }</style>
+        </section>
+        
+        <section>
+            <h3>rotateX()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Rotates an element around the horizontal X-axis. A <code>perspective</code> property on a parent element is required to see the 3D effect.</li>
+                <li><strong>Syntax:</strong> <code>transform: rotateX(angle);</code></li>
+                <li><strong>Property Values:</strong> Accepts an angle unit like degrees (<code>deg</code>) or radians (<code>rad</code>). A positive value rotates the top edge towards the viewer, while a negative value rotates it away.</li>
+                <li><strong>Example:</strong> Hover to rotate the card 60 degrees around the X-axis.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: rotateX(60deg); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="rotateX-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Rotate X</p>
+                    </div>
+                </div>
+            </div>
+            <style>#rotateX-demo:hover { transform: rotateX(60deg); }</style>
+        </section>
+
+        <section>
+            <h3>rotateY()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Rotates an element around the vertical Y-axis. A <code>perspective</code> property on a parent element is required to see the 3D effect.</li>
+                <li><strong>Syntax:</strong> <code>transform: rotateY(angle);</code></li>
+                <li><strong>Property Values:</strong> Accepts an angle unit (e.g., <code>deg</code>). A positive value rotates the right edge towards the viewer, while a negative value rotates it away.</li>
+                <li><strong>Example:</strong> Hover to rotate the card 60 degrees around the Y-axis.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: rotateY(60deg); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="rotateY-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Rotate Y</p>
+                    </div>
+                </div>
+            </div>
+            <style>#rotateY-demo:hover { transform: rotateY(60deg); }</style>
+        </section>
+
+        <section>
+            <h3>rotateZ()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Rotates an element around the Z-axis. This is equivalent to the 2D <code>rotate()</code> function.</li>
+                <li><strong>Syntax:</strong> <code>transform: rotateZ(angle);</code></li>
+                <li><strong>Property Values:</strong> Accepts an angle unit (e.g., <code>deg</code>). Positive values cause a clockwise rotation, and negative values cause a counter-clockwise rotation.</li>
+                <li><strong>Example:</strong> Hover to rotate the card 45 degrees.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: rotateZ(45deg); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="rotateZ-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Rotate Z</p>
+                    </div>
+                </div>
+            </div>
+            <style>#rotateZ-demo:hover { transform: rotateZ(45deg); }</style>
+        </section>
+
+        <section>
+            <h3>scaleX()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Resizes an element's width along the X-axis.</li>
+                <li><strong>Syntax:</strong> <code>transform: scaleX(sx);</code></li>
+                <li><strong>Property Values:</strong> A unitless number where 1 is the original width. Values greater than 1 stretch the width, while values between 0 and 1 shrink it.</li>
+                <li><strong>Example:</strong> Hover to stretch the card's width by 30%.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: scaleX(1.3); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="scaleX-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Scale X</p>
+                    </div>
+                </div>
+            </div>
+            <style>#scaleX-demo:hover { transform: scaleX(1.3); }</style>
+        </section>
+
+        <section>
+            <h3>scaleY()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Resizes an element's height along the Y-axis.</li>
+                <li><strong>Syntax:</strong> <code>transform: scaleY(sy);</code></li>
+                <li><strong>Property Values:</strong> A unitless number where 1 is the original height. Values greater than 1 stretch the height, while values between 0 and 1 shrink it.</li>
+                <li><strong>Example:</strong> Hover to shrink the card's height by 20%.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: scaleY(0.8); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="scaleY-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Scale Y</p>
+                    </div>
+                </div>
+            </div>
+            <style>#scaleY-demo:hover { transform: scaleY(0.8); }</style>
+        </section>
+
+        <section>
+            <h3>scaleZ()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Resizes an element along the Z-axis. This does not change the visual size of a 2D element unless used in combination with other 3D transforms. It can affect how child elements are transformed in a 3D context.</li>
+                <li><strong>Syntax:</strong> <code>transform: scaleZ(sz);</code></li>
+                <li><strong>Property Values:</strong> A unitless number where 1 is the original depth.</li>
+                <li><strong>Example:</strong> Hover to scale the card's depth. This is not visually apparent on a flat object, but the text is moved forward and scaled to demonstrate the effect.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.card:hover { transform: rotateY(45deg) scaleZ(2.5); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="scaleZ-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>Scale Z (with Rotate)</p>
+                    </div>
+                </div>
+            </div>
+            <style>#scaleZ-demo:hover { transform: rotateY(45deg) scaleZ(2.5); }</style>
+        </section>
+
+        <section>
+            <h3>matrix3d()</h3>
+            <ul>
+                <li><strong>Definition:</strong> Defines a 3D transformation using a 4x4 matrix of 16 values. This single function can combine all other 3D transforms (translate, scale, rotate, and skew) into one declaration.</li>
+                <li><strong>Syntax:</strong> <code>transform: matrix3d(n,n,n,n, n,n,n,n, n,n,n,n, n,n,n,n);</code></li>
+                <li><strong>Property Values:</strong> Sixteen unitless numbers that represent the 3D transformation matrix. Modifying these values requires a strong understanding of linear algebra.</li>
+                <li><strong>Example:</strong> Hover to apply a complex transform combining rotation and translation using matrix3d().</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>.container:hover .card { transform: matrix3d(0.866, 0.5, 0, 0, -0.5, 0.866, 0, 0, 0, 0, 1, 0, 50, 20, 0, 1.2); }</code></pre>
+                <div class="transform-card-container">
+                    <div class="transform-card" id="matrix3d-demo">
+                        <img src="https://via.placeholder.com/300x150/4a148c/fff?text=Image" alt="Placeholder Image">
+                        <p>matrix3d()</p>
+                    </div>
+                </div>
+            </div>
+            <style>#matrix3d-demo:hover { transform: matrix3d(0.866, 0.5, 0, 0, -0.5, 0.866, 0, 0, 0, 0, 1, 0, 50, 20, 0, 1.2); }</style>
+        </section>
+
+    </div>
+</body>
+</html>
