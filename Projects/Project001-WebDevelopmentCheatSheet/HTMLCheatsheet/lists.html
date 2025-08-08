@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Lists</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>HTML Lists</h1>
+
+        <h2>Definition</h2>
+        <p>HTML lists allow web developers to group a set of related items in lists. There are three types of lists in HTML: unordered lists, ordered lists, and description lists. </p>
+
+        <h2>Details & Usage</h2>
+        <p>Lists are fundamental for organizing content, making it more readable and structured.
+            <strong>Unordered lists</strong> (<code>&lt;ul&gt;</code>) are for items where the order does not matter (like a shopping list).
+            <strong>Ordered lists</strong> (<code>&lt;ol&gt;</code>) are for items where the order is important (like step-by-step instructions).
+            <strong>Description lists</strong> (<code>&lt;dl&gt;</code>) are used to display name-value pairs, such as terms and their definitions.
+        </p>
+
+        <h2>List of All Possible HTML Tags</h2>
+        <ul>
+            <li><code>&lt;ul&gt;</code>: Defines an unordered list (bullet points).</li>
+            <li><code>&lt;ol&gt;</code>: Defines an ordered list (numbered).</li>
+            <li><code>&lt;li&gt;</code>: Defines a list item within a <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>.</li>
+            <li><code>&lt;dl&gt;</code>: Defines a description list.</li>
+            <li><code>&lt;dt&gt;</code>: Defines a term (a name) in a description list.</li>
+            <li><code>&lt;dd&gt;</code>: Describes each term in a description list.</li>
+        </ul>
+
+        <h2>List of All Possible HTML Tag Attributes</h2>
+        <p>Most list-related tags primarily use <strong>Global Attributes</strong>. However, some have unique attributes:</p>
+        <ul>
+            <li><strong>for &lt;ol&gt;:</strong>
+                <ul>
+                    <li><code>reversed</code>: A boolean attribute that specifies the list order should be descending. </li>
+                    <li><code>start</code>: A number that specifies the starting value of the list. </li>
+                    <li><code>type</code>: Specifies the kind of marker to use (<code>'1'</code>, <code>'A'</code>, <code>'a'</code>, <code>'I'</code>, <code>'i'</code>). </li>
+                </ul>
+            </li>
+             <li><strong>for &lt;li&gt;:</strong>
+                <ul>
+                    <li><code>value</code>: For <code>&lt;ol&gt;</code> lists, this attribute specifies a new number for the current list item.</li>
+                </ul>
+            </li>
+             <li><strong>for &lt;ul&gt;:</strong>
+                <ul>
+                    <li><code>type</code>: (Deprecated) Specifies the bullet style (<code>'disc'</code>, <code>'circle'</code>, <code>'square'</code>). CSS is now preferred. </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Example Illustration</h2>
+        <p>The code below shows the three different types of lists.</p>
+        <pre><code>&lt;h3&gt;Unordered List (Groceries)&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+    &lt;li&gt;Bread&lt;/li&gt;
+    &lt;li&gt;Cheese&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Ordered List (Instructions)&lt;/h3&gt;
+&lt;ol start="1" type="1"&gt;
+    &lt;li&gt;Gather ingredients&lt;/li&gt;
+    &lt;li&gt;Mix them together&lt;/li&gt;
+    &lt;li&gt;Bake for 30 minutes&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Description List (Web Terms)&lt;/h3&gt;
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+        <div class="example-div">
+            <h3>Unordered List (Groceries)</h3>
+            <ul>
+                <li>Milk</li>
+                <li>Bread</li>
+                <li>Cheese</li>
+            </ul>
+
+            <h3>Ordered List (Instructions)</h3>
+            <ol start="1" type="1">
+                <li>Gather ingredients</li>
+                <li>Mix them together</li>
+                <li>Bake for 30 minutes</li>
+            </ol>
+
+            <h3>Description List (Web Terms)</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+            </dl>
+        </div>
+    </div>
+</body>
+</html>

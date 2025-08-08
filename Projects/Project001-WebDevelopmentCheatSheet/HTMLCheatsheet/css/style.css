@@ -2,7 +2,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0; /* Adjusted to 0 for full-width header/footer */
+    padding: 0;
     background-color: #5858c1;
     color: #333;
 }
@@ -88,7 +88,7 @@ pre code{
 
 .container {
     max-width: 900px;
-    margin: 20px auto; /* Added margin for spacing */
+    margin: 20px auto;
     background-color: #ffffff;
     padding: 20px 40px;
     border-radius: 8px;
@@ -108,6 +108,9 @@ pre code{
     padding: 20px 40px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .topic-box {
@@ -115,15 +118,17 @@ pre code{
     border: 2px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    margin: 10px;
+    margin: 0; /* Adjusted from 10px to 0 as gap is handled by grid */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     box-sizing: border-box;
     color: #007bff;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .topic-box:hover {
-    box-shadow: 0 18px 5px rgba(215, 97, 24, 0.9);
-    background-color:#e04949 ;
+    box-shadow: 0 8px 15px rgba(215, 97, 24, 0.9);
+    background-color:#e04949;
+    transform: translateY(-5px);
 }
 
 .topic-box h3 {
@@ -159,35 +164,6 @@ pre code{
     background-color: #f8f9fa;
 }
 
-.topic-box:hover {
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    background-color:#e04949 ;
-    transform: translate(-8px, -5px);
-    transition: 0.3s;
-}
-
-ul li{
-    list-style-type: "👉 "; /* Added space for better alignment */
-    padding-left: 5px;
-}
-
-/* ADDED FOR LINKING.HTML */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-th {
-    background-color: #f2f2f2;
-    color: #333;
-    font-weight: 600;
-}
-
 .example-div h1,
 .example-div h2,
 .example-div h3 {
@@ -197,3 +173,88 @@ th {
     font-weight: normal;
     color: black;
 }
+
+ul li{
+    list-style-type: "👉 ";
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+/* Styles for Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: 600;
+}
+
+caption {
+    caption-side: bottom;
+    padding-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Styles for Forms */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="submit"],
+.form-group button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group input[type="submit"]:hover,
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: 600;
+    color: #0056b3;
+}
+

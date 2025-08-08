@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Formatting</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .example-div dt { font-weight: bold; margin-top: 10px; }
+        .example-div dd { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>HTML Formatting</h1>
+
+        <h2>Definition</h2>
+        <p>HTML contains several elements for defining text with a special meaning or structure. These tags are used to format the appearance of text, either for presentational purposes or to convey semantic importance.</p>
+
+        <h2>Details & Usage</h2>
+        <p>Formatting tags can be broadly divided into two categories:
+            <strong>Physical tags</strong> (like <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code>) define the visual appearance of text (e.g., bold, italic).
+            <strong>Semantic (or logical) tags</strong> (like <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code>) provide extra meaning to the text, which is important for accessibility and SEO. For instance, <code>&lt;strong&gt;</code> indicates that the text is important, while <code>&lt;b&gt;</code> just makes it bold.
+        </p>
+
+        <h2>List of Formatting Tags & Examples</h2>
+        <dl>
+            <dt><code>&lt;b&gt;</code> and <code>&lt;strong&gt;</code></dt>
+            <dd><code>&lt;b&gt;</code> makes text <b>bold</b> without extra importance. <code>&lt;strong&gt;</code> indicates that text is <strong>important</strong>. Browsers render both as bold. </dd>
+
+            <dt><code>&lt;i&gt;</code> and <code>&lt;em&gt;</code></dt>
+            <dd><code>&lt;i&gt;</code> makes text <i>italic</i> for an alternate voice (e.g., a technical term). <code>&lt;em&gt;</code> is used to <em>emphasize</em> text. Browsers render both as italic.</dd>
+
+            <dt><code>&lt;u&gt;</code> and <code>&lt;ins&gt;</code></dt>
+            <dd><code>&lt;u&gt;</code> renders as <u>underlined</u> text, but should be avoided to prevent confusion with links. <code>&lt;ins&gt;</code> defines <ins>inserted text</ins> and is semantically more appropriate for marking additions.</dd>
+
+            <dt><code>&lt;s&gt;</code> and <code>&lt;del&gt;</code></dt>
+            <dd><code>&lt;s&gt;</code> renders text with a <s>strikethrough</s> to indicate it's no longer correct. <code>&lt;del&gt;</code> defines <del>deleted text</del> and is semantically better for marking removals.</dd>
+
+            <dt><code>&lt;mark&gt;</code></dt>
+            <dd>The <code>&lt;mark&gt;</code> tag is used to <mark>highlight</mark> text, like using a marker pen.</dd>
+
+            <dt><code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code></dt>
+            <dd>Used for <sub>subscript</sub> (like in H₂O) and <sup>superscript</sup> (like in E=mc²).</dd>
+
+            <dt><code>&lt;small&gt;</code></dt>
+            <dd>Makes text <small>smaller</small>, often used for fine print or copyright notices.</dd>
+
+            <dt><code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, <code>&lt;var&gt;</code></dt>
+            <dd>These are for computer-related text. <code>&lt;code&gt;</code> for code snippets, <code>&lt;kbd&gt;</code> for keyboard input, <code>&lt;samp&gt;</code> for sample output, and <code>&lt;var&gt;</code> for variables. They usually render in a monospace font.</dd>
+
+            <dt><code>&lt;blockquote&gt;</code> and <code>&lt;q&gt;</code></dt>
+            <dd><code>&lt;blockquote&gt;</code> is for long quotations that are indented. <code>&lt;q&gt;</code> is for short, <q>inline quotations</q> that are enclosed in quotes.</dd>
+
+            <dt><code>&lt;abbr&gt;</code> and <code>&lt;dfn&gt;</code></dt>
+            <dd><code>&lt;abbr&gt;</code> defines an abbreviation like <abbr title="World Health Organization">WHO</abbr>. <code>&lt;dfn&gt;</code> defines the <dfn>defining instance</dfn> of a term.</dd>
+            
+            <dt><code>&lt;address&gt;</code></dt>
+            <dd>Defines contact information (author, owner) for a document or article.</dd>
+        </dl>
+        
+        <h2>Example Illustration</h2>
+        <div class="example-div">
+            <p>This paragraph contains <strong>important text</strong>, while this part is just <b>bold</b>.</p>
+            <p>Water is written as H<sub>2</sub>O and the date is the 5<sup>th</sup> of August.</p>
+            <p>The following text is <del>no longer valid</del> <ins>and has been updated</ins>.</p>
+            <blockquote>
+                <p>This is a long quotation, cited from another source. It is typically rendered as an indented block.</p>
+                <cite>—Some Author</cite>
+            </blockquote>
+            <p>To save, press <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
+        </div>
+    </div>
+</body>
+</html>

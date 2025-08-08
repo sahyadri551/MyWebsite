@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Non-Closing Elements</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>HTML Non-Closing Elements</h1>
+
+        <h2>Definition</h2>
+        <p>Non-closing elements, also known as <strong>void elements</strong> or <strong>empty elements</strong>, are HTML tags that do not have a closing tag. Since they can't contain any content (like text or other elements), they don't need a closing tag. They are written with a single tag, for example <code>&lt;br&gt;</code>. </p>
+
+        <h2>Details & Usage</h2>
+        <p>Void elements are used to insert or embed something into the document at a specific point. For example, <code>&lt;img&gt;</code> embeds an image, <code>&lt;hr&gt;</code> inserts a thematic break (a horizontal line), and <code>&lt;input&gt;</code> inserts a form control. Their behavior is defined entirely by their attributes.</p>
+
+        <h2>List of Common Non-Closing Tags & Attributes</h2>
+        <p>In addition to <strong>Global Attributes</strong>, these elements have important specific attributes:</p>
+        <ul>
+            <li><code>&lt;br&gt;</code>: Inserts a single line break. It has no attributes.</li>
+            <li><code>&lt;hr&gt;</code>: Represents a thematic break or horizontal rule between paragraphs. It has no specific attributes. </li>
+            <li><code>&lt;img&gt;</code>: Embeds an image.
+                <ul>
+                    <li><code>src</code>: (Required) The path to the image file.</li>
+                    <li><code>alt</code>: (Required) Alternative text for the image, crucial for accessibility.</li>
+                    <li><code>width</code> / <code>height</code>: The dimensions of the image.</li>
+                </ul>
+            </li>
+            <li><code>&lt;link&gt;</code>: Links the HTML document to an external resource, most commonly a CSS stylesheet.
+                <ul>
+                    <li><code>href</code>: The URL of the linked resource.</li>
+                    <li><code>rel</code>: Specifies the relationship (e.g., <code>'stylesheet'</code>, <code>'icon'</code>).</li>
+                    <li><code>type</code>: The MIME type of the resource (e.g., <code>'text/css'</code>).</li>
+                </ul>
+            </li>
+            <li><code>&lt;meta&gt;</code>: Provides metadata about the HTML document.
+                <ul>
+                    <li><code>charset</code>: Specifies the character encoding (e.g., <code>'UTF-8'</code>).</li>
+                    <li><code>name</code> / <code>content</code>: Used for descriptions, keywords, and viewport settings.</li>
+                </ul>
+            </li>
+            <li><code>&lt;input&gt;</code>: (Also a form element) Creates interactive controls for web-based forms.
+                <ul>
+                    <li><code>type</code>: Defines the input type (e.g., <code>text</code>, <code>radio</code>, <code>submit</code>).</li>
+                    <li><code>name</code>, <code>value</code>, <code>placeholder</code>, etc.</li>
+                </ul>
+            </li>
+            <li><code>&lt;source&gt;</code>: Specifies multiple media resources for <code>&lt;video&gt;</code> or <code>&lt;audio&gt;</code> elements.</li>
+        </ul>
+
+        <h2>Example Illustration</h2>
+        <p>The code below demonstrates several common void elements.</p>
+        <pre><code>&lt;p&gt;This is the first line.&lt;br&gt;This is the second line.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;Here is an image:&lt;/p&gt;
+&lt;img src="https://via.placeholder.com/150" alt="A 150x150 placeholder image" width="150" height="150"&gt;</code></pre>
+
+        <div class="example-div">
+            <p>This is the first line.<br>This is the second line.</p>
+            <hr>
+            <p>Here is an image:</p>
+            <img src="https://via.placeholder.com/150" alt="A 150x150 placeholder image" width="150" height="150">
+        </div>
+    </div>
+</body>
+</html>

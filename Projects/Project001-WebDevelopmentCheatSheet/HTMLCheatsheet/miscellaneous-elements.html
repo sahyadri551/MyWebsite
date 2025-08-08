@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Miscellaneous Elements</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>Miscellaneous HTML Elements</h1>
+
+        <h2>The &lt;iframe&gt; Element</h2>
+        <p><strong>Definition:</strong> The <code>&lt;iframe&gt;</code> (Inline Frame) element is used to embed another HTML document within the current one. This is commonly used for embedding maps, videos, or content from other websites.</p>
+        <p><strong>Usage & Syntax:</strong> Its behavior is controlled by attributes like <code>src</code> (the URL of the page to embed), <code>width</code>, <code>height</code>, and <code>sandbox</code> (for security restrictions).</p>
+        <pre><code>&lt;iframe src="https://www.example.com" width="600" height="400" title="Example Website"&gt;&lt;/iframe&gt;</code></pre>
+        <h4>Example: Embedding a YouTube Video</h4>
+        <p>A primary use case for <code>&lt;iframe&gt;</code> is embedding videos from platforms like YouTube.</p>
+        <div class="example-div">
+            <h4>An Embedded YouTube Video</h4>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <hr>
+
+        <h2>The &lt;details&gt; and &lt;summary&gt; Elements</h2>
+        <p><strong>Definition:</strong> The <code>&lt;details&gt;</code> element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. The <code>&lt;summary&gt;</code> element provides a visible heading for it.</p>
+        <p><strong>Usage & Syntax:</strong> This is a native HTML way to create "accordion" or "toggle" components without JavaScript. The <code>open</code> attribute can be added to make it visible by default.</p>
+        <pre><code>&lt;details&gt;
+    &lt;summary&gt;Click to see more&lt;/summary&gt;
+    &lt;p&gt;This is the hidden content that appears on click.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+        <div class="example-div">
+            <details>
+                <summary>Copyright Information</summary>
+                <p>All content on this website is © 2025. All rights reserved.</p>
+            </details>
+            <details open>
+                <summary>Release Notes (Open by default)</summary>
+                <p>Version 2.0 is now live with enhanced features and bug fixes.</p>
+            </details>
+        </div>
+        <hr>
+
+        <h2>The &lt;dialog&gt; Element</h2>
+        <p><strong>Definition:</strong> The <code>&lt;dialog&gt;</code> element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or sub-window.</p>
+        <p><strong>Usage & Syntax:</strong> It can be controlled with the <code>open</code> attribute or, more powerfully, with JavaScript methods like <code>showModal()</code> (for a modal dialog that blocks the rest of the page) and <code>close()</code>.</p>
+        <pre><code>&lt;dialog id="myDialog"&gt;
+    &lt;h4&gt;Dialog Title&lt;/h4&gt;
+    &lt;p&gt;This is a modal dialog.&lt;/p&gt;
+    &lt;button id="closeDialog"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+&lt;button id="showDialog"&gt;Show Dialog&lt;/button&gt;</code></pre>
+        <div class="example-div">
+            <dialog id="demoDialog">
+                <h4>Subscription Confirmation</h4>
+                <p>Thank you for subscribing to our newsletter!</p>
+                <form method="dialog">
+                    <button>OK</button>
+                </form>
+            </dialog>
+            <button onclick="document.getElementById('demoDialog').showModal();">Show Dialog</button>
+        </div>
+        <hr>
+
+        <h2>The &lt;picture&gt; Element</h2>
+        <p><strong>Definition:</strong> The <code>&lt;picture&gt;</code> element is a container used to specify multiple <code>&lt;source&gt;</code> elements for a specific <code>&lt;img&gt;</code> contained in it. The browser will choose the most appropriate image source based on the current layout (e.g., viewport width), device capabilities (e.g., pixel density), or image format support.</p>
+        <p><strong>Usage & Syntax:</strong> This is the modern, flexible way to deliver responsive images. It ensures users download an image optimized for their device, saving bandwidth and improving load times. The <code>&lt;img&gt;</code> tag is required as a fallback.</p>
+        <pre><code>&lt;picture&gt;
+   &lt;source media="(min-width: 650px)" srcset="large-image.jpg"&gt;
+   &lt;source media="(min-width: 465px)" srcset="medium-image.jpg"&gt;
+   &lt;img src="small-image.jpg" alt="A responsive image"&gt;
+&lt;/picture&gt;</code></pre>
+        <div class="example-div">
+             <h4>Responsive Image Example</h4>
+             <p>Resize your browser window to see the image source change (the text on the placeholder will update). This example uses placeholder images.</p>
+             <picture>
+                <source media="(min-width: 750px)" srcset="https://via.placeholder.com/800x200/282c34/ffffff?text=Large+(>750px)">
+                <source media="(min-width: 450px)" srcset="https://via.placeholder.com/400x150/007bff/ffffff?text=Medium+(>450px)">
+                <img src="https://via.placeholder.com/300x100/e04949/ffffff?text=Small+(Default)" alt="A responsive image placeholder" style="width:auto;">
+             </picture>
+        </div>
+        <hr>
+        
+        <h2>The &lt;progress&gt; Element</h2>
+        <p><strong>Definition:</strong> The <code>&lt;progress&gt;</code> element displays an indicator showing the completion progress of a task.</p>
+        <p><strong>Usage & Syntax:</strong> It is typically used for file uploads, downloads, or other operations that take time. The <code>max</code> attribute defines the goal, and the <code>value</code> attribute defines the current progress. If no <code>value</code> is provided, it becomes an indeterminate progress bar.</p>
+        <pre><code>&lt;label for="file"&gt;File progress:&lt;/label&gt;
+&lt;progress id="file" max="100" value="70"&gt; 70% &lt;/progress&gt;</code></pre>
+        <div class="example-div">
+            <label for="taskProgress">Task Progress (70%)</label><br>
+            <progress id="taskProgress" max="100" value="70">70%</progress><br><br>
+            <label for="loadingProgress">Loading (Indeterminate)</label><br>
+            <progress id="loadingProgress"></progress>
+        </div>
+        <hr>
+
+        <h2>The &lt;track&gt; Element</h2>
+        <p><strong>Definition:</strong> The <code>&lt;track&gt;</code> element is used as a child of the media elements <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> to specify timed text tracks (or time-based data).</p>
+        <p><strong>Usage & Syntax:</strong> Tracks are formatted in WebVTT format (<code>.vtt</code> files) and are used for subtitles, captions, descriptions, or chapters. The <code>kind</code> attribute specifies the type of track (e.g., <code>subtitles</code>, <code>captions</code>), <code>src</code> points to the <code>.vtt</code> file, <code>srclang</code> specifies the language, and <code>label</code> provides a user-visible title.</p>
+        <pre><code>&lt;video controls&gt;
+    &lt;source src="my-video.mp4" type="video/mp4"&gt;
+    &lt;track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English" default&gt;
+    &lt;track kind="subtitles" src="subtitles_es.vtt" srclang="es" label="Spanish"&gt;
+&lt;/video&gt;</code></pre>
+        <div class="example-div">
+            <h4>Video with Text Tracks</h4>
+            <p>This example video player shows where captions/subtitles would appear if a valid <code>.vtt</code> file were linked. The browser's native video controls will show an option to turn them on.</p>
+            <video controls width="100%" poster="https://via.placeholder.com/600x340.png?text=Video+with+Tracks">
+                <track kind="captions" srclang="en" label="English Captions" default>
+            </video>
+        </div>
+        <hr>
+        
+        <h2>Other Notable Elements</h2>
+        <div class="example-div">
+            <h4>The &lt;hgroup&gt; Element</h4>
+            <p>Used to group a main heading with one or more subheadings.</p>
+            <hgroup>
+                <h3>HTML5 Cheatsheet</h3>
+                <h4>A Guide to Modern Web Markup</h4>
+            </hgroup>
+            <hr>
+            <h4>The &lt;search&gt; Element</h4>
+            <p>A new semantic element that wraps a part of the page dedicated to searching.</p>
+            <search>
+                <form>
+                    <label for="q">Search:</label>
+                    <input type="search" id="q" name="q">
+                    <input type="submit" value="Go">
+                </form>
+            </search>
+             <hr>
+            <h4>The &lt;object&gt; and &lt;embed&gt; Elements</h4>
+            <p>Older tags used for embedding external content like plugins or other documents. <code>&lt;iframe&gt;</code> is generally preferred today.</p>
+            <object data="https://via.placeholder.com/400x100?text=Embedded+Object" width="400" height="100"></object>
+        </div>
+
+    </div>
+</body>
+</html>

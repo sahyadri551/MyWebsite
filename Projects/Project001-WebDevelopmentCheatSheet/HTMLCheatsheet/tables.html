@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>HTML Tables</h1>
+
+        <h2>Definition</h2>
+        <p>HTML tables allow you to arrange data into rows and columns. They are used to display tabular data, such as financial reports, schedules, or product comparisons, in a structured and easy-to-read format. </p>
+
+        <h2>Details & Usage</h2>
+        <p>A table is created with the <code>&lt;table&gt;</code> tag. Inside it, you define table rows with <code>&lt;tr&gt;</code>, table headers with <code>&lt;th&gt;</code>, and table data cells with <code>&lt;td&gt;</code>. For better structure and accessibility, it's recommended to group header content in <code>&lt;thead&gt;</code>, body content in <code>&lt;tbody&gt;</code>, and footer content in <code>&lt;tfoot&gt;</code>.</p>
+
+        <h2>List of All HTML Tags</h2>
+        <ul>
+            <li><code>&lt;table&gt;</code>: Defines a table.</li>
+            <li><code>&lt;thead&gt;</code>: Groups the header content in a table. </li>
+            <li><code>&lt;tbody&gt;</code>: Groups the body content in a table. </li>
+            <li><code>&lt;tfoot&gt;</code>: Groups the footer content in a table. </li>
+            <li><code>&lt;tr&gt;</code>: Defines a row in a table. </li>
+            <li><code>&lt;th&gt;</code>: Defines a header cell in a table. Text is bold and centered by default. </li>
+            <li><code>&lt;td&gt;</code>: Defines a standard data cell in a table. </li>
+            <li><code>&lt;caption&gt;</code>: Defines a table caption.</li>
+            <li><code>&lt;colgroup&gt;</code>: Specifies a group of one or more columns for formatting. </li>
+            <li><code>&lt;col&gt;</code>: Specifies column properties for each column within a <code>&lt;colgroup&gt;</code>. </li>
+        </ul>
+
+        <h2>List of All Possible HTML Tag Attributes</h2>
+        <p>Table elements support <strong>Global Attributes</strong>. Key specific attributes include:</p>
+        <ul>
+            <li><strong>for &lt;table&gt;:</strong>
+                <ul>
+                     <li><code>border</code>: (Deprecated) Specifies the width of the border around the table. Use CSS instead. </li>
+                </ul>
+            </li>
+            <li><strong>for &lt;th&gt; and &lt;td&gt;:</strong>
+                <ul>
+                    <li><code>colspan</code>: Specifies the number of columns a cell should span. </li>
+                    <li><code>rowspan</code>: Specifies the number of rows a cell should span. </li>
+                    <li><code>headers</code>: Specifies one or more header cells a cell is related to for accessibility.</li>
+                </ul>
+            </li>
+             <li><strong>for &lt;th&gt;:</strong>
+                <ul>
+                     <li><code>scope</code>: Specifies whether a header cell is a header for a column, row, or group of columns/rows (<code>col</code>, <code>row</code>, <code>colgroup</code>, <code>rowgroup</code>).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Example Illustration</h2>
+        <p>The code below shows a table with a header, body, and cells that span multiple columns and rows.</p>
+        <pre><code>&lt;table&gt;
+    &lt;caption&gt;Employee Schedule&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Monday&lt;/th&gt;
+            &lt;th&gt;Tuesday&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alice&lt;/td&gt;
+            &lt;td&gt;9 AM - 5 PM&lt;/td&gt;
+            &lt;td&gt;Off&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob&lt;/td&gt;
+            &lt;td colspan="2"&gt;On-site Training&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+        <div class="example-div">
+            <table>
+                <caption>Employee Schedule</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alice</td>
+                        <td>9 AM - 5 PM</td>
+                        <td>Off</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td colspan="2">On-site Training</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

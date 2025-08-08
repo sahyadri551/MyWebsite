@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html">&larr; Back to Home</a>
+        <h1>HTML Forms</h1>
+
+        <h2>Definition</h2>
+        <p>An HTML form is used to collect user input. The user input is most often sent to a server for processing. Forms are essential for creating interactive web pages, such as contact pages, login pages, and surveys.</p>
+
+        <h2>Details & Usage</h2>
+        <p>Forms are created using the <code>&lt;form&gt;</code> element, which acts as a container for different types of input elements, such as text fields, checkboxes, radio buttons, submit buttons, and more. The two most important attributes of the <code>&lt;form&gt;</code> tag are <code>action</code> (which specifies where to send the form data) and <code>method</code> (which specifies the HTTP method to use, typically GET or POST). </p>
+
+        <h2>List of Form-related Tags</h2>
+        <ul>
+            <li><code>&lt;form&gt;</code>: The container for a web form.</li>
+            <li><code>&lt;input&gt;</code>: The most versatile form element; its behavior is defined by its <code>type</code> attribute.</li>
+            <li><code>&lt;label&gt;</code>: Defines a label for an <code>&lt;input&gt;</code> element, improving accessibility.</li>
+            <li><code>&lt;textarea&gt;</code>: Defines a multi-line text input control. </li>
+            <li><code>&lt;button&gt;</code>: Defines a clickable button.</li>
+            <li><code>&lt;select&gt;</code>: Creates a drop-down list. </li>
+            <li><code>&lt;option&gt;</code>: Defines an option in a drop-down list. </li>
+            <li><code>&lt;optgroup&gt;</code>: Groups related options in a drop-down list.</li>
+            <li><code>&lt;fieldset&gt;</code>: Groups related elements in a form.</li>
+            <li><code>&lt;legend&gt;</code>: Defines a caption for a <code>&lt;fieldset&gt;</code> element.</li>
+            <li><code>&lt;datalist&gt;</code>: Specifies a list of pre-defined options for an <code>&lt;input&gt;</code> element.</li>
+            <li><code>&lt;output&gt;</code>: Represents the result of a calculation.</li>
+        </ul>
+
+        <h2>Common Attributes</h2>
+        <p>In addition to <strong>Global Attributes</strong> (like <code>class</code>, <code>id</code>, <code>style</code>, <code>title</code>), form elements have specific attributes:</p>
+        <ul>
+            <li><strong>for &lt;form&gt;:</strong>
+                <ul>
+                    <li><code>action</code>: URL where the form data is sent.</li>
+                    <li><code>method</code>: HTTP method (<code>get</code> or <code>post</code>). </li>
+                    <li><code>enctype</code>: Encoding type for form data, use <code>multipart/form-data</code> for file uploads. </li>
+                    <li><code>target</code>: Where to display the response (e.g., <code>_blank</code>, <code>_self</code>). </li>
+                </ul>
+            </li>
+            <li><strong>for &lt;input&gt;:</strong>
+                <ul>
+                    <li><code>type</code>: Specifies the type of input (e.g., <code>text</code>, <code>password</code>, <code>checkbox</code>, <code>radio</code>, <code>submit</code>, <code>file</code>, <code>date</code>, <code>color</code>). </li>
+                    <li><code>name</code>: The name of the input, sent to the server.</li>
+                    <li><code>value</code>: The initial value of the input.</li>
+                    <li><code>placeholder</code>: Hint text that disappears on focus.</li>
+                    <li><code>required</code>: Makes the input field mandatory.</li>
+                    <li><code>disabled</code>: Disables the input field.</li>
+                </ul>
+            </li>
+            <li><strong>for &lt;textarea&gt;:</strong>
+                <ul>
+                    <li><code>rows</code>: Specifies the visible number of lines. </li>
+                    <li><code>cols</code>: Specifies the visible width in characters. </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Example Illustration</h2>
+        <p>The code below demonstrates a simple contact form with various input types.</p>
+        <pre><code>&lt;form action="/submit-form" method="post"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Contact Us&lt;/legend&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for="name"&gt;Name:&lt;/label&gt;
+            &lt;input type="text" id="name" name="user_name" required&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for="email"&gt;Email:&lt;/label&gt;
+            &lt;input type="email" id="email" name="user_email" required&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for="inquiry"&gt;Reason for Inquiry:&lt;/label&gt;
+            &lt;select id="inquiry" name="inquiry_reason"&gt;
+                &lt;option value="general"&gt;General Question&lt;/option&gt;
+                &lt;option value="support"&gt;Technical Support&lt;/option&gt;
+                &lt;option value="feedback"&gt;Feedback&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for="message"&gt;Message:&lt;/label&gt;
+            &lt;textarea id="message" name="user_message" rows="4"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;input type="submit" value="Send Message"&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+        <div class="example-div">
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Contact Us</legend>
+                    <div class="form-group">
+                        <label for="name-demo">Name:</label>
+                        <input type="text" id="name-demo" name="user_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-demo">Email:</label>
+                        <input type="email" id="email-demo" name="user_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiry-demo">Reason for Inquiry:</label>
+                        <select id="inquiry-demo" name="inquiry_reason">
+                            <option value="general">General Question</option>
+                            <option value="support">Technical Support</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-demo">Message:</label>
+                        <textarea id="message-demo" name="user_message" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Message">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
