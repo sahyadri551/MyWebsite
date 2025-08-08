@@ -1,0 +1,144 @@
+body{
+    font-family:Verdana, Geneva, Tahoma, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+}
+
+header{
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+header a{
+    text-decoration: none;
+}
+#logo-text{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logo{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border: 1px solid #eee4e2;
+    border-radius: 50%;
+}
+
+#search-bar{
+    float: right;
+    background-color: rgb(31, 85, 245);
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+
+.search-input{
+    padding: 5px;
+    margin-right: 20px;
+    width: 190px;
+    border: none;
+    border-radius: 3px;
+    background-image: url("image/search.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+.search-button{
+    padding: 5px 18px;
+    border: none;
+    float: right;
+    border-radius: 3px;
+    background: #e8491d;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.search-button:hover{
+    background: #a50582;
+}
+
+nav{
+    background-color: #0f46ee;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li{
+    padding: 10px 10px;
+    width: 300px;
+    text-align: center;
+    border-left: #f4f4f4 1px solid;
+    border-right: #f4f4f4 1px solid;
+}
+nav ul li:hover{
+    background-color: #0505a8;
+    border-radius: 5px;
+    font-size:larger;
+    transition: font-size 0.3s ease;
+    transition: background-color 0.5s ease;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: #f00909;
+}
+
+#intro{
+     margin-top: 20px;
+    background-color: #0f46ee;
+    color: #fff;
+    padding: 10px 0;
+    height: 300px;
+}
+
+#intro h1{
+    padding: 10px 20px;
+    font-size: 40px;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+#intro p{
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: justify;
+    color: #d1cccc;
+}
+
+#main{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

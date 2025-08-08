@@ -4,129 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Keyframe Animations</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        /* =================================== */
-        /* ==  GENERAL STYLES FROM style.css  == */
-        /* =================================== */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #5858c1;
-            color: #333;
-        }
-
-        h1, h2, h3, h4 {
-            color: #0056b3;
-            font-weight: 600;
-            font-variant: small-caps;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #0056b3;
-            font-weight: bolder;
-            font-size: 40px;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: #282c34;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 40px;
-            background-color: inherit;
-            border: none;
-            color: brown;
-        }
-
-        footer a {
-            color: #61dafb;
-            text-decoration: none;
-            font-size: 16px;
-            text-align: left;
-        }
-
-        footer{
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            background-color: #282c34;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 15px;
-            color: #E2E8F0;
-        }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        code {
-            background-color: #e9ecef;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: "Courier New", Courier, monospace;
-        }
-
-        pre {
-            background-color: #282c34;
-            color: #abb2bf;
-            padding: 15px;
-            border-radius: 8px;
-            overflow-x: auto;
-            white-space: pre-wrap;
-        }
-
-        pre code{
-            background-color: inherit;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        ul li{
-            list-style-type: "👉 ";
-        }
-
-        .example-box {
-            padding: 20px;
-            margin: 25px 0;
-            border: 1px solid #ced4da;
-            border-radius: 8px;
-            background-color: #f8f9fa;
-        }
-        
-        /* ======================================= */
-        /* == ANIMATION-SPECIFIC INTERNAL STYLES == */
-        /* ======================================= */
-        
-        /* Center content for animation demos */
         .animation-demo-area {
             display: flex;
             justify-content: center;
@@ -135,21 +14,19 @@
             gap: 50px;
             flex-wrap: wrap;
         }
-
-        /* -- 1. Flipping Text Heading -- */
         .flipping-heading {
             font-size: 50px;
             font-weight: bold;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            perspective: 600px; /* Essential for 3D effect */
+            perspective: 600px; 
             border: none;
         }
 
         .flipping-heading span {
             display: inline-block;
             animation: flip 2s infinite;
-            animation-delay: calc(.2s * var(--i)); /* Staggered delay for each letter */
+            animation-delay: 0.2s; 
         }
 
         @keyframes flip {
@@ -158,15 +35,14 @@
           }
         }
         
-        /* -- 2. Bouncing Ball Animation -- */
         .bouncing-box {
             width: 300px;
             height: 400px;
-            background-color: #87ceeb; /* Sky blue */
+            background-color: #87ceeb; 
             border-radius: 10px;
             position: relative;
             border: 2px solid #333;
-            border-bottom: 15px solid #3CB371; /* Green grass */
+            border-bottom: 15px solid #3CB371;
             overflow: hidden;
         }
 
@@ -176,8 +52,8 @@
             height: 50px;
             border-radius: 50%;
             left: 50%;
-            margin-left: -25px; /* Center the ball */
-            bottom: 350px; /* Start from top */
+            margin-left: -25px; 
+            bottom: 350px; 
             background-image: url("image/football.jpg");
             background-color: #007bff;
             background-size: cover;
@@ -190,12 +66,11 @@
             100% { transform: translateY(350px); }
         }
 
-        /* -- 3. Circular Loader Animation -- */
         .circular-loader {
             width: 80px;
             height: 80px;
-            border: 10px solid #f3f3f3; /* Light grey track */
-            border-top: 10px solid #0056b3; /* Blue spinning part */
+            border: 10px solid #f3f3f3; 
+            border-top: 10px solid #0056b3; 
             border-radius: 50%;
             animation: spin 1.5s linear infinite;
         }
@@ -205,7 +80,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* -- 4. Linear Bubble Loader -- */
         .bubble-loader {
             display: flex;
             align-items: center;
@@ -220,7 +94,6 @@
             animation: bubble-scale 1.4s infinite ease-in-out both;
         }
 
-        /* Animation delays for each bubble */
         .bubble:nth-child(1) { animation-delay: -0.32s; }
         .bubble:nth-child(2) { animation-delay: -0.16s; }
         
@@ -238,22 +111,22 @@
 <body>
 
     <div class="container">
-
+         <a href="animation.html">&larr; Go Back</a>
         <h1 class="flipping-heading">
-            <span style="--i:1">C</span>
-            <span style="--i:2">S</span>
-            <span style="--i:3">S</span>
-            <span style="--i:4">&nbsp;</span>
-            <span style="--i:5">A</span>
-            <span style="--i:6">N</span>
-            <span style="--i:7">I</span>
-            <span style="--i:8">M</span>
-            <span style="--i:9">A</span>
-            <span style="--i:10">T</span>
-            <span style="--i:11">I</span>
-            <span style="--i:12">O</span>
-            <span style="--i:13">N</span>
-            <span style="--i:14">S</span>
+            <span >C</span>
+            <span >S</span>
+            <span >S</span>
+            <span >&nbsp;</span>
+            <span >A</span>
+            <span >N</span>
+            <span >I</span>
+            <span >M</span>
+            <span >A</span>
+            <span >T</span>
+            <span >I</span>
+            <span >O</span>
+            <span >N</span>
+            <span >S</span>
         </h1>
         
         <p>This page demonstrates several engaging animations created purely with CSS `@keyframes`. The examples below match the animations requested.</p>
