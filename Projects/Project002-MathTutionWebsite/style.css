@@ -142,3 +142,67 @@ nav ul li a:hover{
     flex-wrap: wrap;
     justify-content: center;
 }
+
+#main div{
+    border: #0f46ee 3px solid;
+    border-radius: 10px;
+    gap: 10px;
+    margin: 10px;
+    width: 650px;
+    height: 600px;
+}
+
+#main div h2{
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    font-variant: small-caps;
+    border-bottom: 4px solid #00000036;
+}
+
+#main div p{
+    padding: 10px 20px;
+}
+
+#lessons ul{
+    list-style-type:"✍️";
+    padding: 20px;
+    margin: 20px;
+}
+
+#lessons ul li{ 
+    padding: 5px;
+    font-size: larger;
+}
+#lessons ul li a{
+    text-decoration: none;
+    color: #0f46ee;
+}
+#lessons ul li a:hover{
+    color: #f00909;
+    font-size: x-large;
+}
+#features ul{
+    list-style-type: "✨";
+    padding: 20px;
+    margin: 20px;
+}
+
+#features ul li{ 
+    padding: 25px;
+    font-size: x-large;
+    color: #0f46ee;
+}
+
+#features ul li:hover{
+    color: #f00909;
+    font-size: xx-large;
+}
+
+footer{
+    background-color: #0f46ee;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
