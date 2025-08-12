@@ -1,0 +1,49 @@
+/* 2D - 3D Transform */
+
+.main{
+    width: 200px;
+    height: 200px;
+    background-color: #0d47a1;
+}
+
+.main:hover{
+    transform: translate(50px, 50px);
+    /* transform: translateX(50px);
+    transform: translateY(50px);
+    transform: translateZ(50px);
+    transform: translate3d(-50px, 50px, -50px); */
+
+    transform: rotate(45deg);
+    /* transform: rotateX(45deg);
+    transform: rotateY(45deg);
+    transform: rotateZ(45deg);
+    transform: rotate3d(1, 1, 1, 45deg); */
+
+    transform: scale(1.5);
+    /* transform: scaleX(1.5);
+    transform: scaleY(1.5);
+    transform: scaleZ(1.5);
+    transform: scale3d(1.5, 1.5, 1.5); */
+
+    transform: skew(45deg);
+    /* transform: skewX(45deg);
+    transform: skewY(45deg);
+    transform: skew(45deg, 45deg); */
+
+    transform: matrix(1, 2, 3, 4, 5, 6);
+    /* transform: matrix3d(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16); */
+    transform: perspective(500px);
+
+    
+    background-color: blanchedalmond;
+    transition: all 0.5s ease-in-out;
+    /* transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out,color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out 0.2s; */
+    transition-duration:0.5s ;/* default value */
+    transition-delay: 0.2s; /* default value */
+    transition-timing-function: ease-in-out; /* Syntax: ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end, steps(n, start|end), cubic-bezier(x1, y1, x2, y2)   */
+    /* transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1) ; */
+    transition-property:all ;/* name of properties on which transition will be applied */
+    transition-behavior:smooth ;/* The transition-behavior CSS property specifies whether transitions will be started for properties whose animation behavior is discrete. Syntax: auto | smooth | none | normal | allow-discrete | inherit | initial | unset   */
+}
+
