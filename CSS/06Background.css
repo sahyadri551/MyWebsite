@@ -20,8 +20,20 @@
 /* Multiple background Image */
 .bg-3{
     background-image: url('./image/back1.png'), url('./image/back2.png');
-    background-size: cover;
-    background-position: center;
+    background-size: 80px 80px,300px 300px;
+    background-position: right bottom,left top;/* image position of image 1, image 2 */
+    background-repeat: no-repeat, no-repeat;
     width: 300px;
     height: 300px;
+}
+
+.bg-4{
+    border: 5px dotted red;
+    background-color: aqua;
+    padding: 50px;
+    /* margin: 20px;
+    border-radius: 10px; */
+    width: 500px;
+    height: 500px;
+    background-clip:content-box;/* padding-box,border-box,content-box */
 }

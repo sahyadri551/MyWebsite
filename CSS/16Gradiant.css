@@ -1,0 +1,131 @@
+/* Linear Gradiant */
+.grad1{
+    /* background-image: linear-gradient(red, green) ; */
+    width: 400px;
+    height: 400px;
+    /* background-image: linear-gradient(to right,red, green) ; */
+    /* background-image: linear-gradient(to bottom right,red, green) ; */
+    /* background-image: linear-gradient(120deg,red, green) ; */
+    /* background-image: linear-gradient(120deg,red, yellow,green,orange,blue,indigo,violet) ; */
+    background-image: linear-gradient(rgba(255, 0, 0, 0.651) , rgba(85, 172, 85, 0.724) 25%, rgba(255,221,78,0.7) 50%,rgba(60, 58, 189, 0.799) ) ;
+}
+/* Radial Gradiant */
+.grad2{
+    width: 600px;
+    height: 400px;
+    /* background-image: radial-gradient(red 25%, yellow 50%,white); */
+    /* background-image: radial-gradient(circle,red 25%, yellow 50%,wheat); */
+    /* background-image: radial-gradient(closest-side,red 25%, yellow 50%,wheat); */
+    /* background-image: radial-gradient(closest-side at 75% 25%,red 25%, yellow 50%,wheat); */
+    /* background-image: radial-gradient(farthest-side at 75% 25%,red 25%, yellow 50%,wheat); */
+    /* background-image: radial-gradient(closest-corner at 75% 25%,red 25%, yellow 50%,wheat); */
+    background-image: radial-gradient(farthest-corner at 75% 25%,red 25%, yellow 50%,wheat);
+
+
+
+
+}
+
+/* General styling for the new divs */
+.gradient-box {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    float: left;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    font-family: sans-serif;
+}
+
+/* Multi-Step Gradient */
+.multi-step-gradient {
+  background: linear-gradient(to right, red, yellow 20%, green 40%, cyan 60%, blue 80%, violet);
+}
+
+/* Repeating Linear Gradient (Stripes) */
+.repeating-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    #606dbc,
+    #606dbc 10px,
+    #465298 10px,
+    #465298 20px
+  );
+}
+
+/* Repeating Radial Gradient (Bullseye) */
+.repeating-bullseye {
+  background: repeating-radial-gradient(
+    circle,
+    #f00,
+    #f00 10px,
+    #fff 10px,
+    #fff 20px
+  );
+}
+
+/* Conic Gradient (Pie Chart) */
+.conic-gradient-pie {
+  background: conic-gradient(
+    red 0deg 90deg,
+    yellow 90deg 180deg,
+    lime 180deg 270deg,
+    blue 270deg 360deg
+  );
+  border-radius: 50%;
+}
+
+/* Layered Gradients */
+.layered-gradients {
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2)),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2));
+  background-color: #232323;
+  background-size: 60px 60px;
+}
+
+/* Animated Gradient */
+@property --color-one {
+  syntax: '<color>';
+  initial-value: #ff0000;
+  inherits: false;
+}
+
+@property --color-two {
+  syntax: '<color>';
+  initial-value: #0000ff;
+  inherits: false;
+}
+
+.animated-gradient {
+  background: linear-gradient(to right, var(--color-one), var(--color-two));
+  transition: --color-one 1s, --color-two 1s;
+}
+
+.animated-gradient:hover {
+  --color-one: #00ff00;
+  --color-two: #ffff00;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, #f3ec78, #af4261);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Checkerboard Pattern */
+.checkerboard {
+  background-image:
+    linear-gradient(45deg, #808080 25%, transparent 25%),
+    linear-gradient(-45deg, #808080 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #808080 75%),
+    linear-gradient(-45deg, transparent 75%, #808080 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-color: #e0e0e0;
+}
