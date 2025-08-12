@@ -12,6 +12,16 @@
     
 }
 
+.inline{
+    writing-mode: horizontal-tb; /*This is a shorthand property for both 'direction' and 'block-progression'. Syntax: horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr */
+    /* writing-mode: vertical-lr; */
+    /* writing-mode: vertical-rl; */
+    /* writing-mode: sideways-lr; */
+    /* writing-mode: sideways-rl; */
+
+    text-orientation: mixed; /*Specifies the orientation of text in a line. Syntax: mixed | upright | sideways */
+}
+
 /* overflow: visible;  Content is not clipped and may overflow the element's box. */
 /* overflow: hidden;   Content is clipped and not visible outside the element's box. */ 
 /* overflow: scroll;   Content is clipped, but a scrollbar is added to view the content. */
