@@ -108,7 +108,9 @@
     "yaml": "^2.8.1"
   },
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/output.css --minify",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch"
   },
   "keywords": [],
   "author": "",
