@@ -1,0 +1,202 @@
+/* Thumbnail Image */
+.thumbnail-img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;/*Specifies how the contents of a replaced element should be scaled relative to the box established by its used height and width. Syntax: fill | contain | cover | none | scale-down */
+}
+/*    
+    .thumbnail-img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    width:max-content;
+    height: max-content;
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+    padding: 5px;
+} */
+
+/* Responsive Thumbnail Image */
+    
+.thumbnail-img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    max-width: 80%;
+    max-height: auto;
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Polaroid Image/Card */
+
+.polaroid {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+}
+
+.polaroid p{
+    text-align: center;
+    padding: 10px;
+    color: chartreuse;
+}
+.polaroid:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    max-width: 80%;
+    max-height: auto;
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Text Over Image */
+.container{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.img{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+.img-text{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.img-top-text{
+    transition:.5 ease ;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.img-bottom-text{
+    transition:.5 ease ;
+    opacity: 0;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.img-left-text{
+    transition:.5 ease ;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.img-right-text{
+    transition:.5 ease ;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.img-top-right-text{
+    transition:.5 ease ;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.img-top-left-text{
+    transition:.5 ease ;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.img-bottom-right-text{
+    transition:.5 ease ;
+    opacity: 0;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.img-bottom-left-text{
+    transition:.5 ease ;
+    opacity: 0;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: larger;
+}
+
+.container:hover .img{
+    opacity: 0.3;
+}
+.container:hover .img-text,
+.container:hover .img-top-text,
+.container:hover .img-bottom-text,
+.container:hover .img-left-text,
+.container:hover .img-right-text,
+.container:hover .img-top-right-text,
+.container:hover .img-top-left-text,
+.container:hover .img-bottom-right-text,
+.container:hover .img-bottom-left-text{
+    opacity: 1;
+}
