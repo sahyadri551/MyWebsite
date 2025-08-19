@@ -1,12 +1,27 @@
-n1=63
-n2=45
-const prompt = require('prompt-sync')();
-n1=Number(prompt("Enter first number: "))
-n2=Number(prompt("Enter second number: "))
-console.log(n1+n2)
-console.log(n1-n2)
-console.log(n1*n2)
-console.log(n1/n2)
-console.log(Math.floor(n1/n2))
-console.log(n1%n2)
-console.log(n1**n2)
+const n1 = parseInt(prompt("Enter first number"));
+const n2 = parseInt(prompt("Enter second number"));
+const op = prompt("Enter operator");
+
+switch (op){
+    case "+":
+        console.log(n1+n2);
+        break;
+    case "-":
+        console.log(n1-n2);
+        break;
+    case "*":
+        console.log(n1*n2);
+        break;
+    case "/":
+        console.log(n1/n2);
+        console.log(Math.floor(n1/n2));
+        break;
+    case "%":
+        console.log(n1%n2);
+        break;
+    case "**":
+        console.log(n1**n2);
+        break;
+    default:
+        console.log("Invalid operator");
+}
