@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Concepts Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Concepts Cheatsheet</h1>
+    </header>
+    <div class="index-container">
+        <div class="topic-box">
+            <h3>JavaScript Introduction</h3>
+            <p>Learn the history, features, and key concepts of JavaScript, the language of the web.</p>
+            <a href="#intro">View Details</a>
+        </div>
+        <div class="topic-box">
+            <h3>JS History</h3>
+            <p>A brief summary of JavaScript's evolution, including the significant ES5 and ES6 updates.</p>
+            <a href="#history">View Details</a>
+        </div>
+        <div class="topic-box">
+            <h3>JS Features</h3>
+            <p>Explore the core features that make JavaScript a versatile and powerful programming language.</p>
+            <a href="#features">View Details</a>
+        </div>
+        <div class="topic-box">
+            <h3>Popular JS Frameworks</h3>
+            <p>Discover popular frontend and backend frameworks that extend the capabilities of JavaScript.</p>
+            <a href="#frameworks">View Details</a>
+        </div>
+        <div class="topic-box">
+            <h3>JS Engine</h3>
+            <p>Understand the structure and working of the JavaScript engine that executes your code.</p>
+            <a href="#engine">View Details</a>
+        </div>
+        <div class="topic-box">
+            <h3>Data Types</h3>
+            <p>Dive into the different data types in JavaScript, both primitive and non-primitive.</p>
+            <a href="javascript_data_types.html">View Details</a>
+        </div>
+    </div>
+
+    <main class="container">
+        <section id="intro">
+            <h2>JavaScript Intro</h2>
+            <p>JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is a language that is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm. Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. It enables interactive web pages and is an essential part of web applications. The vast majority of websites use it, and all major web browsers have a dedicated JavaScript engine to execute it.</p>
+        </section>
+        <hr>
+        <section id="history">
+            <h2>JS History</h2>
+            <p>Created in 10 days in May 1995 by Brendan Eich, then a programmer at Netscape, JavaScript was initially named Mocha. It was later renamed to LiveScript and finally to JavaScript. The name change was a marketing move to capitalize on the popularity of Sun Microsystems' Java language, despite the two having very little in common. In 1997, JavaScript was standardized by ECMA International as ECMAScript.</p>
+            <h3>ES5 and ES6 Updates</h3>
+            <p><b>ES5 (ECMAScript 5)</b>, published in 2009, was the first major update to the language in a decade. It introduced several new features and improvements, including:</p>
+            <ul>
+                <li><code>use strict</code> directive for writing safer code.</li>
+                <li>Array methods like <code>forEach</code>, <code>map</code>, <code>filter</code>, <code>reduce</code>, and <code>reduceRight</code>.</li>
+                <li><code>JSON.parse()</code> and <code>JSON.stringify()</code> for working with JSON data.</li>
+                <li>Enhancements to the <code>Object</code> constructor, including <code>Object.keys()</code>, <code>Object.values()</code>, <code>Object.entries()</code>, <code>Object.assign()</code>, and other object-related enhancements.</li>
+            </ul>
+            <p><b>ES6 (ECMAScript 2015)</b>, also known as ECMAScript 2015, was a significant and highly anticipated update that brought modern syntax and features to the language:</p>
+            <ul>
+                <li><code>let</code> and <code>const</code> for block-scoped variables.</li>
+                <li>Arrow functions for a more concise function syntax.</li>
+                <li>Classes for a more familiar object-oriented programming syntax.</li>
+                <li>Template literals for easier string interpolation.</li>
+                <li>Destructuring assignment for arrays and objects.</li>
+                <li>Default function parameters.</li>
+                <li>Promises for better asynchronous programming.</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="features">
+            <h2>JS Features</h2>
+            <ul>
+                <li><b>Lightweight and Interpreted:</b> JavaScript is a lightweight language, and web browsers interpret it directly without the need for compilation.</li>
+                <li><b>First-Class Functions:</b> Functions in JavaScript are treated as first-class citizens, meaning they can be assigned to variables, passed as arguments to other functions, and returned from functions.</li>
+                <li><b>Prototype-Based:</b> JavaScript uses prototypes for inheritance rather than classes (though ES6 introduced class syntax, it's syntactic sugar over the existing prototype-based inheritance).</li>
+                <li><b>Dynamic Typing:</b> A variable in JavaScript can hold values of different data types during the execution of a program.</li>
+                <li><b>Event-Driven and Asynchronous:</b> JavaScript is well-suited for handling user interactions and asynchronous operations, making it ideal for building responsive user interfaces.</li>
+                <li><b>Platform Independent:</b> JavaScript can run on any platform with a JavaScript engine, making it a highly portable language.</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="frameworks">
+            <h2>Popular JS Frontend and Backend Frameworks</h2>
+            <h3>Frontend Frameworks</h3>
+            <ul>
+                <li><b>React:</b> A JavaScript library for building user interfaces, developed and maintained by Facebook. It is known for its component-based architecture and virtual DOM.</li>
+                <li><b>Angular:</b> A TypeScript-based open-source web application framework led by the Angular Team at Google. It is a complete rewrite of AngularJS and is known for its comprehensive features.</li>
+                <li><b>Vue.js:</b> A progressive JavaScript framework for building user interfaces. It is known for its approachability, versatility, and performance.</li>
+            </ul>
+            <h3>Backend Frameworks</h3>
+            <ul>
+                <li><b>Node.js:</b> A JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to run JavaScript on the server-side.</li>
+                <li><b>Express.js:</b> A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</li>
+                <li><b>Next.js:</b> A React framework for production that enables functionalities like server-side rendering and generating static websites.</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="engine">
+            <h2>JS Engine Structure And Working</h2>
+            <p>A JavaScript engine is a computer program that executes JavaScript code. The first JavaScript engines were mere interpreters, but all modern engines use just-in-time (JIT) compilation for improved performance.</p>
+            <h3>Structure</h3>
+            <p>A typical JavaScript engine consists of two main components:</p>
+            <ul>
+                <li><b>Memory Heap:</b> This is where memory allocation happens. Objects are stored in the heap.</li>
+                <li><b>Call Stack:</b> This is where the engine keeps track of the functions that are being executed. When a script calls a function, it's added to the top of the call stack. When the function returns, it's popped off the stack.</li>
+            </ul>
+            <h3>Working</h3>
+            <p>The process of executing JavaScript code involves several steps:</p>
+            <ol>
+                <li><b>Parsing:</b> The engine reads the source code and converts it into an Abstract Syntax Tree (AST).</li>
+                <li><b>Compilation:</b> The AST is then passed to the engine's interpreter or JIT compiler. The interpreter, like Ignition in V8, generates bytecode from the AST.</li>
+                <li><b>Optimization:</b> The engine's optimizing compiler, like TurboFan in V8, takes the bytecode and profiling data and produces highly optimized machine code. If the profiling data suggests an optimization was incorrect, the engine de-optimizes and falls back to the interpreter's bytecode.</li>
+                <li><b>Execution:</b> The optimized machine code is then executed.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="../index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Concepts Cheatsheet</p>
+    </footer>
+</body>
+</html>

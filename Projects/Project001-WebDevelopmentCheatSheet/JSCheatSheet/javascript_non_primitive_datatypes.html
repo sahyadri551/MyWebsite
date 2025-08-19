@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Non-Primitive Data Types</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Non-Primitive Data Types</h1>
+    </header>
+    <div class="index-container">
+        <div class="topic-box">
+            <h3>Objects</h3>
+            <p>Understand the fundamental non-primitive data type in JavaScript.</p>
+            <a href="#objects">View Details</a>
+        </div>
+        <div class="topic-box">
+            <h3>Arrays</h3>
+            <p>Learn about this special type of object used for storing ordered collections.</p>
+            <a href="#arrays">View Details</a>
+        </div>
+        <div class="topic-box">
+            <h3>Functions</h3>
+            <p>Explore how functions are also a type of object in JavaScript.</p>
+            <a href="#functions">View Details</a>
+        </div>
+    </div>
+
+    <main class="container">
+        <section id="objects">
+            <h2>Objects</h2>
+            <p>In JavaScript, an object is a standalone entity, with properties and type. A property of an object can be explained as a variable that is attached to the object. An object property can be a primitive data type or another object. Objects in JavaScript are collections of key-value pairs. The keys are strings (or Symbols), and the values can be of any data type.</p>
+            <h3>Creating an Object:</h3>
+            <pre><code>// Using object literal syntax
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};</code></pre>
+            <h3>Accessing Object Properties:</h3>
+            <pre><code>console.log(person.firstName); // Dot notation
+console.log(person["lastName"]); // Bracket notation</code></pre>
+        </section>
+        <hr>
+        <section id="arrays">
+            <h2>Arrays</h2>
+            <p>An array is a special type of object used for storing ordered collections of values. Array elements can be of any data type, and they are accessed using a numeric index.</p>
+            <h3>Creating an Array:</h3>
+            <pre><code>// Using array literal syntax
+let cars = ["Saab", "Volvo", "BMW"];</code></pre>
+            <h3>Accessing Array Elements:</h3>
+            <pre><code>console.log(cars[0]); // Accessing the first element</code></pre>
+            <h3>Common Array Methods:</h3>
+            <ul>
+                <li><code>push()</code>: Adds one or more elements to the end of an array.</li>
+                <li><code>pop()</code>: Removes the last element from an array.</li>
+                <li><code>shift()</code>: Removes the first element from an array.</li>
+                <li><code>unshift()</code>: Adds one or more elements to the beginning of an array.</li>
+                <li><code>forEach()</code>: Executes a provided function once for each array element.</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="functions">
+            <h2>Functions</h2>
+            <p>In JavaScript, functions are first-class objects, because they can have properties and methods just like any other object. What distinguishes them from other objects is that functions can be called. In brief, they are `Function` objects.</p>
+            <h3>Creating a Function:</h3>
+            <pre><code>// Function declaration
+function greet(name) {
+    return "Hello, " + name;
+}
+
+// Function expression
+const farewell = function(name) {
+    return "Goodbye, " + name;
+};
+
+// Arrow function (ES6)
+const sayHi = (name) => `Hi, ${name}`;</code></pre>
+            <h3>Functions as Objects:</h3>
+            <p>Because functions are objects, you can add properties to them:</p>
+            <pre><code>greet.description = "This function returns a greeting.";
+console.log(greet.description);</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="javascript_data_types.html">&larr; Back to Data Types</a>&emsp;&copy; 2025 JavaScript Concepts Cheatsheet</p>
+    </footer>
+</body>
+</html>

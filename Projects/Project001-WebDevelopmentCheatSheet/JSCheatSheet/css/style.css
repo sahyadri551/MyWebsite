@@ -1,0 +1,159 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+    font-weight: 600;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #282c34;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+    background-color: inherit;
+    border: none;
+    color: #61dafb;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #282c34;
+}
+
+footer p {
+    margin: 0;
+    font-size: 15px;
+    color: #E2E8F0;
+}
+
+footer a {
+    color: #61dafb;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background-color: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+pre {
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+pre code{
+    background-color: inherit;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.index-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.topic-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topic-box:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.topic-box h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.topic-box p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.topic-box a {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.topic-box a:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.comparison-table th, .comparison-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: #f2f2f2;
+}
