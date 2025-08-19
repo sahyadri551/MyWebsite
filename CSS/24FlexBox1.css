@@ -1,0 +1,36 @@
+.container{
+    background-color: #ff0000;
+    display:flex;/* Syntax: [ <display-outside> || <display-inside> ] | <display-listitem> | <display-internal> | <display-box> | <display-legacy>.Possible values:none | inline | inline-block | block | flex | grid | inline-flex | inline-flexbox | inline-table | table | table-row | table-cell | table-column | table-column-group | table-header-group | table-footer-group |table-row-group | contents | list-item | run-in | flow-root | flexbox | ruby | ruby-base | ruby-text | ruby-base-container | ruby-text-container  */
+    justify-content:center;/*flex-start | flex-end | center | space-between | space-around | space-evenly | baseline | first baseline | last baseline | end | left | right | base | start | stretch | unsafe  */
+    align-items:center;/* align-self: auto | flex-start | flex-end | center | baseline | stretch | first baseline | last baseline | safe | unsafe | stretch | start | end | left | right | self-start | self-end */
+    flex-wrap: wrap;/*flex-wrap: wrap-reverse;*/
+    /* flex-direction:row-reverse;/*row-reverse,column,column-reverse */
+    /* flex-flow: row-reverse wrap-reverse;/*Syntax: <'flex-direction'> || <'flex-wrap'>. Shorthand for <'flex-direction'> and <'flex-wrap'> */
+}
+.container div{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #00ff00;
+    align-content: center;
+    text-align: center;
+}
+
+.container div:nth-child(odd){
+    background-color: #0000ff;
+    color: azure;
+    /* flex: 1 1 200px;Specifies the components of a flexible length: the flex grow factor and flex shrink factor, and the flex basis. Syntax: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] */
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px; */
+
+    align-self:center;
+    /* align-self: auto | flex-start | flex-end | center | baseline | stretch | first baseline | last baseline | safe | unsafe | stretch | start | end | left | right | self-start | self-end */
+}
+
+.grow{
+    flex-grow: 5;
+}
+.shrink{
+    flex-shrink: 5;
+}
