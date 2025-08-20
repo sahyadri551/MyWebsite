@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Conditional Statements Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Conditional Statements</h1>
+    </header>
+
+    <main class="container">
+        <section id="definition">
+            <h2>Definition</h2>
+            <p><strong>Conditional statements</strong> are used to perform different actions based on different conditions. They allow your code to make decisions and execute specific blocks of code only when a certain condition is met. This control over the flow of execution is fundamental to programming.</p>
+        </section>
+        <hr>
+
+        <section id="if-else">
+            <h2>Detailed Explanation of <code>if</code>, <code>if else</code>, <code>else if</code></h2>
+
+            <h3>The <code>if</code> Statement</h3>
+            <p>The <code>if</code> statement executes a block of code if a specified condition is true.</p>
+            <h4>Syntax:</h4>
+            <pre><code><span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">condition</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-comment">// block of code to be executed if the condition is true</span>
+<span class="code-punctuation">}</span></code></pre>
+            <h4>Example:</h4>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">hour</span> <span class="code-operator">=</span> <span class="code-number">14</span><span class="code-punctuation">;</span>
+
+<span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">hour</span> <span class="code-operator"><</span> <span class="code-number">18</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"Good day"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span>
+<span class="code-comment">// Output: Good day</span></code></pre>
+
+            <h3>The <code>if...else</code> Statement</h3>
+            <p>The <code>if...else</code> statement executes one block of code if the condition is true and another block if the condition is false.</p>
+            <h4>Syntax:</h4>
+            <pre><code><span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">condition</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-comment">// block of code to be executed if the condition is true</span>
+<span class="code-punctuation">}</span> <span class="code-keyword">else</span> <span class="code-punctuation">{</span>
+  <span class="code-comment">// block of code to be executed if the condition is false</span>
+<span class="code-punctuation">}</span></code></pre>
+            <h4>Example:</h4>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">temperature</span> <span class="code-operator">=</span> <span class="code-number">30</span><span class="code-punctuation">;</span>
+
+<span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">temperature</span> <span class="code-operator">></span> <span class="code-number">25</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"It's a hot day!"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span> <span class="code-keyword">else</span> <span class="code-punctuation">{</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"It's a pleasant day."</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span>
+<span class="code-comment">// Output: It's a hot day!</span></code></pre>
+
+            <h3>The <code>else if</code> Statement</h3>
+            <p>The <code>else if</code> statement specifies a new condition to test if the first condition is false. You can have multiple <code>else if</code> blocks.</p>
+            <h4>Syntax:</h4>
+            <pre><code><span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">condition1</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-comment">// block of code for condition1</span>
+<span class="code-punctuation">}</span> <span class="code-keyword">else if</span> <span class="code-punctuation">(</span><span class="code-variable">condition2</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-comment">// block of code for condition2</span>
+<span class="code-punctuation">}</span> <span class="code-keyword">else</span> <span class="code-punctuation">{</span>
+  <span class="code-comment">// block of code if no conditions are met</span>
+<span class="code-punctuation">}</span></code></pre>
+            <h4>Example:</h4>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">score</span> <span class="code-operator">=</span> <span class="code-number">85</span><span class="code-punctuation">;</span>
+
+<span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">score</span> <span class="code-operator">>=</span> <span class="code-number">90</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"Grade: A"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span> <span class="code-keyword">else if</span> <span class="code-punctuation">(</span><span class="code-variable">score</span> <span class="code-operator">>=</span> <span class="code-number">80</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"Grade: B"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span> <span class="code-keyword">else if</span> <span class="code-punctuation">(</span><span class="code-variable">score</span> <span class="code-operator">>=</span> <span class="code-number">70</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"Grade: C"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span> <span class="code-keyword">else</span> <span class="code-punctuation">{</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"Grade: F"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span>
+<span class="code-comment">// Output: Grade: B</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="nested-if-else">
+            <h2>Nested <code>if...else</code> Statement</h2>
+            <p>You can use an <code>if</code> or <code>else if</code> statement inside another <code>if</code> or <code>else if</code> statement. This is known as nesting.</p>
+            <h4>Example:</h4>
+            <p>This program checks if a number is positive, negative, or zero, and if it's positive, it also checks if it's even or odd.</p>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">num</span> <span class="code-operator">=</span> <span class="code-number">10</span><span class="code-punctuation">;</span>
+
+<span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">num</span> <span class="code-operator">>=</span> <span class="code-number">0</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">num</span> <span class="code-operator">===</span> <span class="code-number">0</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+    <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"The number is zero."</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  <span class="code-punctuation">}</span> <span class="code-keyword">else</span> <span class="code-punctuation">{</span>
+    <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"The number is positive."</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">if</span> <span class="code-punctuation">(</span><span class="code-variable">num</span> <span class="code-operator">%</span> <span class="code-number">2</span> <span class="code-operator">===</span> <span class="code-number">0</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+      <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"It is also an even number."</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+    <span class="code-punctuation">}</span> <span class="code-keyword">else</span> <span class="code-punctuation">{</span>
+      <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"It is also an odd number."</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+    <span class="code-punctuation">}</span>
+  <span class="code-punctuation">}</span>
+<span class="code-punctuation">}</span> <span class="code-keyword">else</span> <span class="code-punctuation">{</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"The number is negative."</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span>
+<span class="code-comment">// Output:
+// The number is positive.
+// It is also an even number.</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="switch-case">
+            <h2>The <code>switch</code> Statement</h2>
+            <p>The <code>switch</code> statement is used to perform different actions based on different conditions. It evaluates an expression, matching the expression's value against a series of <code>case</code> clauses, and executes statements after the first clause with a matching value, until a <code>break</code> statement is encountered.</p>
+            <ul>
+                <li><strong><code>case</code></strong>: Defines a block of code to be executed if the expression matches the case's value.</li>
+                <li><strong><code>break</code></strong>: Stops the execution inside the switch block. If omitted, execution continues into the next case.</li>
+                <li><strong><code>default</code></strong>: Specifies the code to run if there is no case match.</li>
+            </ul>
+            <h4>Example:</h4>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">day</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">Date</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">.</span><span class="code-function">getDay</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Returns a number (0=Sun, 1=Mon, ...)</span>
+<span class="code-keyword">let</span> <span class="code-variable">dayName</span><span class="code-punctuation">;</span>
+
+<span class="code-keyword">switch</span> <span class="code-punctuation">(</span><span class="code-variable">day</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+  <span class="code-keyword">case</span> <span class="code-number">0</span><span class="code-punctuation">:</span>
+    <span class="code-variable">dayName</span> <span class="code-operator">=</span> <span class="code-string">"Sunday"</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">case</span> <span class="code-number">1</span><span class="code-punctuation">:</span>
+    <span class="code-variable">dayName</span> <span class="code-operator">=</span> <span class="code-string">"Monday"</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">case</span> <span class="code-number">2</span><span class="code-punctuation">:</span>
+    <span class="code-variable">dayName</span> <span class="code-operator">=</span> <span class="code-string">"Tuesday"</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">case</span> <span class="code-number">3</span><span class="code-punctuation">:</span>
+    <span class="code-variable">dayName</span> <span class="code-operator">=</span> <span class="code-string">"Wednesday"</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">case</span> <span class="code-number">4</span><span class="code-punctuation">:</span>
+    <span class="code-variable">dayName</span> <span class="code-operator">=</span> <span class="code-string">"Thursday"</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">case</span> <span class="code-number">5</span><span class="code-punctuation">:</span>
+    <span class="code-variable">dayName</span> <span class="code-operator">=</span> <span class="code-string">"Friday"</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">case</span> <span class="code-number">6</span><span class="code-punctuation">:</span>
+    <span class="code-variable">dayName</span> <span class="code-operator">=</span> <span class="code-string">"Saturday"</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">default</span><span class="code-punctuation">:</span>
+    <span class="code-variable">dayName</span> <span class="code-operator">=</span> <span class="code-string">"Unknown Day"</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">"Today is "</span> <span class="code-operator">+</span> <span class="code-variable">dayName</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="nested-switch">
+            <h2>Nested <code>switch</code> Statement</h2>
+            <p>A <code>switch</code> statement can be nested inside another <code>switch</code> statement. This can be useful for evaluating more complex, multi-level conditions.</p>
+            <h4>Example: Even-Odd Number Check Program</h4>
+            <p>This program checks if a number is between 1 and 10, and then uses a nested switch to determine if the number is even or odd.</p>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">num</span> <span class="code-operator">=</span> <span class="code-number">7</span><span class="code-punctuation">;</span>
+<span class="code-keyword">let</span> <span class="code-variable">message</span> <span class="code-operator">=</span> <span class="code-string">""</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Outer switch checks if the number is within a certain range (e.g., a single digit)</span>
+<span class="code-keyword">switch</span> <span class="code-punctuation">(</span><span class="code-variable">num</span> <span class="code-operator">></span> <span class="code-number">0</span> <span class="code-operator">&&</span> <span class="code-variable">num</span> <span class="code-operator"><</span> <span class="code-number">10</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+    <span class="code-keyword">case</span> <span class="code-boolean">true</span><span class="code-punctuation">:</span>
+        <span class="code-variable">message</span> <span class="code-operator">+=</span> <span class="code-string">"The number is a single positive digit. "</span><span class="code-punctuation">;</span>
+        
+        <span class="code-comment">// Inner switch checks if the number is even or odd</span>
+        <span class="code-keyword">switch</span> <span class="code-punctuation">(</span><span class="code-variable">num</span> <span class="code-operator">%</span> <span class="code-number">2</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+            <span class="code-keyword">case</span> <span class="code-number">0</span><span class="code-punctuation">:</span>
+                <span class="code-variable">message</span> <span class="code-operator">+=</span> <span class="code-string">"It is an EVEN number."</span><span class="code-punctuation">;</span>
+                <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+            <span class="code-keyword">case</span> <span class="code-number">1</span><span class="code-punctuation">:</span>
+                <span class="code-variable">message</span> <span class="code-operator">+=</span> <span class="code-string">"It is an ODD number."</span><span class="code-punctuation">;</span>
+                <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+        <span class="code-punctuation">}</span>
+        <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+
+    <span class="code-keyword">case</span> <span class="code-boolean">false</span><span class="code-punctuation">:</span>
+        <span class="code-variable">message</span> <span class="code-operator">=</span> <span class="code-string">"The number is not a single positive digit."</span><span class="code-punctuation">;</span>
+        <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+        
+    <span class="code-keyword">default</span><span class="code-punctuation">:</span>
+        <span class="code-variable">message</span> <span class="code-operator">=</span> <span class="code-string">"Invalid input."</span><span class="code-punctuation">;</span>
+        <span class="code-keyword">break</span><span class="code-punctuation">;</span>
+<span class="code-punctuation">}</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">message</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-comment">// Output: The number is a single positive digit. It is an ODD number.</span>
+</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>

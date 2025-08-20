@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Operators</h1>
+    </header>
+
+    <main class="container">
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>In JavaScript, an <strong>operator</strong> is a special symbol used to perform operations on operands (values and variables). For example, in <code>10 + 5</code>, the <code>+</code> sign is an operator and <code>10</code> and <code>5</code> are operands. Operators are the building blocks of any program, allowing you to manipulate data, compare values, and combine multiple conditions.</p>
+        </section>
+        <hr>
+
+        <section id="types-by-operands">
+            <h2>Types of Operators by Number of Operands</h2>
+            <p>Operators can be classified based on the number of operands they work with.</p>
+            <ul>
+                <li><strong>Unary:</strong> A unary operator works on a single operand.
+                    <pre><code><span class="code-keyword">let</span> <span class="code-variable">x</span> <span class="code-operator">=</span> <span class="code-number">5</span><span class="code-punctuation">;</span>
+<span class="code-variable">x</span><span class="code-operator">++</span><span class="code-punctuation">;</span> <span class="code-comment">// '++' is a unary operator</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-operator">!</span><span class="code-boolean">true</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// '!' is a unary operator</span></code></pre>
+                </li>
+                <li><strong>Binary:</strong> A binary operator works on two operands. This is the most common type.
+                    <pre><code><span class="code-keyword">let</span> <span class="code-variable">sum</span> <span class="code-operator">=</span> <span class="code-number">10</span> <span class="code-operator">+</span> <span class="code-number">20</span><span class="code-punctuation">;</span> <span class="code-comment">// '+' is a binary operator</span></code></pre>
+                </li>
+                <li><strong>Ternary:</strong> A ternary operator is the only operator in JavaScript that works on three operands.
+                    <pre><code><span class="code-keyword">let</span> <span class="code-variable">result</span> <span class="code-operator">=</span> <span class="code-punctuation">(</span><span class="code-number">10</span> <span class="code-operator">></span> <span class="code-number">5</span><span class="code-punctuation">)</span> <span class="code-operator">?</span> <span class="code-string">'Yes'</span> <span class="code-operator">:</span> <span class="code-string">'No'</span><span class="code-punctuation">;</span> <span class="code-comment">// '?:' is a ternary operator</span></code></pre>
+                </li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="types-by-usage">
+            <h2>Types of Operators by Usage</h2>
+
+            <h3>Arithmetic Operators</h3>
+            <p>Used to perform mathematical calculations.</p>
+            <ul>
+                <li><code>+</code> (Addition), <code>-</code> (Subtraction), <code>*</code> (Multiplication), <code>/</code> (Division)</li>
+                <li><code>%</code> (Modulus - remainder of division)</li>
+                <li><code>**</code> (Exponentiation - ES6)</li>
+                <li><code>++</code> (Increment), <code>--</code> (Decrement)</li>
+            </ul>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">a</span> <span class="code-operator">=</span> <span class="code-number">10</span><span class="code-punctuation">;</span>
+<span class="code-keyword">let</span> <span class="code-variable">b</span> <span class="code-operator">=</span> <span class="code-number">4</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">a</span> <span class="code-operator">+</span> <span class="code-variable">b</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// 14</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">a</span> <span class="code-operator">%</span> <span class="code-variable">b</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// 2</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-number">2</span> <span class="code-operator">**</span> <span class="code-number">3</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 8</span>
+<span class="code-variable">a</span><span class="code-operator">++</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">a</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>      <span class="code-comment">// 11</span></code></pre>
+
+            <h3>Assignment Operators</h3>
+            <p>Used to assign values to variables.</p>
+            <ul>
+                <li><code>=</code> (Assignment)</li>
+                <li><code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>**=</code> (Compound Assignment)</li>
+            </ul>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">x</span> <span class="code-operator">=</span> <span class="code-number">10</span><span class="code-punctuation">;</span>
+<span class="code-variable">x</span> <span class="code-operator">+=</span> <span class="code-number">5</span><span class="code-punctuation">;</span> <span class="code-comment">// equivalent to x = x + 5</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">x</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 15</span></code></pre>
+
+            <h3>Comparison Operators</h3>
+            <p>Used to compare two values, resulting in a Boolean value (<code>true</code> or <code>false</code>).</p>
+            <ul>
+                <li><code>==</code> (Equal to), <code>!=</code> (Not equal to)</li>
+                <li><code>===</code> (Strictly equal to - value and type), <code>!==</code> (Strictly not equal to)</li>
+                <li><code>></code> (Greater than), <code><</code> (Less than), <code>>=</code> (Greater than or equal to), <code><=</code> (Less than or equal to)</li>
+            </ul>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">age</span> <span class="code-operator">=</span> <span class="code-number">25</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">age</span> <span class="code-operator">></span> <span class="code-number">18</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>    <span class="code-comment">// true</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">'25'</span> <span class="code-operator">==</span> <span class="code-number">25</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// true (loose equality)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">'25'</span> <span class="code-operator">===</span> <span class="code-number">25</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// false (strict equality)</span></code></pre>
+
+            <h3>Logical Operators</h3>
+            <p>Used to combine or invert Boolean values.</p>
+            <ul>
+                <li><code>&&</code> (Logical AND)</li>
+                <li><code>||</code> (Logical OR)</li>
+                <li><code>!</code> (Logical NOT)</li>
+            </ul>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">isAdult</span> <span class="code-operator">=</span> <span class="code-boolean">true</span><span class="code-punctuation">;</span>
+<span class="code-keyword">let</span> <span class="code-variable">hasLicense</span> <span class="code-operator">=</span> <span class="code-boolean">false</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">isAdult</span> <span class="code-operator">&&</span> <span class="code-variable">hasLicense</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// false</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">isAdult</span> <span class="code-operator">||</span> <span class="code-variable">hasLicense</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// true</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-operator">!</span><span class="code-variable">isAdult</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>              <span class="code-comment">// false</span></code></pre>
+
+            <h3>Bitwise Operators</h3>
+            <p>Treat operands as 32-bit signed integers and perform operations on their binary representation.</p>
+            <ul>
+                <li><code>&</code> (AND), <code>|</code> (OR), <code>^</code> (XOR), <code>~</code> (NOT)</li>
+                <li><code><<</code> (Left shift), <code>>></code> (Sign-propagating right shift), <code>>>></code> (Zero-fill right shift)</li>
+            </ul>
+            <pre><code><span class="code-comment">// 5 = 0101, 1 = 0001</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-number">5</span> <span class="code-operator">&</span> <span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 1 (0001)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-number">5</span> <span class="code-operator">|</span> <span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 5 (0101)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-operator">~</span><span class="code-number">5</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>    <span class="code-comment">// -6 (Explained below)</span></code></pre>
+
+            <h3>Ternary (Conditional) Operator</h3>
+            <p>A shortcut for an <code>if...else</code> statement.</p>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">temperature</span> <span class="code-operator">=</span> <span class="code-number">25</span><span class="code-punctuation">;</span>
+<span class="code-keyword">let</span> <span class="code-variable">weather</span> <span class="code-operator">=</span> <span class="code-punctuation">(</span><span class="code-variable">temperature</span> <span class="code-operator">></span> <span class="code-number">20</span><span class="code-punctuation">)</span> <span class="code-operator">?</span> <span class="code-string">'Warm'</span> <span class="code-operator">:</span> <span class="code-string">'Cool'</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">weather</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Warm</span></code></pre>
+
+        </section>
+        <hr>
+
+        <section id="equality-diff">
+            <h2>Differentiate between == and ===</h2>
+            <p>Understanding the difference between the loose equality (<code>==</code>) and strict equality (<code>===</code>) operators is crucial in JavaScript.</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th><code>==</code> (Loose Equality)</th>
+                        <th><code>===</code> (Strict Equality)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Comparison</strong></td>
+                        <td>Compares only the values of the operands.</td>
+                        <td>Compares both the values and the data types of the operands.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Type Coercion</strong></td>
+                        <td>Performs type coercion, meaning it converts operands to the same type before comparison.</td>
+                        <td>Does not perform type coercion. If the types are different, it immediately returns <code>false</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Usage</strong></td>
+                        <td>Can lead to unexpected results due to automatic type conversion. Generally advised against.</td>
+                        <td>Predictable and safer. It is the recommended equality operator.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Example</h3>
+            <pre><code><span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-number">77</span> <span class="code-operator">==</span> <span class="code-string">'77'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// true, because '77' is converted to the number 77 before comparison.</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-number">77</span> <span class="code-operator">===</span> <span class="code-string">'77'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// false, because one is a number and the other is a string.</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-boolean">true</span> <span class="code-operator">==</span> <span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// true, because true is converted to the number 1.</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-boolean">true</span> <span class="code-operator">===</span> <span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// false, because one is a boolean and the other is a number.</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">null</span> <span class="code-operator">==</span> <span class="code-keyword">undefined</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// true, a special case in the equality algorithm.</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">null</span> <span class="code-operator">===</span> <span class="code-keyword">undefined</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// false, because they are of different types.</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="bitwise-not">
+            <h2>Explain ~ (Bitwise NOT) Operator Clearly</h2>
+            <p>The Bitwise NOT (<code>~</code>) operator inverts all the bits of its operand. It operates on a 32-bit signed integer. The process can be confusing because of how negative numbers are stored in binary using a format called <strong>Two's Complement</strong>.</p>
+            <p>The formula for the result of <code>~n</code> is simply <code>-(n + 1)</code>.</p>
+            <p>Let's see why <code>~5</code> equals <code>-6</code>:</p>
+            <ol>
+                <li><strong>Convert to 32-bit Binary:</strong> The number 5 in a 32-bit representation is:
+                    <pre><code>00000000 00000000 00000000 00000101</code></pre>
+                </li>
+                <li><strong>Invert all bits:</strong> The <code>~</code> operator flips every 0 to a 1 and every 1 to a 0.
+                    <pre><code>11111111 11111111 11111111 11111010</code></pre>
+                </li>
+                <li><strong>Interpret as a Signed Integer:</strong> Since the first bit (the sign bit) is 1, the number is negative. To find its decimal value, the computer uses the Two's Complement method:
+                    <ul>
+                        <li>Invert all the bits again: <code>00000000 00000000 00000000 00000101</code></li>
+                        <li>Add 1: <code>00000000 00000000 00000000 00000110</code></li>
+                    </ul>
+                </li>
+                <li><strong>Result:</strong> The resulting binary is the representation for the number 6. Since the sign bit was 1, the final decimal value is <strong>-6</strong>.</li>
+            </ol>
+        </section>
+        <hr>
+
+        <section id="precedence">
+            <h2>Operator Precedence</h2>
+            <p>Operator precedence determines the order in which operators are evaluated in an expression. Operators with higher precedence are evaluated before operators with lower precedence. Parentheses <code>()</code> can be used to override the default precedence.</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Precedence</th>
+                        <th>Operator Type</th>
+                        <th>Operators</th>
+                        <th>Associativity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>21</td><td>Grouping</td><td><code>( ... )</code></td><td>n/a</td></tr>
+                    <tr><td>20</td><td>Member Access, new</td><td><code>.</code>, <code>?.</code>, <code>new</code> (with args)</td><td>Left-to-right</td></tr>
+                    <tr><td>18</td><td>Postfix Increment/Decrement</td><td><code>++</code>, <code>--</code></td><td>n/a</td></tr>
+                    <tr><td>17</td><td>Logical NOT, Bitwise NOT, Unary</td><td><code>!</code>, <code>~</code>, <code>+</code>, <code>-</code>, <code>++</code>, <code>--</code>, <code>typeof</code></td><td>Right-to-left</td></tr>
+                    <tr><td>16</td><td>Exponentiation</td><td><code>**</code></td><td>Right-to-left</td></tr>
+                    <tr><td>15</td><td>Multiplication, Division, Modulus</td><td><code>*</code>, <code>/</code>, <code>%</code></td><td>Left-to-right</td></tr>
+                    <tr><td>14</td><td>Addition, Subtraction</td><td><code>+</code>, <code>-</code></td><td>Left-to-right</td></tr>
+                    <tr><td>13</td><td>Bitwise Shift</td><td><code>&lt;&lt;</code>, <code>&gt;&gt;</code>, <code>&gt;&gt;&gt;</code></td><td>Left-to-right</td></tr>
+                    <tr><td>12</td><td>Relational</td><td><code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>in</code>, <code>instanceof</code></td><td>Left-to-right</td></tr>
+                    <tr><td>11</td><td>Equality</td><td><code>==</code>, <code>!=</code>, <code>===</code>, <code>!==</code></td><td>Left-to-right</td></tr>
+                    <tr><td>10</td><td>Bitwise AND</td><td><code>&</code></td><td>Left-to-right</td></tr>
+                    <tr><td>9</td><td>Bitwise XOR</td><td><code>^</code></td><td>Left-to-right</td></tr>
+                    <tr><td>8</td><td>Bitwise OR</td><td><code>|</code></td><td>Left-to-right</td></tr>
+                    <tr><td>7</td><td>Logical AND</td><td><code>&&</code></td><td>Left-to-right</td></tr>
+                    <tr><td>6</td><td>Logical OR</td><td><code>||</code></td><td>Left-to-right</td></tr>
+                    <tr><td>5</td><td>Nullish Coalescing</td><td><code>??</code></td><td>Left-to-right</td></tr>
+                    <tr><td>4</td><td>Conditional (Ternary)</td><td><code>? :</code></td><td>Right-to-left</td></tr>
+                    <tr><td>3</td><td>Assignment</td><td><code>=</code>, <code>+=</code>, <code>-=</code>, etc.</td><td>Right-to-left</td></tr>
+                    <tr><td>1</td><td>Comma</td><td><code>,</code></td><td>Left-to-right</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <hr>
+
+        <section id="typeof-instanceof">
+            <h2><code>typeof</code> and <code>instanceof</code> Operators</h2>
+            
+            <h3><code>typeof</code> Operator</h3>
+            <p>The <code>typeof</code> operator is a unary operator that returns a string indicating the data type of its operand.</p>
+            <pre><code><span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-number">42</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>             <span class="code-comment">// "number"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-string">'hello'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>        <span class="code-comment">// "string"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-boolean">true</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>           <span class="code-comment">// "boolean"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-keyword">undefined</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>      <span class="code-comment">// "undefined"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-punctuation">{</span> <span class="code-variable">a</span><span class="code-operator">:</span> <span class="code-number">1</span> <span class="code-punctuation">}</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>       <span class="code-comment">// "object"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-punctuation">[</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">]</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>      <span class="code-comment">// "object" (arrays are objects)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-keyword">null</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>           <span class="code-comment">// "object" (this is a well-known historical bug)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-keyword">function</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span><span class="code-punctuation">}</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// "function"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-keyword">typeof</span> <span class="code-function">Symbol</span><span class="code-punctuation">(</span><span class="code-string">'id'</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// "symbol"</span></code></pre>
+
+            <h3><code>instanceof</code> Operator</h3>
+            <p>The <code>instanceof</code> operator checks if an object is an instance of a particular constructor or class. It tests whether the <code>prototype</code> property of a constructor appears anywhere in the prototype chain of an object.</p>
+            <pre><code><span class="code-keyword">class</span> <span class="code-variable">Car</span> <span class="code-punctuation">{</span><span class="code-punctuation">}</span>
+<span class="code-keyword">let</span> <span class="code-variable">myCar</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">Car</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">myCar</span> <span class="code-keyword">instanceof</span> <span class="code-variable">Car</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>        <span class="code-comment">// true</span>
+
+<span class="code-keyword">let</span> <span class="code-variable">colors</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-string">'red'</span><span class="code-punctuation">,</span> <span class="code-string">'green'</span><span class="code-punctuation">,</span> <span class="code-string">'blue'</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">colors</span> <span class="code-keyword">instanceof</span> <span class="code-variable">Array</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>     <span class="code-comment">// true</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">colors</span> <span class="code-keyword">instanceof</span> <span class="code-variable">Object</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>    <span class="code-comment">// true (because Array inherits from Object)</span>
+
+<span class="code-keyword">let</span> <span class="code-variable">date</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">Date</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">date</span> <span class="code-keyword">instanceof</span> <span class="code-variable">Date</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>        <span class="code-comment">// true</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">'Hello'</span> <span class="code-keyword">instanceof</span> <span class="code-variable">String</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// false (a primitive is not an instance)</span>
+<span class="code-keyword">let</span> <span class="code-variable">strObj</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">String</span><span class="code-punctuation">(</span><span class="code-string">'Hello'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">strObj</span> <span class="code-keyword">instanceof</span> <span class="code-variable">String</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// true (this is a String object)</span></code></pre>
+        </section>
+        <hr>
+        
+        <section id="nullish-coalescing">
+            <h2>Nullish Coalescing Operator (<code>??</code>)</h2>
+            <p>The nullish coalescing operator (<code>??</code>) is a logical operator that returns its right-hand side operand when its left-hand side operand is <code>null</code> or <code>undefined</code>, and otherwise returns its left-hand side operand.</p>
+            <p>It's a way to provide a default value for a variable only when it is "nullish" (i.e., <code>null</code> or <code>undefined</code>).</p>
+            
+            <h3>Usage and Example</h3>
+            <p>This is particularly useful because it treats other "falsy" values like <code>0</code>, <code>''</code> (empty string), and <code>false</code> as valid values, unlike the logical OR (<code>||</code>) operator.</p>
+
+            <pre><code><span class="code-comment">// Using || (Logical OR)</span>
+<span class="code-keyword">let</span> <span class="code-variable">quantity</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span>
+<span class="code-keyword">let</span> <span class="code-variable">displayQuantity_OR</span> <span class="code-operator">=</span> <span class="code-variable">quantity</span> <span class="code-operator">||</span> <span class="code-number">10</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">displayQuantity_OR</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 10 (because 0 is a falsy value, || falls back to the default)</span>
+
+<span class="code-comment">// Using ?? (Nullish Coalescing)</span>
+<span class="code-keyword">let</span> <span class="code-variable">displayQuantity_NC</span> <span class="code-operator">=</span> <span class="code-variable">quantity</span> <span class="code-operator">??</span> <span class="code-number">10</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">displayQuantity_NC</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 0 (because 0 is not null or undefined, it is considered a valid value)</span>
+
+<span class="code-keyword">let</span> <span class="code-variable">user</span><span class="code-punctuation">;</span> <span class="code-comment">// undefined</span>
+<span class="code-keyword">let</span> <span class="code-variable">defaultUser</span> <span class="code-operator">=</span> <span class="code-string">'Guest'</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">user</span> <span class="code-operator">??</span> <span class="code-variable">defaultUser</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 'Guest'</span>
+
+<span class="code-keyword">let</span> <span class="code-variable">config</span> <span class="code-operator">=</span> <span class="code-punctuation">{</span> <span class="code-variable">timeout</span><span class="code-operator">:</span> <span class="code-number">0</span><span class="code-punctuation">,</span> <span class="code-variable">retries</span><span class="code-operator">:</span> <span class="code-keyword">null</span> <span class="code-punctuation">}</span><span class="code-punctuation">;</span>
+<span class="code-keyword">let</span> <span class="code-variable">timeout</span> <span class="code-operator">=</span> <span class="code-variable">config</span><span class="code-punctuation">.</span><span class="code-variable">timeout</span> <span class="code-operator">??</span> <span class="code-number">5000</span><span class="code-punctuation">;</span>   <span class="code-comment">// timeout is 0</span>
+<span class="code-keyword">let</span> <span class="code-variable">retries</span> <span class="code-operator">=</span> <span class="code-variable">config</span><span class="code-punctuation">.</span><span class="code-variable">retries</span> <span class="code-operator">??</span> <span class="code-number">3</span><span class="code-punctuation">;</span>       <span class="code-comment">// retries is 3</span>
+<span class="code-keyword">let</span> <span class="code-variable">host</span> <span class="code-operator">=</span> <span class="code-variable">config</span><span class="code-punctuation">.</span><span class="code-variable">host</span> <span class="code-operator">??</span> <span class="code-string">'localhost'</span><span class="code-punctuation">;</span>   <span class="code-comment">// host is 'localhost'</span>
+</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>
