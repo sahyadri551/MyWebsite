@@ -232,6 +232,8 @@ nav ul li a:hover{
     margin: 5px;
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
+    /* background: #0f46ee; */
     font-variant: small-caps;
     border-bottom: 4px solid #00000036;
 }
@@ -278,7 +280,8 @@ nav ul li a:hover{
 }
 
 footer{
-    background-color: #0f46ee;
+    /* background-color: #0f46ee; */
+    background: linear-gradient(#3498db, #8e44ad);
     color: #fff;
     padding: 30px 0;
     text-align: center;
