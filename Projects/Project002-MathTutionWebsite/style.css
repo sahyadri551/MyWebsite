@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     font-family:Verdana, Geneva, Tahoma, Arial, sans-serif;
     margin: 0;
@@ -5,17 +9,20 @@ body{
 }
 
 #container{
-    width: 90%;
+    width: 94%;
     margin: 0 auto;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
-    height: 100px;
+    /* height: 100px; */
     padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -30,8 +37,9 @@ header a{
 .logo{
     align-items: center;
     display: flex;
-    justify-content: center;
-    justify-content: space-between;
+    /* justify-content: center;
+    justify-content: space-between;  */
+    flex: 50%;
 }
 
 .logo img{
@@ -43,18 +51,23 @@ header a{
 }
 
 #search-bar{
-    float: right;
-    background-color: rgb(31, 85, 245);
-    padding: 20px 30px;
+    /* float: left; */
+    flex: 50%;
+    /* background-color: rgb(31, 85, 245); */
+    background: linear-gradient(45deg, #3498db, #8e44ad);
+    padding: 20px 20px;
     border-radius: 10px;
-    width: 300px;
+    /* width: 300px; */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    align-content: center;
 }
 
 
 .search-input{
     padding: 5px;
-    margin-right: 20px;
-    width: 190px;
+    margin-right: 0;
+    width: 80%;
     border: none;
     border-radius: 3px;
     background-image: url("image/search.png");
@@ -64,7 +77,8 @@ header a{
 }
 
 .search-button{
-    padding: 5px 18px;
+    padding: 5px 0;
+    width: 16%;
     border: none;
     float: right;
     border-radius: 3px;
@@ -77,8 +91,38 @@ header a{
     background: #a50582;
 }
 
+@media screen and (max-width: 650px) {
+    .search-input{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .search-button{
+        width: 40%;
+    }
+    nav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li{
+        width: 100%;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+@media screen and (max-width: 505px) {
+    .search-input{
+        width: 80%;
+    }
+    .search-button{
+        width: 16%;
+    }
+    
+}
+
 nav{
-    background-color: #0f46ee;
+    /* background-color: #0f46ee; */
+    background: linear-gradient(45deg, #3498db, #8e44ad);
     color: #fff;
     padding: 10px 0;
 }
@@ -97,6 +141,11 @@ nav ul li{
     border-left: #f4f4f4 1px solid;
     border-right: #f4f4f4 1px solid;
 }
+nav ul li:last-child, nav ul li:first-child{
+    border-left: none;
+    border-right: none;
+}
+
 nav ul li:hover{
     background-color: #0505a8;
     border-radius: 5px;
@@ -116,10 +165,12 @@ nav ul li a:hover{
 
 #intro{
      margin-top: 20px;
-    background-color: #0f46ee;
+    /* background-color: #0f46ee; */
+    background: linear-gradient(#3498db, #8e44ad);
     color: #fff;
     padding: 10px 0;
-    height: 300px;
+    max-height: 600px;
+    min-height: 250px;
 }
 
 #intro h1{
@@ -141,15 +192,39 @@ nav ul li a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex: 50%;
 }
 
 #main div{
-    border: #0f46ee 3px solid;
+    /* border: #0f46ee 3px solid; */
+    border: 1px solid #ddd;
+    background-color: #ffffff;
     border-radius: 10px;
     gap: 10px;
     margin: 10px;
     width: 650px;
-    height: 600px;
+    min-height: 600px;
+    max-height: 800px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+#main div:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+@media screen and (max-width: 1425px) and (min-width: 1111px) {
+    #main div{
+        width: 500px;
+    }
+    
+}
+
+@media screen and (max-width: 1110px) and (min-width: 900px) {
+    #main div{
+        width: 400px;
+    }
 }
 
 #main div h2{
@@ -182,6 +257,7 @@ nav ul li a:hover{
 #lessons ul li a:hover{
     color: #f00909;
     font-size: x-large;
+    transition: font-size 0.2s ease-in-out;
 }
 #features ul{
     list-style-type: "✨";
@@ -198,6 +274,7 @@ nav ul li a:hover{
 #features ul li:hover{
     color: #f00909;
     font-size: xx-large;
+    transition: font-size 0.2s ease-in-out;
 }
 
 footer{
