@@ -1,0 +1,11 @@
+@import "base";
+article{
+    div{
+        h3{
+            color: $fontcolor;
+        }
+        p{
+            color: $p-color;
+        }
+    }
+}

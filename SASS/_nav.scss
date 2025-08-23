@@ -1,0 +1,36 @@
+@use "sass:color";
+@import "base";
+nav{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: $backgroundcolor;
+    color: #fff;
+    padding: 10px;
+    a{
+        color: #fff;
+        text-decoration: none;
+        flex: 1;
+        font-size: $fontsize;
+        padding: 20px;
+        margin: 0 15px;
+        &:hover{
+            text-decoration: underline;
+            color: $hovercolor;
+            background-color: color.adjust($backgroundcolor, $lightness: 10%);
+        }
+        &:active{
+            //local variable scope
+            $activecolor-background: color.adjust(#1ee7a7, $lightness: 20%);
+            // To make local variables as global
+            $p-color: #1ce423 !global;
+            color: $activecolor;
+            background-color: $activecolor-background;
+        }
+        &.active{
+            color:wheat;
+            background-color: #96edd2;
+            font-weight: bold;
+        }
+    }
+}

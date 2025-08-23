@@ -1,0 +1,9 @@
+@use "sass:color";
+$backgroundcolor: #67b5f4;
+$hovercolor: color.adjust(#0d4f85, $lightness: 10%);
+$activecolor: color.adjust(#0d4f85, $lightness: 20%);
+$fontsize: 24px;
+$fontcolor: #4b4beb;
+* {
+    box-sizing: border-box;
+}

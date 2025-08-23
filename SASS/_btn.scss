@@ -1,0 +1,33 @@
+@use "sass:color";
+
+.btn-success{
+    background-color: green;
+    @extend %btn;
+    &:hover {
+        background-color: color.adjust(green, $lightness: -10%);
+    }
+}
+.btn-error{
+    background-color: rgba(255, 0, 0, 0.749);
+    @extend %btn;
+    &:hover {
+        background-color: color.adjust(rgba(255, 0, 0, 0.749), $lightness: -10%);
+    }
+}
+.btn-warning{
+    background-color: rgba(255, 165, 0, 0.749);
+    @extend %btn;
+    &:hover {
+        background-color: color.adjust(rgba(255, 165, 0, 0.749), $lightness: -10%);
+    }
+}
+%btn{
+    font-size: 1.2em;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+}
+

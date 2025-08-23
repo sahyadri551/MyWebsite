@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #67b5f4;
+  color: #fff;
+  padding: 10px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  flex: 1;
+  font-size: 24px;
+  padding: 20px;
+  margin: 0 15px;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: rgb(17.5410958904, 106.595890411, 179.4589041096);
+  background-color: rgb(150.5582822086, 204.1533742331, 247.4417177914);
+}
+nav a:active {
+  color: rgb(22.0821917808, 134.1917808219, 225.9178082192);
+  background-color: rgb(122.1686746988, 240.8313253012, 203.0481927711);
+}
+nav a.active {
+  color: wheat;
+  background-color: #96edd2;
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+article div h3 {
+  color: #4b4beb;
+}
+article div p {
+  color: #1ce423;
+}
+
+.btn-success {
+  background-color: green;
+}
+.btn-success:hover {
+  background-color: #004d00;
+}
+
+.btn-error {
+  background-color: rgba(255, 0, 0, 0.749);
+}
+.btn-error:hover {
+  background-color: rgba(204, 0, 0, 0.749);
+}
+
+.btn-warning {
+  background-color: rgba(255, 165, 0, 0.749);
+}
+.btn-warning:hover {
+  background-color: rgba(204, 132, 0, 0.749);
+}
+
+.btn-success, .btn-error, .btn-warning {
+  font-size: 1.2em;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
