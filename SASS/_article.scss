@@ -1,11 +1,32 @@
 @import "base";
+@mixin h_trans($deg){
+    -o-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    transform: rotate($deg);
+}
+
 article{
     div{
         h3{
             color: $fontcolor;
+            margin: 20px;
+            font-size: 1.5em;
+            font-weight: 900;
         }
         p{
             color: $p-color;
+        }
+    }
+    div:nth-child(1){
+        h3:nth-child(1){
+            @include h_trans(2deg);
+        }
+    }
+    div:nth-child(2){
+        h3:nth-child(1){
+            @include h_trans(-2deg);
         }
     }
 }

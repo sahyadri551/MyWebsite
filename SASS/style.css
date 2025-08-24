@@ -43,9 +43,18 @@ nav a.active {
 
 article div h3 {
   color: #4b4beb;
+  margin: 20px;
+  font-size: 1.5em;
+  font-weight: 900;
 }
 article div p {
   color: #1ce423;
+}
+article div:nth-child(1) h3:nth-child(1) {
+  transform: rotate(2deg);
+}
+article div:nth-child(2) h3:nth-child(1) {
+  transform: rotate(-2deg);
 }
 
 .btn-success {
