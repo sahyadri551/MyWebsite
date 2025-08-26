@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Math Object Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Math Object</h1>
+    </header>
+
+    <main class="container">
+        <section id="intro">
+            <h2>Introduction to Math</h2>
+            <p>The JavaScript `Math` object is a built-in object that provides properties and methods for mathematical constants and functions. Unlike other global objects, `Math` is not a constructor. All properties and methods of `Math` are static and can be called by using `Math` as an object without creating it.</p>
+        </section>
+        <hr>
+
+        <section id="constants">
+            <h2>Mathematical Constants</h2>
+            <p>The `Math` object provides several built-in mathematical constants as properties.</p>
+            <pre><code><span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-variable">PI</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>      <span class="code-comment">// 3.141592653589793 (Ratio of a circle's circumference to its diameter)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-variable">E</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>         <span class="code-comment">// 2.718281828459045 (Euler's number)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-variable">SQRT2</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// 1.4142135623730951 (Square root of 2)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-variable">LN10</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>      <span class="code-comment">// 2.302585092994046 (Natural logarithm of 10)</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="rounding">
+            <h2>Rounding Methods</h2>
+            <ul>
+                <li><code>Math.round(x)</code>: Returns the value of `x` rounded to the nearest integer.</li>
+                <li><code>Math.ceil(x)</code>: Returns the smallest integer greater than or equal to `x` (rounds up).</li>
+                <li><code>Math.floor(x)</code>: Returns the largest integer less than or equal to `x` (rounds down).</li>
+                <li><code>Math.trunc(x)</code>: Returns the integer part of `x` by removing any fractional digits.</li>
+            </ul>
+            <pre><code><span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">round</span><span class="code-punctuation">(</span><span class="code-number">4.7</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 5</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">round</span><span class="code-punctuation">(</span><span class="code-number">4.4</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 4</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">ceil</span><span class="code-punctuation">(</span><span class="code-number">4.2</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// 5</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">floor</span><span class="code-punctuation">(</span><span class="code-number">4.8</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 4</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">trunc</span><span class="code-punctuation">(</span><span class="code-number">4.9</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 4</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="power-root">
+            <h2>Power and Root Methods</h2>
+            <ul>
+                <li><code>Math.pow(x, y)</code>: Returns the value of `x` to the power of `y`.</li>
+                <li><code>Math.sqrt(x)</code>: Returns the square root of `x`.</li>
+                <li><code>Math.cbrt(x)</code>: Returns the cube root of `x`.</li>
+                <li><code>Math.exp(x)</code>: Returns $e^x$, where $e$ is Euler's number.</li>
+            </ul>
+             <pre><code><span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">pow</span><span class="code-punctuation">(</span><span class="code-number">8</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// 64</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">sqrt</span><span class="code-punctuation">(</span><span class="code-number">64</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// 8</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">cbrt</span><span class="code-punctuation">(</span><span class="code-number">125</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 5</span></code></pre>
+        </section>
+        <hr>
+        
+        <section id="min-max">
+            <h2>Min, Max, and Absolute Value</h2>
+            <ul>
+                <li><code>Math.min(...)</code>: Returns the lowest-valued number passed into it.</li>
+                <li><code>Math.max(...)</code>: Returns the largest-valued number passed into it.</li>
+                <li><code>Math.abs(x)</code>: Returns the absolute (positive) value of `x`.</li>
+            </ul>
+            <pre><code><span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">min</span><span class="code-punctuation">(</span><span class="code-number">0</span><span class="code-punctuation">,</span> <span class="code-number">150</span><span class="code-punctuation">,</span> <span class="code-number">30</span><span class="code-punctuation">,</span> <span class="code-number">20</span><span class="code-punctuation">,</span> <span class="code-operator">-</span><span class="code-number">8</span><span class="code-punctuation">,</span> <span class="code-operator">-</span><span class="code-number">200</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// -200</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">max</span><span class="code-punctuation">(</span><span class="code-number">0</span><span class="code-punctuation">,</span> <span class="code-number">150</span><span class="code-punctuation">,</span> <span class="code-number">30</span><span class="code-punctuation">,</span> <span class="code-number">20</span><span class="code-punctuation">,</span> <span class="code-operator">-</span><span class="code-number">8</span><span class="code-punctuation">,</span> <span class="code-operator">-</span><span class="code-number">200</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 150</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">abs</span><span class="code-punctuation">(</span><span class="code-operator">-</span><span class="code-number">7.8</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>                 <span class="code-comment">// 7.8</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="random">
+            <h2>Random Number Generation</h2>
+            <p><code>Math.random()</code> returns a floating-point, pseudo-random number in the range from 0 (inclusive) up to but not including 1.</p>
+            <p>You can combine it with other methods to generate random numbers in a specific range.</p>
+            <pre><code><span class="code-comment">// Returns a random number between 0 and 1 (e.g., 0.12345)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">random</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Returns a random integer from 0 to 9</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">floor</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">random</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span> <span class="code-operator">*</span> <span class="code-number">10</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Returns a random integer from 1 to 10</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">floor</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">random</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span> <span class="code-operator">*</span> <span class="code-number">10</span><span class="code-punctuation">)</span> <span class="code-operator">+</span> <span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="trigonometry">
+            <h2>Trigonometric and Logarithmic Methods</h2>
+            <p>The `Math` object provides a full suite of trigonometric and logarithmic functions.</p>
+            <ul>
+                <li>Trigonometric methods like <code>Math.sin()</code>, <code>Math.cos()</code>, and <code>Math.tan()</code> take angles in **radians**.</li>
+                <li>Logarithmic methods include <code>Math.log()</code> (natural log), <code>Math.log10()</code>, and <code>Math.log2()</code>.</li>
+            </ul>
+            <pre><code><span class="code-comment">// Calculate sine of 90 degrees</span>
+<span class="code-keyword">let</span> <span class="code-variable">angleInDegrees</span> <span class="code-operator">=</span> <span class="code-number">90</span><span class="code-punctuation">;</span>
+<span class="code-keyword">let</span> <span class="code-variable">angleInRadians</span> <span class="code-operator">=</span> <span class="code-variable">angleInDegrees</span> <span class="code-operator">*</span> <span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-variable">PI</span> <span class="code-operator">/</span> <span class="code-number">180</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">sin</span><span class="code-punctuation">(</span><span class="code-variable">angleInRadians</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 1</span>
+
+<span class="code-comment">// Logarithmic functions</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-variable">E</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// 1 (Natural log)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">Math</span><span class="code-punctuation">.</span><span class="code-function">log10</span><span class="code-punctuation">(</span><span class="code-number">100</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 2 (Base-10 log)</span></code></pre>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>
