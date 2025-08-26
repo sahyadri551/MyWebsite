@@ -1,0 +1,1 @@
+str.matchAll(/a/g)
