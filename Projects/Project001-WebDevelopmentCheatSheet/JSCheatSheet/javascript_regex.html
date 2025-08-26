@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Regular Expressions Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Regular Expressions (RegEx)</h1>
+    </header>
+
+    <main class="container">
+        <section id="intro">
+            <h2>Introduction to RegEx</h2>
+            <p>A **Regular Expression** (often shortened to RegEx or RegExp) is an object that describes a sequence of characters used for defining a search pattern. These patterns are used by string-searching algorithms to perform "find" or "find and replace" operations on strings, or for input validation.</p>
+            <p>In JavaScript, a regular expression is created using a literal, which consists of a pattern enclosed between slashes (`/`).</p>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">regex</span> <span class="code-operator">=</span> <span class="code-regexp">/pattern/flags</span><span class="code-punctuation">;</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="methods">
+            <h2>Using RegEx with String Methods</h2>
+            <p>Regular expressions are most powerful when used with string methods to perform searches and replacements.</p>
+            <ul>
+                <li><code>search(regex)</code>: Searches a string for a match and returns the index of the first match. Returns -1 if no match is found.</li>
+                <li><code>match(regex)</code>: Retrieves the result of matching a string against a regular expression. Returns an array of matches or `null`.</li>
+                <li><code>replace(regex, replacement)</code>: Returns a new string where matched patterns are replaced with a specified string or the result of a function.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"A long length of string with many long words."</span><span class="code-punctuation">;</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">search</span><span class="code-punctuation">(</span><span class="code-regexp">/long/</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 2 (index of the first 'long')</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/long/g</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ['long', 'long']</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">replace</span><span class="code-punctuation">(</span><span class="code-regexp">/long/gi</span><span class="code-punctuation">,</span> <span class="code-string">"short"</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-comment">// "A short length of string with many short words."</span></code></pre>
+        </section>
+        <hr>
+        
+        <section id="flags">
+            <h2>RegEx Flags</h2>
+            <p>Flags (or modifiers) are placed after the second slash and change how the search is performed.</p>
+            <ul>
+                <li><code>g</code> (Global): Finds all matches in the string, not just the first one.</li>
+                <li><code>i</code> (Case-Insensitive): Makes the matching case-insensitive (e.g., `/a/i` matches 'a' and 'A').</li>
+                <li><code>m</code> (Multiline): Allows the start (<code>^</code>) and end (<code>$</code>) anchors to match the start and end of lines, not just the whole string.</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="metacharacters">
+            <h2>Metacharacters (Character Classes)</h2>
+            <p>Metacharacters are characters with a special meaning. They are used to create more specific and powerful patterns.</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Character</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>.</code></td><td>Matches any single character except newline.</td></tr>
+                    <tr><td><code>\d</code></td><td>Matches any digit (equivalent to <code>[0-9]</code>).</td></tr>
+                    <tr><td><code>\D</code></td><td>Matches any non-digit.</td></tr>
+                    <tr><td><code>\w</code></td><td>Matches any word character (alphanumeric `[a-zA-Z0-9]` plus underscore `_`).</td></tr>
+                    <tr><td><code>\W</code></td><td>Matches any non-word character.</td></tr>
+                    <tr><td><code>\s</code></td><td>Matches a single whitespace character (space, tab, newline, etc.).</td></tr>
+                    <tr><td><code>\S</code></td><td>Matches a single non-whitespace character.</td></tr>
+                    <tr><td><code>\b</code></td><td>Finds a match at the beginning or end of a word (word boundary).</td></tr>
+                </tbody>
+            </table>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">text</span> <span class="code-operator">=</span> <span class="code-string">"My phone number is 123-456-7890."</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Find all digits</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">text</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/\d/g</span><span class="code-punctuation">)</span><span class="code-punctuation">.</span><span class="code-function">join</span><span class="code-punctuation">(</span><span class="code-string">''</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "1234567890"</span>
+
+<span class="code-comment">// Find all non-word characters</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">text</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/\W/g</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// [' ', ' ', ' ', ' ', '-', '-', '.']</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="brackets">
+            <h2>Brackets (Character Sets)</h2>
+            <p>Brackets are used to find a range of characters.</p>
+            <ul>
+                <li><code>[abc]</code>: Finds any of the characters between the brackets.</li>
+                <li><code>[^abc]</code>: The caret (<code>^</code>) negates the set, finding any character NOT between the brackets.</li>
+                <li><code>[0-9]</code>: Finds any digit from 0 to 9.</li>
+                <li><code>[a-z]</code>: Finds any lowercase character from a to z.</li>
+                <li><code>(a|b)</code>: Finds either 'a' or 'b'.</li>
+            </ul>
+             <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"Is this gray or grey?"</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Find 'gray' or 'grey'</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/gr(a|e)y/g</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ["gray", "grey"]</span>
+
+<span class="code-comment">// Find all vowels</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/[aeiou]/gi</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ['I', 'i', 'a', 'o', 'e']</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="quantifiers">
+            <h2>Quantifiers</h2>
+            <p>Quantifiers specify how many instances of a character, group, or character class must be present in the input for a match to be found.</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr><th>Quantifier</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>+</code></td><td>Matches one or more occurrences of the preceding character.</td></tr>
+                    <tr><td><code>*</code></td><td>Matches zero or more occurrences.</td></tr>
+                    <tr><td><code>?</code></td><td>Matches zero or one occurrence.</td></tr>
+                    <tr><td><code>{n}</code></td><td>Matches exactly `n` occurrences.</td></tr>
+                    <tr><td><code>{n,}</code></td><td>Matches at least `n` occurrences.</td></tr>
+                    <tr><td><code>{n,m}</code></td><td>Matches from `n` to `m` occurrences.</td></tr>
+                </tbody>
+            </table>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">text</span> <span class="code-operator">=</span> <span class="code-string">"hellooo world, helo"</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Matches 'o' two or more times</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">text</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/o{2,}/g</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ["ooo"]</span>
+
+<span class="code-comment">// Matches 'helo' or 'hello'</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">text</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/hel?o/g</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// null (needs to be /hel{1,2}o/ or similar)</span>
+<span class="code-comment">// A better pattern for 'helo' or 'hello':</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">text</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/hel{1,2}o/g</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ["hellooo", "helo"] -> Corrected logic: /hello|helo/ or /hel+o/</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">text</span><span class="code-punctuation">.</span><span class="code-function">match</span><span class="code-punctuation">(</span><span class="code-regexp">/hel+o/g</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// ["hellooo", "helo"]</span></code></pre>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>
