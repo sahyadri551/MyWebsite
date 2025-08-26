@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Loops</h1>
+    </header>
+
+    <main class="container">
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>Loops are a fundamental concept in programming that allow you to execute a block of code repeatedly. They are used to automate repetitive tasks, iterate over collections of data like arrays and objects, and perform calculations until a certain condition is met. Without loops, you would have to write the same code over and over again, making your programs verbose and difficult to maintain.</p>
+        </section>
+        <hr>
+
+        <section id="loop-types">
+            <h2>Types of Loops</h2>
+            <p>JavaScript provides several ways to perform iteration. The main types of loops are:</p>
+            <ul>
+                <li><b>for loop:</b> The most common loop, used when you know the number of iterations beforehand.</li>
+                <li><b>while loop:</b> Executes a block of code as long as a specified condition is true.</li>
+                <li><b>do...while loop:</b> Similar to the while loop, but it executes the code block at least once before checking the condition.</li>
+                <li><b>for...of loop:</b> Iterates over the values of an iterable object (like Arrays, Strings, Maps, Sets).</li>
+                <li><b>for...in loop:</b> Iterates over the enumerable properties (keys) of an object.</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="basic-loops">
+            <h2>Standard Loops Explained</h2>
+            
+            <h3>The <code>for</code> Loop</h3>
+            <p>The <code>for</code> loop is ideal when you know how many times you want the loop to run. It consists of three parts: initialization, condition, and final expression (increment/decrement).</p>
+            <p><b>Syntax:</b></p>
+            <pre><code><span class="code-keyword">for</span> (<span class="code-variable">initialization</span>; <span class="code-variable">condition</span>; <span class="code-variable">finalExpression</span>) {
+  <span class="code-comment">// code to be executed</span>
+}</code></pre>
+            <p><b>Example:</b></p>
+            <pre><code><span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-variable">i</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span> <span class="code-variable">i</span> <span class="code-operator"><</span> <span class="code-number">5</span><span class="code-punctuation">;</span> <span class="code-variable">i</span><span class="code-operator">++</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`The number is ${<span class="code-variable">i</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}</code></pre>
+            <p><b>Result:</b></p>
+            <pre><code>The number is 0
+The number is 1
+The number is 2
+The number is 3
+The number is 4</code></pre>
+
+            <h3>The <code>while</code> Loop</h3>
+            <p>The <code>while</code> loop continues to execute as long as the specified condition evaluates to true. The condition is checked <strong>before</strong> each iteration.</p>
+            <p><b>Syntax:</b></p>
+            <pre><code><span class="code-keyword">while</span> (<span class="code-variable">condition</span>) {
+  <span class="code-comment">// code to be executed</span>
+}</code></pre>
+            <p><b>Example:</b></p>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">count</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span>
+<span class="code-keyword">while</span> (<span class="code-variable">count</span> <span class="code-operator"><</span> <span class="code-number">3</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`Count is ${<span class="code-variable">count</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  <span class="code-variable">count</span><span class="code-operator">++</span><span class="code-punctuation">;</span>
+}</code></pre>
+            <p><b>Result:</b></p>
+            <pre><code>Count is 0
+Count is 1
+Count is 2</code></pre>
+
+            <h3>The <code>do...while</code> Loop</h3>
+            <p>This loop is a variant of the <code>while</code> loop. The key difference is that the code block is executed at least once, and the condition is checked <strong>after</strong> the execution.</p>
+            <p><b>Syntax:</b></p>
+            <pre><code><span class="code-keyword">do</span> {
+  <span class="code-comment">// code to be executed</span>
+} <span class="code-keyword">while</span> (<span class="code-variable">condition</span>);</code></pre>
+            <p><b>Example:</b></p>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">i</span> <span class="code-operator">=</span> <span class="code-number">5</span><span class="code-punctuation">;</span>
+<span class="code-keyword">do</span> {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`The value is ${<span class="code-variable">i</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  <span class="code-variable">i</span><span class="code-operator">++</span><span class="code-punctuation">;</span>
+} <span class="code-keyword">while</span> (<span class="code-variable">i</span> <span class="code-operator"><</span> <span class="code-number">5</span>)<span class="code-punctuation">;</span></code></pre>
+            <p><b>Result:</b></p>
+            <pre><code>The value is 5</code></pre>
+        </section>
+        <hr>
+
+        <section id="iterator-loops">
+            <h2>Array and Object Loops</h2>
+            
+            <h3>The <code>for...of</code> Loop</h3>
+            <p>Introduced in ES6, the <code>for...of</code> loop is the modern way to iterate over iterable objects like arrays, strings, maps, and sets. It directly gives you the <strong>value</strong> of each element.</p>
+            <p><b>Syntax:</b></p>
+            <pre><code><span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">element</span> <span class="code-keyword">of</span> <span class="code-variable">iterable</span>) {
+  <span class="code-comment">// code to be executed with element</span>
+}</code></pre>
+            <p><b>Example:</b></p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">fruits</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-string">'Apple'</span><span class="code-punctuation">,</span> <span class="code-string">'Banana'</span><span class="code-punctuation">,</span> <span class="code-string">'Cherry'</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">fruit</span> <span class="code-keyword">of</span> <span class="code-variable">fruits</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">fruit</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}</code></pre>
+            <p><b>Result:</b></p>
+            <pre><code>Apple
+Banana
+Cherry</code></pre>
+
+            <h3>The <code>for...in</code> Loop</h3>
+            <p>The <code>for...in</code> loop iterates over the enumerable property <strong>keys</strong> (or indices) of an object. It's generally used for plain objects, not for arrays, as it can have unexpected behavior with array inheritance and order.</p>
+            <p><b>Syntax:</b></p>
+            <pre><code><span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">key</span> <span class="code-keyword">in</span> <span class="code-variable">object</span>) {
+  <span class="code-comment">// code to be executed with key</span>
+}</code></pre>
+            <p><b>Example:</b></p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">user</span> <span class="code-operator">=</span> <span class="code-punctuation">{</span>
+  <span class="code-variable">name</span><span class="code-operator">:</span> <span class="code-string">'Alice'</span><span class="code-punctuation">,</span>
+  <span class="code-variable">age</span><span class="code-operator">:</span> <span class="code-number">30</span><span class="code-punctuation">,</span>
+  <span class="code-variable">isAdmin</span><span class="code-operator">:</span> <span class="code-boolean">true</span>
+<span class="code-punctuation">};</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">key</span> <span class="code-keyword">in</span> <span class="code-variable">user</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`${<span class="code-variable">key</span>}: ${<span class="code-variable">user</span>[<span class="code-variable">key</span>]}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}</code></pre>
+            <p><b>Result:</b></p>
+            <pre><code>name: Alice
+age: 30
+isAdmin: true</code></pre>
+        </section>
+        <hr>
+
+        <section id="control-statements">
+            <h2>Loop Control Statements</h2>
+            <p>Control statements change the normal execution flow of a loop.</p>
+            <ul>
+                <li><b><code>break</code></b>: Immediately terminates the current loop and transfers control to the statement following the loop.</li>
+                <li><b><code>continue</code></b>: Skips the rest of the current iteration and proceeds to the next one.</li>
+            </ul>
+            <p><b>Example (<code></code>break</code>):</b></p>
+            <pre><code><span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-variable">i</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span> <span class="code-variable">i</span> <span class="code-operator"><</span> <span class="code-number">10</span><span class="code-punctuation">;</span> <span class="code-variable">i</span><span class="code-operator">++</span>) {
+  <span class="code-keyword">if</span> (<span class="code-variable">i</span> <span class="code-operator">===</span> <span class="code-number">3</span>) {
+    <span class="code-keyword">break</span><span class="code-punctuation">;</span> <span class="code-comment">// Stop the loop when i is 3</span>
+  }
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">i</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}
+<span class="code-comment">// Result: 0, 1, 2</span></code></pre>
+
+            <p><b>Example (<code>continue</code>):</b></p>
+            <pre><code><span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-variable">i</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span> <span class="code-variable">i</span> <span class="code-operator"><</span> <span class="code-number">5</span><span class="code-punctuation">;</span> <span class="code-variable">i</span><span class="code-operator">++</span>) {
+  <span class="code-keyword">if</span> (<span class="code-variable">i</span> <span class="code-operator">===</span> <span class="code-number">2</span>) {
+    <span class="code-keyword">continue</span><span class="code-punctuation">;</span> <span class="code-comment">// Skip the rest of this iteration when i is 2</span>
+  }
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">i</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}
+<span class="code-comment">// Result: 0, 1, 3, 4</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="array-methods">
+            <h2>Higher-Order Array Methods</h2>
+            <p>Arrays in JavaScript come with powerful, built-in methods that use functions to perform iteration and are often more concise and readable than traditional loops.</p>
+
+            <h3><code>.forEach()</code></h3>
+            <p>Executes a provided function once for each array element. It's a modern replacement for a simple <code>for</code> loop.</p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">colors</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-string">'red'</span><span class="code-punctuation">,</span> <span class="code-string">'green'</span><span class="code-punctuation">,</span> <span class="code-string">'blue'</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-variable">colors</span><span class="code-punctuation">.</span><span class="code-function">forEach</span><span class="code-punctuation">(</span>(<span class="code-variable">color</span><span class="code-punctuation">,</span> <span class="code-variable">index</span>) <span class="code-operator">=></span> {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`Color at index ${<span class="code-variable">index</span>} is ${<span class="code-variable">color</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+});
+<span class="code-comment">// Result: Logs each color with its index.</span></code></pre>
+
+            <h3><code>.map()</code></h3>
+            <p>Creates a <strong>new array</strong>  populated with the results of calling a provided function on every element in the calling array.</p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">numbers</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">doubled</span> <span class="code-operator">=</span> <span class="code-variable">numbers</span><span class="code-punctuation">.</span><span class="code-function">map</span><span class="code-punctuation">(</span><span class="code-variable">num</span> <span class="code-operator">=></span> <span class="code-variable">num</span> <span class="code-operator">*</span> <span class="code-number">2</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">doubled</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-comment">// Result: [2, 4, 6]</span></code></pre>
+
+            <h3><code>.filter()</code></h3>
+            <p>Creates a <strong>new array</strong> with all elements that pass the test implemented by the provided function.</p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">ages</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">15</span><span class="code-punctuation">,</span> <span class="code-number">20</span><span class="code-punctuation">,</span> <span class="code-number">35</span><span class="code-punctuation">,</span> <span class="code-number">18</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">adults</span> <span class="code-operator">=</span> <span class="code-variable">ages</span><span class="code-punctuation">.</span><span class="code-function">filter</span><span class="code-punctuation">(</span><span class="code-variable">age</span> <span class="code-operator">=></span> <span class="code-variable">age</span> <span class="code-operator">>=</span> <span class="code-number">18</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">adults</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-comment">// Result: [20, 35, 18]</span></code></pre>
+
+            <h3><code>.reduce()</code></h3>
+            <p>Executes a <strong>reducer</strong> function on each element of the array, resulting in a single output value.</p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">values</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">sum</span> <span class="code-operator">=</span> <span class="code-variable">values</span><span class="code-punctuation">.</span><span class="code-function">reduce</span><span class="code-punctuation">(</span>(<span class="code-variable">accumulator</span><span class="code-punctuation">,</span> <span class="code-variable">currentValue</span>) <span class="code-operator">=></span> <span class="code-variable">accumulator</span> <span class="code-operator">+</span> <span class="code-variable">currentValue</span><span class="code-punctuation">,</span> <span class="code-number">0</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">sum</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-comment">// Result: 10</span></code></pre>
+
+            <h3><code>.some()</code> and <code>.every()</code></h3>
+            <p>These methods test whether elements in the array pass a test. They return a boolean.</p>
+            <ul>
+                <li><b>.some()</b>: Returns <code>true</code> if at least <strong>one</strong> element passes the test.</li>
+                <li><b>.every()</b>: Returns <code>true</code> only if <strong>all</strong> elements pass the test.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">scores</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">85</span><span class="code-punctuation">,</span> <span class="code-number">92</span><span class="code-punctuation">,</span> <span class="code-number">78</span><span class="code-punctuation">,</span> <span class="code-number">40</span><span class="code-punctuation">,</span> <span class="code-number">95</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">hasFailingScore</span> <span class="code-operator">=</span> <span class="code-variable">scores</span><span class="code-punctuation">.</span><span class="code-function">some</span><span class="code-punctuation">(</span><span class="code-variable">score</span> <span class="code-operator">=></span> <span class="code-variable">score</span> <span class="code-operator"><</span> <span class="code-number">50</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// true</span>
+<span class="code-keyword">const</span> <span class="code-variable">allPassingScores</span> <span class="code-operator">=</span> <span class="code-variable">scores</span><span class="code-punctuation">.</span><span class="code-function">every</span><span class="code-punctuation">(</span><span class="code-variable">score</span> <span class="code-operator">=></span> <span class="code-variable">score</span> <span class="code-operator">>=</span> <span class="code-number">50</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// false</span></code></pre>
+
+            <h3><code>.find()</code> and <code>.findIndex()</code></h3>
+            <p>These methods find an element in an array.</p>
+            <ul>
+                <li><b>.find()</b>: Returns the <strong>first</strong> element that satisfies the provided testing function. Otherwise <code>undefined</code> is returned.</li>
+                <li><b>.findIndex()</b>: Returns the <strong>index</strong> of the first element that satisfies the test. Otherwise <code>-1</code> is returned.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">products</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span>
+  { <span class="code-variable">id</span><span class="code-operator">:</span> <span class="code-string">'a'</span><span class="code-punctuation">,</span> <span class="code-variable">name</span><span class="code-operator">:</span> <span class="code-string">'Laptop'</span> },
+  { <span class="code-variable">id</span><span class="code-operator">:</span> <span class="code-string">'b'</span><span class="code-punctuation">,</span> <span class="code-variable">name</span><span class="code-operator">:</span> <span class="code-string">'Mouse'</span> },
+  { <span class="code-variable">id</span><span class="code-operator">:</span> <span class="code-string">'c'</span><span class="code-punctuation">,</span> <span class="code-variable">name</span><span class="code-operator">:</span> <span class="code-string">'Keyboard'</span> }
+<span class="code-punctuation">];</span>
+<span class="code-keyword">const</span> <span class="code-variable">mouse</span> <span class="code-operator">=</span> <span class="code-variable">products</span><span class="code-punctuation">.</span><span class="code-function">find</span><span class="code-punctuation">(</span><span class="code-variable">p</span> <span class="code-operator">=></span> <span class="code-variable">p</span><span class="code-punctuation">.</span><span class="code-variable">name</span> <span class="code-operator">===</span> <span class="code-string">'Mouse'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">mouse</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// { id: 'b', name: 'Mouse' }</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">mouseIndex</span> <span class="code-operator">=</span> <span class="code-variable">products</span><span class="code-punctuation">.</span><span class="code-function">findIndex</span><span class="code-punctuation">(</span><span class="code-variable">p</span> <span class="code-operator">=></span> <span class="code-variable">p</span><span class="code-punctuation">.</span><span class="code-variable">name</span> <span class="code-operator">===</span> <span class="code-string">'Mouse'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">mouseIndex</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 1</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="advanced-topics">
+            <h2>Advanced Loop Topics</h2>
+
+            <h3>Loop performance and optimization</h3>
+            <p>For most applications, loop performance is not a bottleneck. However, in performance-critical code, consider these tips:</p>
+            <ul>
+                <li><b>Choosing the right loop:</b> A classic <code>for</code> loop with a cached array length (<code>for (let i = 0, len = arr.length; i < len; i++)</code>) can be marginally faster than <code>.forEach()</code> or <code>for...of</code> for extremely large arrays because it has less overhead.</li>
+                <li><b>Minimize work inside the loop:</b> Avoid complex calculations, function calls, or DOM manipulation inside a loop if they can be done outside.</li>
+            </ul>
+
+            <h3>Async/Await inside loops</h3>
+            <p>Using <code>await</code> inside loops is a common requirement. The <code>for...of</code> loop is the best choice as it correctly handles <code>await</code> and pauses the loop until the promise resolves.</p>
+            <p><b>Note:</b> You cannot use <code>await</code> inside <code>.forEach()</code> because it does not wait for the async operations to complete.</p>
+            <pre><code><span class="code-keyword">async</span> <span class="code-keyword">function</span> <span class="code-function">processUsers</span>(<span class="code-variable">userIds</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">'Processing users...'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">id</span> <span class="code-keyword">of</span> <span class="code-variable">userIds</span>) {
+    <span class="code-keyword">const</span> <span class="code-variable">user</span> <span class="code-operator">=</span> <span class="code-keyword">await</span> <span class="code-function">fetchUserData</span><span class="code-punctuation">(</span><span class="code-variable">id</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Loop pauses here</span>
+    <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`Processed ${<span class="code-variable">user</span><span class="code-punctuation">.</span><span class="code-variable">name</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  }
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">'All users processed.'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}</code></pre>
+
+            <h3>Nested loops</h3>
+            <p>A nested loop is a loop inside another loop. This is common for working with multi-dimensional arrays or creating combinations of data. Be mindful of performance, as the complexity is often <strong>O(n<sup>2</sup>)</strong> or higher.</p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">matrix</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span>[<span class="code-number">1</span>, <span class="code-number">2</span>]<span class="code-punctuation">,</span> [<span class="code-number">3</span>, <span class="code-number">4</span>]<span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-variable">i</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span> <span class="code-variable">i</span> <span class="code-operator"><</span> <span class="code-variable">matrix</span><span class="code-punctuation">.</span><span class="code-variable">length</span><span class="code-punctuation">;</span> <span class="code-variable">i</span><span class="code-operator">++</span>) {
+  <span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-variable">j</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span> <span class="code-variable">j</span> <span class="code-operator"><</span> <span class="code-variable">matrix</span>[<span class="code-variable">i</span>]<span class="code-punctuation">.</span><span class="code-variable">length</span><span class="code-punctuation">;</span> <span class="code-variable">j</span><span class="code-operator">++</span>) {
+    <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">matrix</span>[<span class="code-variable">i</span>][<span class="code-variable">j</span>]<span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  }
+}
+<span class="code-comment">// Result: 1, 2, 3, 4</span></code></pre>
+
+            <h3>Looping over Sets and Maps</h3>
+            <p>Both <code>Set</code> and <code>Map</code> are iterable, so <code>for...of</code> and <code>.forEach()</code> work perfectly.</p>
+            <pre><code><span class="code-comment">// Set</span>
+<span class="code-keyword">const</span> <span class="code-variable">mySet</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">Set</span><span class="code-punctuation">(</span>[<span class="code-string">'a'</span><span class="code-punctuation">,</span> <span class="code-string">'b'</span><span class="code-punctuation">,</span> <span class="code-string">'c'</span>]<span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">value</span> <span class="code-keyword">of</span> <span class="code-variable">mySet</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">value</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}
+
+<span class="code-comment">// Map</span>
+<span class="code-keyword">const</span> <span class="code-variable">myMap</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">Map</span><span class="code-punctuation">(</span>[ [<span class="code-string">'key1'</span><span class="code-punctuation">,</span> <span class="code-string">'value1'</span>]<span class="code-punctuation">,</span> [<span class="code-string">'key2'</span><span class="code-punctuation">,</span> <span class="code-string">'value2'</span>] ]<span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-variable">myMap</span><span class="code-punctuation">.</span><span class="code-function">forEach</span><span class="code-punctuation">(</span>(<span class="code-variable">value</span><span class="code-punctuation">,</span> <span class="code-variable">key</span>) <span class="code-operator">=></span> {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`${<span class="code-variable">key</span>} = ${<span class="code-variable">value</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+});</code></pre>
+
+            <h3>Infinite loops and how to avoid them</h3>
+            <p>An infinite loop occurs when the loop's condition never becomes <code>false</code>. This will freeze the browser or server.</p>
+            <p><b>Cause:</b> Usually happens when the counter variable is not updated correctly, or the condition is always true.</p>
+            <pre><code><span class="code-comment">// DANGER: Infinite Loop! The condition <code>i < 5</code> is always true.</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-variable">i</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span> <span class="code-variable">i</span> <span class="code-operator"><</span> <span class="code-number">5</span><span class="code-punctuation">;</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">'This will run forever'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}</code></pre>
+            <p><b>Prevention:</b> Always ensure that the loop's condition will eventually be met. Double-check your update expressions (e.g., <code>i++</code>) and your conditional logic.</p>
+
+            <h3>Recursion as an alternative to loops</h3>
+            <p>Recursion is a technique where a function calls itself to solve a problem. Any problem solvable with a loop can also be solved with recursion. It's often used for tasks involving tree-like data structures.</p>
+            <p><b>Example (Factorial):</b></p>
+            <pre><code><span class="code-comment">// Using a loop</span>
+<span class="code-keyword">function</span> <span class="code-function">factorialLoop</span>(<span class="code-variable">n</span>) {
+  <span class="code-keyword">let</span> <span class="code-variable">result</span> <span class="code-operator">=</span> <span class="code-number">1</span><span class="code-punctuation">;</span>
+  <span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-variable">i</span> <span class="code-operator">=</span> <span class="code-variable">n</span><span class="code-punctuation">;</span> <span class="code-variable">i</span> <span class="code-operator">></span> <span class="code-number">1</span><span class="code-punctuation">;</span> <span class="code-variable">i</span><span class="code-operator">--</span>) {
+    <span class="code-variable">result</span> <span class="code-operator">*=</span> <span class="code-variable">i</span><span class="code-punctuation">;</span>
+  }
+  <span class="code-keyword">return</span> <span class="code-variable">result</span><span class="code-punctuation">;</span>
+}
+
+<span class="code-comment">// Using recursion</span>
+<span class="code-keyword">function</span> <span class="code-function">factorialRecursive</span>(<span class="code-variable">n</span>) {
+  <span class="code-keyword">if</span> (<span class="code-variable">n</span> <span class="code-operator"><=</span> <span class="code-number">1</span>) { <span class="code-comment">// Base case: stops the recursion</span>
+    <span class="code-keyword">return</span> <span class="code-number">1</span><span class="code-punctuation">;</span>
+  }
+  <span class="code-keyword">return</span> <span class="code-variable">n</span> <span class="code-operator">*</span> <span class="code-function">factorialRecursive</span><span class="code-punctuation">(</span><span class="code-variable">n</span> <span class="code-operator">-</span> <span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Recursive call</span>
+}</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>

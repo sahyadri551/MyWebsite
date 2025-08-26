@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Functions</h1>
+    </header>
+
+    <main class="container">
+        <section id="definition">
+            <h2>Definition</h2>
+            <p>A function is a reusable block of code designed to perform a particular task. Functions are the fundamental building blocks of JavaScript programs. They allow you to organize your code, make it more readable, and avoid repetition. In JavaScript, functions are "first-class citizens," which means they can be treated like any other value: assigned to variables, passed as arguments to other functions, and returned by other functions.</p>
+        </section>
+        <hr>
+
+        <section id="basics">
+            <h2>Function Basics</h2>
+
+            <h3>Declaration, Expression, and Calling</h3>
+            <p>There are two primary ways to create a function:</p>
+            <ul>
+                <li><b>Function Declaration:</b> A named function defined using the `function` keyword. Declarations are "hoisted," meaning they are available throughout their scope even if called before they are defined.</li>
+                <li><b>Function Expression:</b> A function created and assigned to a variable. Expressions are not hoisted, so they can only be called after they are defined.</li>
+            </ul>
+            <pre><code><span class="code-comment">// Function Declaration</span>
+<span class="code-keyword">function</span> <span class="code-function">greet</span>(<span class="code-variable">name</span>) {
+  <span class="code-keyword">return</span> <span class="code-string">`Hello, ${<span class="code-variable">name</span>}!`</span><span class="code-punctuation">;</span>
+}
+
+<span class="code-comment">// Function Expression</span>
+<span class="code-keyword">const</span> <span class="code-variable">add</span> <span class="code-operator">=</span> <span class="code-keyword">function</span>(<span class="code-variable">a</span>, <span class="code-variable">b</span>) {
+  <span class="code-keyword">return</span> <span class="code-variable">a</span> <span class="code-operator">+</span> <span class="code-variable">b</span><span class="code-punctuation">;</span>
+};
+
+<span class="code-comment">// Calling a function</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">greet</span><span class="code-punctuation">(</span><span class="code-string">'Alice'</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Output: Hello, Alice!</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">add</span><span class="code-punctuation">(</span><span class="code-number">5</span><span class="code-punctuation">,</span> <span class="code-number">10</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Output: 15</span></code></pre>
+
+            <h3>Parameters, Arguments, and Default Arguments</h3>
+            <ul>
+                <li><b>Parameters:</b> The names listed in the function definition (e.g., `name`, `a`, `b` above).</li>
+                <li><b>Arguments:</b> The real values passed to the function when it is called (e.g., `'Alice'`, `5`, `10` above).</li>
+                <li><b>Default Arguments (ES6):</b> You can provide default values for parameters, which are used if an argument is not provided.</li>
+            </ul>
+            <pre><code><span class="code-keyword">function</span> <span class="code-function">sayHello</span>(<span class="code-variable">name</span> <span class="code-operator">=</span> <span class="code-string">'Guest'</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`Hello, ${<span class="code-variable">name</span>}!`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}
+<span class="code-function">sayHello</span><span class="code-punctuation">(</span><span class="code-string">'Bob'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Output: Hello, Bob!</span>
+<span class="code-function">sayHello</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>     <span class="code-comment">// Output: Hello, Guest!</span></code></pre>
+            
+            <h3>The `return` Statement</h3>
+            <p>The `return` statement ends function execution and specifies a value to be returned to the function caller. If omitted, a function implicitly returns `undefined`.</p>
+
+            <h3>Function Scope</h3>
+            <ul>
+                <li><b>Global Scope:</b> Variables declared outside any function are in the global scope and can be accessed from anywhere.</li>
+                <li><b>Local Scope (Function Scope):</b> Variables declared inside a function are in a local scope and can only be accessed within that function.</li>
+                <li><b>Block Scope:</b> With `let` and `const`, variables are scoped to the nearest block (`{...}`), such as an `if` statement or a `for` loop.</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="intermediate-topics">
+            <h2>Intermediate Function Topics</h2>
+
+            <h3>Arrow Functions (ES6)</h3>
+            <p>A concise syntax for writing function expressions. They are anonymous and lexically bind the `this` value, which is a key difference from regular functions.</p>
+            <pre><code><span class="code-comment">// Regular function expression</span>
+<span class="code-keyword">const</span> <span class="code-variable">multiply</span> <span class="code-operator">=</span> <span class="code-keyword">function</span>(<span class="code-variable">a</span>, <span class="code-variable">b</span>) {
+  <span class="code-keyword">return</span> <span class="code-variable">a</span> <span class="code-operator">*</span> <span class="code-variable">b</span><span class="code-punctuation">;</span>
+};
+
+<span class="code-comment">// Arrow function</span>
+<span class="code-keyword">const</span> <span class="code-variable">multiplyArrow</span> <span class="code-operator">=</span> (<span class="code-variable">a</span>, <span class="code-variable">b</span>) <span class="code-operator">=></span> <span class="code-variable">a</span> <span class="code-operator">*</span> <span class="code-variable">b</span><span class="code-punctuation">;</span> <span class="code-comment">// Implicit return</span></code></pre>
+
+            <h3>Immediately Invoked Function Expressions (IIFE)</h3>
+            <p>An IIFE is a function that is defined and executed immediately. It's a common pattern for creating a local scope to avoid polluting the global namespace.</p>
+            <pre><code>(<span class="code-keyword">function</span>() {
+  <span class="code-keyword">let</span> <span class="code-variable">message</span> <span class="code-operator">=</span> <span class="code-string">'This is private.'</span><span class="code-punctuation">;</span>
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">message</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+})();
+<span class="code-comment">// The 'message' variable is not accessible globally.</span></code></pre>
+            
+            <h3>Callback and Higher-Order Functions</h3>
+            <ul>
+                <li><b>Callback Function:</b> A function passed as an argument to another function, to be "called back" at a later time.</li>
+                <li><b>Higher-Order Function:</b> A function that either takes one or more functions as arguments, or returns a function as its result.</li>
+            </ul>
+            <pre><code><span class="code-comment">// `calculator` is a higher-order function</span>
+<span class="code-comment">// `operation` is a callback function</span>
+<span class="code-keyword">function</span> <span class="code-function">calculator</span>(<span class="code-variable">a</span>, <span class="code-variable">b</span>, <span class="code-variable">operation</span>) {
+  <span class="code-keyword">return</span> <span class="code-function">operation</span><span class="code-punctuation">(</span><span class="code-variable">a</span>, <span class="code-variable">b</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}
+
+<span class="code-keyword">const</span> <span class="code-variable">sum</span> <span class="code-operator">=</span> (<span class="code-variable">x</span>, <span class="code-variable">y</span>) <span class="code-operator">=></span> <span class="code-variable">x</span> <span class="code-operator">+</span> <span class="code-variable">y</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">product</span> <span class="code-operator">=</span> (<span class="code-variable">x</span>, <span class="code-variable">y</span>) <span class="code-operator">=></span> <span class="code-variable">x</span> <span class="code-operator">*</span> <span class="code-variable">y</span><span class="code-punctuation">;</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">calculator</span><span class="code-punctuation">(</span><span class="code-number">10</span><span class="code-punctuation">,</span> <span class="code-number">5</span><span class="code-punctuation">,</span> <span class="code-variable">sum</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>     <span class="code-comment">// 15</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">calculator</span><span class="code-punctuation">(</span><span class="code-number">10</span><span class="code-punctuation">,</span> <span class="code-number">5</span><span class="code-punctuation">,</span> <span class="code-variable">product</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 50</span></code></pre>
+
+            <h3>Rest Parameters and Spread Syntax</h3>
+            <p>Both use the `...` syntax but for opposite purposes.</p>
+            <ul>
+                <li><b>Rest Parameters:</b> Collects an indefinite number of arguments into an array.</li>
+                <li><b>Spread Syntax:</b> Expands an iterable (like an array) into individual elements.</li>
+            </ul>
+            <pre><code><span class="code-comment">// Rest Parameters</span>
+<span class="code-keyword">function</span> <span class="code-function">sumAll</span>(...<span class="code-variable">numbers</span>) {
+  <span class="code-keyword">return</span> <span class="code-variable">numbers</span><span class="code-punctuation">.</span><span class="code-function">reduce</span><span class="code-punctuation">(</span>(<span class="code-variable">acc</span>, <span class="code-variable">curr</span>) <span class="code-operator">=></span> <span class="code-variable">acc</span> <span class="code-operator">+</span> <span class="code-variable">curr</span><span class="code-punctuation">,</span> <span class="code-number">0</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">sumAll</span><span class="code-punctuation">(</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 10</span>
+
+<span class="code-comment">// Spread Syntax</span>
+<span class="code-keyword">const</span> <span class="code-variable">arr1</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">arr2</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span>...<span class="code-variable">arr1</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">5</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">arr2</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// [1, 2, 3, 4, 5]</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="advanced-topics">
+            <h2>Advanced Function Topics</h2>
+
+            <h3>Closures</h3>
+            <p>A closure is a function that "remembers" the environment in which it was created. This means it has access to variables from its outer (enclosing) function, even after the outer function has finished executing. Closures are a powerful feature for creating private data and stateful functions.</p>
+            <pre><code><span class="code-keyword">function</span> <span class="code-function">createCounter</span>() {
+  <span class="code-keyword">let</span> <span class="code-variable">count</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span> <span class="code-comment">// This variable is in the closure</span>
+
+  <span class="code-keyword">return</span> <span class="code-keyword">function</span>() {
+    <span class="code-variable">count</span><span class="code-operator">++</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">return</span> <span class="code-variable">count</span><span class="code-punctuation">;</span>
+  };
+}
+
+<span class="code-keyword">const</span> <span class="code-variable">counter1</span> <span class="code-operator">=</span> <span class="code-function">createCounter</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">counter1</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 1</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">counter1</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 2</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">counter2</span> <span class="code-operator">=</span> <span class="code-function">createCounter</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Has its own separate `count`</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">counter2</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code- punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 1</span></code></pre>
+
+            <h3>The `this` Keyword</h3>
+            <p>The value of `this` is determined by how a function is called (its "call site").</p>
+            <ul>
+                <li><b>Global Context:</b> In the global scope, `this` refers to the global object (`window` in browsers).</li>
+                <li><b>Inside a Method:</b> When a function is called as a method of an object (`obj.myMethod()`), `this` refers to the object itself.</li>
+                <li><b>Arrow Functions:</b> They do not have their own `this` binding. Instead, they inherit `this` from the parent scope (lexical `this`). This is extremely useful for callbacks inside methods.</li>
+            </ul>
+
+            <h3>Currying</h3>
+            <p>Currying is the process of transforming a function that takes multiple arguments into a sequence of nested functions, each taking a single argument.</p>
+            <pre><code><span class="code-comment">// A non-curried function</span>
+<span class="code-keyword">const</span> <span class="code-variable">add</span> <span class="code-operator">=</span> (<span class="code-variable">a</span>, <span class="code-variable">b</span>, <span class="code-variable">c</span>) <span class="code-operator">=></span> <span class="code-variable">a</span> <span class="code-operator">+</span> <span class="code-variable">b</span> <span class="code-operator">+</span> <span class="code-variable">c</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// The same function, curried</span>
+<span class="code-keyword">const</span> <span class="code-variable">curriedAdd</span> <span class="code-operator">=</span> <span class="code-variable">a</span> <span class="code-operator">=></span> <span class="code-variable">b</span> <span class="code-operator">=></span> <span class="code-variable">c</span> <span class="code-operator">=></span> <span class="code-variable">a</span> <span class="code-operator">+</span> <span class="code-variable">b</span> <span class="code-operator">+</span> <span class="code-variable">c</span><span class="code-punctuation">;</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">curriedAdd</span><span class="code-punctuation">(</span><span class="code-number">2</span><span class="code-punctuation">)</span><span class="code-punctuation">(</span><span class="code-number">3</span><span class="code-punctuation">)</span><span class="code-punctuation">(</span><span class="code-number">5</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 10</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">add5</span> <span class="code-operator">=</span> <span class="code-function">curriedAdd</span><span class="code-punctuation">(</span><span class="code-number">5</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Create a specialized function</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-function">add5</span><span class="code-punctuation">(</span><span class="code-number">10</span><span class="code-punctuation">)</span><span class="code-punctuation">(</span><span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 16</span></code></pre>
+
+            <h3>Async Functions (`async`/`await`)</h3>
+            <p>The `async` and `await` keywords provide syntactic sugar over Promises, making asynchronous code look and behave more like synchronous code, which is easier to read and debug.</p>
+            <ul>
+                <li>An `async` function always returns a Promise.</li>
+                <li>The `await` keyword can only be used inside an `async` function. It pauses the function's execution and waits for a Promise to resolve before continuing.</li>
+            </ul>
+            <pre><code><span class="code-keyword">async</span> <span class="code-keyword">function</span> <span class="code-function">getUserData</span>(<span class="code-variable">userId</span>) {
+  <span class="code-keyword">try</span> {
+    <span class="code-keyword">const</span> <span class="code-variable">response</span> <span class="code-operator">=</span> <span class="code-keyword">await</span> <span class="code-function">fetch</span><span class="code-punctuation">(</span><span class="code-string">`https://api.example.com/users/${<span class="code-variable">userId</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+    <span class="code-keyword">const</span> <span class="code-variable">user</span> <span class="code-operator">=</span> <span class="code-keyword">await</span> <span class="code-variable">response</span><span class="code-punctuation">.</span><span class="code-function">json</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+    <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">user</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  } <span class="code-keyword">catch</span> (<span class="code-variable">error</span>) {
+    <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">error</span><span class="code-punctuation">(</span><span class="code-string">'Failed to fetch user:'</span><span class="code-punctuation">,</span> <span class="code-variable">error</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  }
+}</code></pre>
+
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>
