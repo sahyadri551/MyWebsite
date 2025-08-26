@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Strings Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Strings</h1>
+    </header>
+
+    <main class="container">
+        <section id="intro">
+            <h2>Introduction to Strings</h2>
+            <p>A string in JavaScript is a sequence of characters used to represent text. Strings are primitive data types and are **immutable**, which means that once a string is created, it cannot be changed. Methods that appear to modify a string actually return a new string with the changes.</p>
+            <pre><code><span class="code-keyword">let</span> <span class="code-variable">greeting</span> <span class="code-operator">=</span> <span class="code-string">"Hello, World!"</span><span class="code-punctuation">;</span> <span class="code-comment">// Using double quotes</span>
+<span class="code-keyword">let</span> <span class="code-variable">name</span> <span class="code-operator">=</span> <span class="code-string">'Alice'</span><span class="code-punctuation">;</span>         <span class="code-comment">// Using single quotes</span>
+<span class="code-keyword">let</span> <span class="code-variable">message</span> <span class="code-operator">=</span> <span class="code-string">`Hello, ${<span class="code-variable">name</span>}!`</span><span class="code-punctuation">;</span> <span class="code-comment">// Using template literals (ES6)</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="properties-access">
+            <h2>Properties and Character Access</h2>
+            <ul>
+                <li><code>.length</code>: A property that returns the number of characters in the string.</li>
+                <li><code>.charAt(index)</code>: Returns the character at a specified index.</li>
+                <li>Bracket Notation <code>[index]</code>: A modern way to access the character at a specified index.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"The Sample String"</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-variable">length</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 17</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">charAt</span><span class="code-punctuation">(</span><span class="code-number">4</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 'S'</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">[</span><span class="code-number">4</span><span class="code-punctuation">]</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>         <span class="code-comment">// 'S'</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="case-conversion">
+            <h2>Changing Case</h2>
+            <ul>
+                <li><code>.toUpperCase()</code>: Returns a new string with all characters converted to uppercase.</li>
+                <li><code>.toLowerCase()</code>: Returns a new string with all characters converted to lowercase.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"The Sample String"</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">toUpperCase</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "THE SAMPLE STRING"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">toLowerCase</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "the sample string"</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="extracting">
+            <h2>Extracting Substrings</h2>
+            <ul>
+                <li><code>.slice(startIndex, endIndex)</code>: Extracts a section of a string and returns it as a new string. The `endIndex` is not included. Can accept negative indices.</li>
+                <li><code>.substring(startIndex, endIndex)</code>: Similar to `slice`, but cannot accept negative indices.</li>
+                <li><code>.substr(startIndex, length)</code>: <strong>(Deprecated)</strong> Returns a specified number of characters from a `startIndex`.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"The Sample String"</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">slice</span><span class="code-punctuation">(</span><span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">10</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "Sample"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">slice</span><span class="code-punctuation">(</span><span class="code-operator">-</span><span class="code-number">6</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>   <span class="code-comment">// "String"</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">substring</span><span class="code-punctuation">(</span><span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">10</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span><span class="code-comment">// "Sample"</span></code></pre>
+        </section>
+        <hr>
+        
+        <section id="searching">
+            <h2>Searching and Finding</h2>
+            <ul>
+                <li><code>.indexOf(searchValue)</code>: Returns the index of the first occurrence of a value, or -1 if not found.</li>
+                <li><code>.lastIndexOf(searchValue)</code>: Returns the index of the last occurrence of a value, or -1 if not found.</li>
+                <li><code>.includes(searchValue)</code>: Returns `true` if the string contains the specified value, otherwise `false`.</li>
+                <li><code>.startsWith(searchValue)</code>: Returns `true` if the string begins with the specified value.</li>
+                <li><code>.endsWith(searchValue)</code>: Returns `true` if the string ends with the specified value.</li>
+                <li><code>.search(regexp)</code>: Searches for a match against a regular expression and returns the index of the match, or -1.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"The Sample String"</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">indexOf</span><span class="code-punctuation">(</span><span class="code-string">'S'</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>       <span class="code-comment">// 4</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">includes</span><span class="code-punctuation">(</span><span class="code-string">'Sample'</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// true</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">startsWith</span><span class="code-punctuation">(</span><span class="code-string">'The'</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>  <span class="code-comment">// true</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="modifying">
+            <h2>Modifying and Transforming</h2>
+            <ul>
+                <li><code>.replace(searchValue, newValue)</code>: Returns a new string with the first match of `searchValue` replaced by `newValue`. Can use a regular expression for more powerful replacements.</li>
+                <li><code>.replaceAll(searchValue, newValue)</code>: Returns a new string with all matches replaced.</li>
+                <li><code>.concat(str1, str2, ...)</code>: Joins two or more strings and returns a new combined string. The `+` operator is often more convenient.</li>
+                <li><code>.trim()</code>: Removes whitespace from both ends of a string.</li>
+                <li><code>.repeat(count)</code>: Returns a new string containing the specified number of copies of the original string.</li>
+                <li><code>.padStart(targetLength, padString)</code> / <code>.padEnd(...)</code>: Pads the current string from the start/end with another string until it reaches the target length.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"The Sample String"</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">replace</span><span class="code-punctuation">(</span><span class="code-string">'Sample'</span><span class="code-punctuation">,</span> <span class="code-string">'Example'</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "The Example String"</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">greeting</span> <span class="code-operator">=</span> <span class="code-string">"   Hello World!   "</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">greeting</span><span class="code-punctuation">.</span><span class="code-function">trim</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "Hello World!"</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">'5'</span><span class="code-punctuation">.</span><span class="code-function">padStart</span><span class="code-punctuation">(</span><span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-string">'0'</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "005"</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="to-array">
+            <h2>Converting to an Array</h2>
+            <ul>
+                <li><code>.split(separator)</code>: Divides a string into an ordered list of substrings by searching for a `separator`, puts these substrings into an array, and returns the array.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"The Sample String"</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">words</span> <span class="code-operator">=</span> <span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">split</span><span class="code-punctuation">(</span><span class="code-string">' '</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">words</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ["The", "Sample", "String"]</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">csv</span> <span class="code-operator">=</span> <span class="code-string">'apple,banana,cherry'</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">fruits</span> <span class="code-operator">=</span> <span class="code-variable">csv</span><span class="code-punctuation">.</span><span class="code-function">split</span><span class="code-punctuation">(</span><span class="code-string">','</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">fruits</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ["apple", "banana", "cherry"]</span></code></pre>
+        </section>
+        <hr>
+        
+        <section id="regex-methods">
+            <h2>Regular Expression Methods</h2>
+            <ul>
+                <li><code>.match(regexp)</code>: Retrieves the result of matching a string against a regular expression.</li>
+                <li><code>.matchAll(regexp)</code>: Returns an iterator of all results matching a string against a regular expression, including capturing groups.</li>
+            </ul>
+             <pre><code><span class="code-keyword">const</span> <span class="code-variable">str</span> <span class="code-operator">=</span> <span class="code-string">"The rain in SPAIN stays mainly in the plain."</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">matches</span> <span class="code-operator">=</span> <span class="code-variable">str</span><span class="code-punctuation">.</span><span class="code-function">matchAll</span><span class="code-punctuation">(</span><span class="code-regexp">/ain/gi</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+
+<span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">match</span> <span class="code-keyword">of</span> <span class="code-variable">matches</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`Found '${<span class="code-variable">match</span>[<span class="code-number">0</span>]}' at index ${<span class="code-variable">match</span><span class="code-punctuation">.</span><span class="code-variable">index</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}
+<span class="code-comment">// Found 'ain' at index 5</span>
+<span class="code-comment">// Found 'AIN' at index 14</span>
+<span class="code-comment">// Found 'ain' at index 25</span>
+<span class="code-comment">// Found 'ain' at index 43</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="deprecated-html">
+            <h2>Deprecated HTML Wrapper Methods</h2>
+            <p>JavaScript used to have methods that would wrap a string in HTML tags (e.g., <code>.bold()</code>, <code>.link()</code>, <code>.fontcolor()</code>). These methods are now deprecated and should not be used in modern web development. Instead, you should use the DOM API (e.g., <code>document.createElement</code>) to create and style HTML elements.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>

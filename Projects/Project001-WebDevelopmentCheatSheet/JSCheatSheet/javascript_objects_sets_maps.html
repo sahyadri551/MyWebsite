@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects, Sets & Maps Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Objects, Sets & Maps</h1>
+    </header>
+
+    <main class="container">
+        <section id="objects">
+            <h2>Objects</h2>
+            <p>An **object** is a fundamental data structure in JavaScript. It's a collection of key-value pairs, where keys are usually strings (or Symbols) and values can be any data type, including other objects or functions. Objects are used to group related data and functionality.</p>
+
+            <h3>Creating and Accessing Objects</h3>
+            <p>The most common way to create an object is with an object literal (`{}`). You can access and modify properties using dot notation (`.`) or bracket notation (`[]`). Bracket notation is required when the key is a variable or contains special characters.</p>
+            <pre><code><span class="code-comment">// Object literal</span>
+<span class="code-keyword">const</span> <span class="code-variable">user</span> <span class="code-operator">=</span> <span class="code-punctuation">{</span>
+  <span class="code-variable">firstName</span><span class="code-operator">:</span> <span class="code-string">'John'</span><span class="code-punctuation">,</span>
+  <span class="code-variable">lastName</span><span class="code-operator">:</span> <span class="code-string">'Doe'</span><span class="code-punctuation">,</span>
+  <span class="code-variable">age</span><span class="code-operator">:</span> <span class="code-number">30</span><span class="code-punctuation">,</span>
+  <span class="code-string">'has-admin-access'</span><span class="code-operator">:</span> <span class="code-boolean">true</span><span class="code-punctuation">,</span>
+  <span class="code-function">sayHello</span><span class="code-punctuation">:</span> <span class="code-keyword">function</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span> <span class="code-punctuation">{</span>
+    <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`Hello, my name is ${<span class="code-keyword">this</span><span class="code-punctuation">.</span><span class="code-variable">firstName</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+  <span class="code-punctuation">}</span>
+<span class="code-punctuation">};</span>
+
+<span class="code-comment">// Accessing properties</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">user</span><span class="code-punctuation">.</span><span class="code-variable">firstName</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 'John' (dot notation)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">user</span><span class="code-punctuation">[</span><span class="code-string">'lastName'</span><span class="code-punctuation">]</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 'Doe' (bracket notation)</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">user</span><span class="code-punctuation">[</span><span class="code-string">'has-admin-access'</span><span class="code-punctuation">]</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Bracket notation for special characters</span>
+
+<span class="code-comment">// Calling a method</span>
+<span class="code-variable">user</span><span class="code-punctuation">.</span><span class="code-function">sayHello</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "Hello, my name is John"</span></code></pre>
+            
+            <h3>Iterating Over Objects</h3>
+            <p>You can iterate over an object's properties using a `for...in` loop or by using `Object.keys()`, `Object.values()`, or `Object.entries()` to get an array of the object's keys, values, or key-value pairs, which you can then loop over.</p>
+            <pre><code><span class="code-comment">// Using for...in (iterates over keys)</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">key</span> <span class="code-keyword">in</span> <span class="code-variable">user</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`${<span class="code-variable">key</span>}: ${<span class="code-variable">user</span>[<span class="code-variable">key</span>]}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}
+
+<span class="code-comment">// Using Object.entries() and for...of (modern approach)</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-punctuation">[</span><span class="code-variable">key</span><span class="code-punctuation">,</span> <span class="code-variable">value</span><span class="code-punctuation">]</span> <span class="code-keyword">of</span> <span class="code-variable">Object</span><span class="code-punctuation">.</span><span class="code-function">entries</span><span class="code-punctuation">(</span><span class="code-variable">user</span><span class="code-punctuation">)</span>) {
+  <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-string">`${<span class="code-variable">key</span>}: ${<span class="code-variable">value</span>}`</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}</code></pre>
+        </section>
+        <hr>
+
+        <section id="sets">
+            <h2>Sets</h2>
+            <p>A **Set** is a collection of **unique** values. Each value can only occur once in a Set. Sets can hold any data type, from primitive values to object references.</p>
+
+            <h3>Creating and Using Sets</h3>
+            <p>You create a Set using the `new Set()` constructor. You can optionally pass an iterable (like an array) to initialize it.</p>
+            <ul>
+                <li><code>.add(value)</code>: Adds a new element to the Set.</li>
+                <li><code>.has(value)</code>: Returns a boolean indicating whether an element exists in the Set.</li>
+                <li><code>.delete(value)</code>: Removes a specified element from the Set.</li>
+                <li><code>.clear()</code>: Removes all elements from the Set.</li>
+                <li><code>.size</code>: A property that returns the number of elements in the Set.</li>
+            </ul>
+             <pre><code><span class="code-keyword">const</span> <span class="code-variable">mySet</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">Set</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+
+<span class="code-variable">mySet</span><span class="code-punctuation">.</span><span class="code-function">add</span><span class="code-punctuation">(</span><span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-variable">mySet</span><span class="code-punctuation">.</span><span class="code-function">add</span><span class="code-punctuation">(</span><span class="code-number">5</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-variable">mySet</span><span class="code-punctuation">.</span><span class="code-function">add</span><span class="code-punctuation">(</span><span class="code-string">'some text'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-variable">mySet</span><span class="code-punctuation">.</span><span class="code-function">add</span><span class="code-punctuation">(</span><span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// This will be ignored, as 1 is already in the set</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">mySet</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Set(3) { 1, 5, 'some text' }</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">mySet</span><span class="code-punctuation">.</span><span class="code-function">has</span><span class="code-punctuation">(</span><span class="code-number">5</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// true</span>
+<span class="code-variable">mySet</span><span class="code-punctuation">.</span><span class="code-function">delete</span><span class="code-punctuation">(</span><span class="code-number">5</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">mySet</span><span class="code-punctuation">.</span><span class="code-variable">size</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 2</span></code></pre>
+
+            <h3>Use Case: Removing Duplicates from an Array</h3>
+            <p>Sets provide a very concise way to get the unique values from an array.</p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">numbers</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">5</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">uniqueNumbers</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span>...<span class="code-keyword">new</span> <span class="code-function">Set</span><span class="code-punctuation">(</span><span class="code-variable">numbers</span><span class="code-punctuation">)</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">uniqueNumbers</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// [2, 3, 4, 5]</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="maps">
+            <h2>Maps</h2>
+            <p>A **Map** is a collection of key-value pairs similar to an Object. However, a major difference is that a Map allows **keys of any data type** (including objects and functions), whereas an object's keys are limited to strings and Symbols. Maps also maintain the insertion order of their elements.</p>
+
+            <h3>Creating and Using Maps</h3>
+            <p>You create a Map using the `new Map()` constructor.</p>
+            <ul>
+                <li><code>.set(key, value)</code>: Adds or updates an element with a specified key and value.</li>
+                <li><code>.get(key)</code>: Returns the value associated with the key, or `undefined` if the key doesn't exist.</li>
+                <li><code>.has(key)</code>: Returns a boolean indicating whether an element with the specified key exists.</li>
+                <li><code>.delete(key)</code>: Removes the element with the specified key.</li>
+                <li><code>.size</code>: A property that returns the number of elements in the Map.</li>
+            </ul>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">myMap</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">Map</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">keyString</span> <span class="code-operator">=</span> <span class="code-string">'a string'</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">keyObj</span> <span class="code-operator">=</span> <span class="code-punctuation">{};</span>
+<span class="code-keyword">const</span> <span class="code-variable">keyFunc</span> <span class="code-operator">=</span> <span class="code-keyword">function</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span> <span class="code-punctuation">{};</span>
+
+<span class="code-variable">myMap</span><span class="code-punctuation">.</span><span class="code-function">set</span><span class="code-punctuation">(</span><span class="code-variable">keyString</span><span class="code-punctuation">,</span> <span class="code-string">"value for a string"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-variable">myMap</span><span class="code-punctuation">.</span><span class="code-function">set</span><span class="code-punctuation">(</span><span class="code-variable">keyObj</span><span class="code-punctuation">,</span> <span class="code-string">"value for an object"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-variable">myMap</span><span class="code-punctuation">.</span><span class="code-function">set</span><span class="code-punctuation">(</span><span class="code-variable">keyFunc</span><span class="code-punctuation">,</span> <span class="code-string">"value for a function"</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">myMap</span><span class="code-punctuation">.</span><span class="code-variable">size</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 3</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">myMap</span><span class="code-punctuation">.</span><span class="code-function">get</span><span class="code-punctuation">(</span><span class="code-variable">keyObj</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// "value for an object"</span></code></pre>
+            
+            <h3>Objects vs. Maps</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Object</th>
+                        <th>Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Key Types</strong></td>
+                        <td>Strings and Symbols only.</td>
+                        <td>Any data type (string, number, object, function, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Order</strong></td>
+                        <td>Not guaranteed (though modern engines often preserve it).</td>
+                        <td>Guaranteed insertion order.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Size</strong></td>
+                        <td>Must be calculated manually (e.g., `Object.keys().length`).</td>
+                        <td>Directly available via the `.size` property.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance</strong></td>
+                        <td>Historically optimized for property access.</td>
+                        <td>Optimized for frequent addition and removal of key-value pairs.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Use Case</strong></td>
+                        <td>Good for simple, static collections of data (e.g., a config object).</td>
+                        <td>Better for dynamic collections, especially when keys aren't strings.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>

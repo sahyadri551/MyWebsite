@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays Cheatsheet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Arrays</h1>
+    </header>
+
+    <main class="container">
+        <section id="definition">
+            <h2>Definition</h2>
+            <p>An array is a special type of object used for storing an ordered collection of multiple values in a single variable. The values can be of any data type—numbers, strings, objects, or even other arrays. Each value in an array is called an element, and each element is accessible via a numeric index, starting from zero.</p>
+        </section>
+        <hr>
+        
+        <section id="creating">
+            <h2>Creating Arrays and Accessing Elements</h2>
+            <p>The most common way to create an array is using an array literal (`[]`). You can also use the `new Array()` constructor.</p>
+            <pre><code><span class="code-comment">// Array literal (preferred)</span>
+<span class="code-keyword">const</span> <span class="code-variable">fruits</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-string">'Apple'</span><span class="code-punctuation">,</span> <span class="code-string">'Banana'</span><span class="code-punctuation">,</span> <span class="code-string">'Cherry'</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Using the Array constructor</span>
+<span class="code-keyword">const</span> <span class="code-variable">numbers</span> <span class="code-operator">=</span> <span class="code-keyword">new</span> <span class="code-function">Array</span><span class="code-punctuation">(</span><span class="code-number">10</span><span class="code-punctuation">,</span> <span class="code-number">20</span><span class="code-punctuation">,</span> <span class="code-number">30</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Accessing elements using zero-based index</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">fruits</span><span class="code-punctuation">[</span><span class="code-number">0</span><span class="code-punctuation">]</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 'Apple'</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">fruits</span><span class="code-punctuation">[</span><span class="code-number">2</span><span class="code-punctuation">]</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 'Cherry'</span>
+
+<span class="code-comment">// Modifying an element</span>
+<span class="code-variable">fruits</span><span class="code-punctuation">[</span><span class="code-number">1</span><span class="code-punctuation">]</span> <span class="code-operator">=</span> <span class="code-string">'Blueberry'</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">fruits</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ['Apple', 'Blueberry', 'Cherry']</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="length-looping">
+            <h2>Array Length and Looping</h2>
+            <p>The <code>.length</code> property returns the number of elements in an array. It's commonly used to iterate over the array with a <code>for</code> loop.</p>
+             <pre><code><span class="code-keyword">const</span> <span class="code-variable">colors</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-string">'Red'</span><span class="code-punctuation">,</span> <span class="code-string">'Green'</span><span class="code-punctuation">,</span> <span class="code-string">'Blue'</span><span class="code-punctuation">,</span> <span class="code-string">'Yellow'</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">colors</span><span class="code-punctuation">.</span><span class="code-variable">length</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 4</span>
+
+<span class="code-comment">// Looping with a for loop</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">let</span> <span class="code-variable">i</span> <span class="code-operator">=</span> <span class="code-number">0</span><span class="code-punctuation">;</span> <span class="code-variable">i</span> <span class="code-operator"><</span> <span class="code-variable">colors</span><span class="code-punctuation">.</span><span class="code-variable">length</span><span class="code-punctuation">;</span> <span class="code-variable">i</span><span class="code-operator">++</span>) {
+    <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">colors</span><span class="code-punctuation">[</span><span class="code-variable">i</span><span class="code-punctuation">]</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+}</code></pre>
+        </section>
+        <hr>
+
+        <section id="add-remove">
+            <h2>Adding/Removing Elements</h2>
+            <p>JavaScript provides several methods to add or remove elements from an array.</p>
+            <ul>
+                <li><code>.push(item)</code>: Adds one or more elements to the **end** of an array and returns the new length.</li>
+                <li><code>.pop()</code>: Removes the **last** element from an array and returns that element.</li>
+                <li><code>.unshift(item)</code>: Adds one or more elements to the **beginning** of an array and returns the new length.</li>
+                <li><code>.shift()</code>: Removes the **first** element from an array and returns that element.</li>
+                <li><code>.splice(start, deleteCount, item1, ...)</code>: A powerful method to change the contents of an array by removing, replacing, or adding elements **in place**.</li>
+                <li><code>.slice(start, end)</code>: Returns a **new array** containing a shallow copy of a portion of the original array. It does **not** modify the original array.</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="slice-vs-splice">
+            <h2>Difference Between .slice() and .splice()</h2>
+            <p>This is a common source of confusion. The key difference is that <code>.splice()</code> modifies the original array, while <code>.slice()</code> does not.</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th><code>.slice()</code></th>
+                        <th><code>.splice()</code></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Modifies Original Array?</strong></td>
+                        <td>No (Immutable)</td>
+                        <td>Yes (Mutable)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Return Value</strong></td>
+                        <td>A new array containing the extracted elements.</td>
+                        <td>An array containing the deleted elements.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purpose</strong></td>
+                        <td>To copy a portion of an array.</td>
+                        <td>To add, remove, or replace elements within an array.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">animals</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-string">'ant'</span><span class="code-punctuation">,</span> <span class="code-string">'bison'</span><span class="code-punctuation">,</span> <span class="code-string">'camel'</span><span class="code-punctuation">,</span> <span class="code-string">'duck'</span><span class="code-punctuation">,</span> <span class="code-string">'elephant'</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Using slice()</span>
+<span class="code-keyword">const</span> <span class="code-variable">middleAnimals</span> <span class="code-operator">=</span> <span class="code-variable">animals</span><span class="code-punctuation">.</span><span class="code-function">slice</span><span class="code-punctuation">(</span><span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">middleAnimals</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ['camel', 'duck']</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">animals</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>       <span class="code-comment">// Original array is unchanged</span>
+
+<span class="code-comment">// Using splice()</span>
+<span class="code-keyword">const</span> <span class="code-variable">removed</span> <span class="code-operator">=</span> <span class="code-variable">animals</span><span class="code-punctuation">.</span><span class="code-function">splice</span><span class="code-punctuation">(</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-string">'bear'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Remove 2 elements from index 1 and add 'bear'</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">removed</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ['bison', 'camel']</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">animals</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ['ant', 'bear', 'duck', 'elephant'] - Original array is modified</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="searching">
+            <h2>Searching in Arrays</h2>
+            <ul>
+                <li><code>.indexOf(item)</code> / <code>.lastIndexOf(item)</code>: Return the first/last index of an element, or -1 if not found. Works well for primitive types.</li>
+                <li><code>.includes(item)</code>: Returns `true` or `false` if an element is found. More readable than `indexOf`.</li>
+                <li><code>.find(callback)</code>: Returns the **value** of the first element that passes a test provided by a callback function.</li>
+                <li><code>.findIndex(callback)</code>: Returns the **index** of the first element that passes a test.</li>
+                <li><code>.some(callback)</code>: Checks if at least **one** element passes the test. Returns `true` or `false`.</li>
+                <li><code>.every(callback)</code>: Checks if **all** elements pass the test. Returns `true` or `false`.</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="transforming">
+            <h2>Transforming Arrays</h2>
+            <p>These methods create **new arrays** based on the original, following immutable principles.</p>
+            <ul>
+                <li><code>.map(callback)</code>: Creates a new array by calling a function on every element and storing the results.</li>
+                <li><code>.filter(callback)</code>: Creates a new array with all elements that pass the test in the callback function.</li>
+                <li><code>.reduce(callback, initialValue)</code>: Executes a "reducer" function on each element, resulting in a single output value (e.g., a sum, or a new object).</li>
+            </ul>
+             <pre><code><span class="code-keyword">const</span> <span class="code-variable">numbers</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">5</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">doubled</span> <span class="code-operator">=</span> <span class="code-variable">numbers</span><span class="code-punctuation">.</span><span class="code-function">map</span><span class="code-punctuation">(</span><span class="code-variable">n</span> <span class="code-operator">=></span> <span class="code-variable">n</span> <span class="code-operator">*</span> <span class="code-number">2</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// [2, 4, 6, 8, 10]</span>
+<span class="code-keyword">const</span> <span class="code-variable">evens</span> <span class="code-operator">=</span> <span class="code-variable">numbers</span><span class="code-punctuation">.</span><span class="code-function">filter</span><span class="code-punctuation">(</span><span class="code-variable">n</span> <span class="code-operator">=></span> <span class="code-variable">n</span> <span class="code-operator">%</span> <span class="code-number">2</span> <span class="code-operator">===</span> <span class="code-number">0</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// [2, 4]</span>
+<span class="code-keyword">const</span> <span class="code-variable">sum</span> <span class="code-operator">=</span> <span class="code-variable">numbers</span><span class="code-punctuation">.</span><span class="code-function">reduce</span><span class="code-punctuation">(</span>(<span class="code-variable">accumulator</span><span class="code-punctuation">,</span> <span class="code-variable">current</span>) <span class="code-operator">=></span> <span class="code-variable">accumulator</span> <span class="code-operator">+</span> <span class="code-variable">current</span><span class="code-punctuation">,</span> <span class="code-number">0</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 15</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="sorting">
+             <h2>Sorting and Reversing</h2>
+             <p><code>.sort()</code> and <code>.reverse()</code> are **mutating** methods; they change the original array.</p>
+             <p><strong>Important:</strong> By default, <code>.sort()</code> converts elements to strings and sorts them lexicographically. For numbers, you must provide a custom compare function.</p>
+             <pre><code><span class="code-keyword">const</span> <span class="code-variable">months</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-string">'March'</span><span class="code-punctuation">,</span> <span class="code-string">'Jan'</span><span class="code-punctuation">,</span> <span class="code-string">'Feb'</span><span class="code-punctuation">,</span> <span class="code-string">'Dec'</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-variable">months</span><span class="code-punctuation">.</span><span class="code-function">sort</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">months</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ['Dec', 'Feb', 'Jan', 'March']</span>
+
+<span class="code-keyword">const</span> <span class="code-variable">numbers</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">4</span><span class="code-punctuation">,</span> <span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-number">5</span><span class="code-punctuation">,</span> <span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-number">10</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-variable">numbers</span><span class="code-punctuation">.</span><span class="code-function">sort</span><span class="code-punctuation">(</span>(<span class="code-variable">a</span>, <span class="code-variable">b</span>) <span class="code-operator">=></span> <span class="code-variable">a</span> <span class="code-operator">-</span> <span class="code-variable">b</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Correct numeric sort</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">numbers</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// [1, 2, 3, 4, 5, 10]</span>
+
+<span class="code-variable">numbers</span><span class="code-punctuation">.</span><span class="code-function">reverse</span><span class="code-punctuation">(</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">numbers</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// [10, 5, 4, 3, 2, 1]</span></code></pre>
+        </section>
+        <hr>
+
+        <section id="advanced">
+            <h2>Advanced Array Topics</h2>
+
+            <h3><code>Array.from()</code> and <code>Array.of()</code></h3>
+            <ul>
+                <li><code>Array.from(iterable)</code>: Creates a new array from an array-like or iterable object (like a NodeList from the DOM, a string, or a Set).</li>
+                <li><code>Array.of(...)</code>: Creates a new array from a variable number of arguments, regardless of type.</li>
+            </ul>
+            <pre><code><span class="code-comment">// Array.from a string</span>
+<span class="code-keyword">const</span> <span class="code-variable">helloArr</span> <span class="code-operator">=</span> <span class="code-variable">Array</span><span class="code-punctuation">.</span><span class="code-function">from</span><span class="code-punctuation">(</span><span class="code-string">'hello'</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">helloArr</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// ['h', 'e', 'l', 'l', 'o']</span>
+
+<span class="code-comment">// Array.of</span>
+<span class="code-keyword">const</span> <span class="code-variable">stuff</span> <span class="code-operator">=</span> <span class="code-variable">Array</span><span class="code-punctuation">.</span><span class="code-function">of</span><span class="code-punctuation">(</span><span class="code-number">7</span><span class="code-punctuation">,</span> <span class="code-string">'text'</span><span class="code-punctuation">,</span> <span class="code-boolean">true</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span>
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">stuff</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// [7, 'text', true]</span></code></pre>
+
+            <h3>Empty Slots vs. <code>undefined</code> (Sparse Arrays)</h3>
+            <p>A sparse array is one with "holes" or empty slots. These are not the same as elements with the value <code>undefined</code>. Most array iteration methods (like `map`, `filter`, `forEach`) **skip** empty slots entirely.</p>
+            <pre><code><span class="code-keyword">const</span> <span class="code-variable">sparse</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">1</span><span class="code-punctuation">,</span> , <span class="code-number">3</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">withUndefined</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-keyword">undefined</span><span class="code-punctuation">,</span> <span class="code-number">3</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+
+<span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">sparse</span><span class="code-punctuation">.</span><span class="code-variable">length</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// 3</span>
+<span class="code-variable">sparse</span><span class="code-punctuation">.</span><span class="code-function">forEach</span><span class="code-punctuation">(</span><span class="code-variable">val</span> <span class="code-operator">=></span> <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">val</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Logs 1, then 3. Skips the empty slot.</span>
+
+<span class="code-variable">withUndefined</span><span class="code-punctuation">.</span><span class="code-function">forEach</span><span class="code-punctuation">(</span><span class="code-variable">val</span> <span class="code-operator">=></span> <span class="code-function">console</span><span class="code-punctuation">.</span><span class="code-function">log</span><span class="code-punctuation">(</span><span class="code-variable">val</span><span class="code-punctuation">)</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span> <span class="code-comment">// Logs 1, undefined, then 3.</span></code></pre>
+
+            <h3>Arrays vs. Sets</h3>
+            <p>A `Set` is a collection of **unique** values. Choose based on your needs:</p>
+            <ul>
+                <li>Use an <strong>Array</strong> when order is important or you need to store duplicate values. Accessing by index (`arr[i]`) is very fast.</li>
+                <li>Use a <strong>Set</strong> when you need to store unique values and quickly check for the existence of a value (`set.has(item)`), which is much faster than an array's `includes()` for large collections.</li>
+            </ul>
+        </section>
+        <hr>
+
+        <section id="expert">
+            <h2>Expert / Interview-Level Topics</h2>
+
+            <h3>Immutability with Arrays</h3>
+            <p>Immutability means not changing data in place. In many modern frameworks (like React), it's a core principle. Instead of mutating an array, you create a new one with the desired changes.</p>
+            <p><strong>Mutating Methods:</strong> <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code>, <code>splice</code>, <code>sort</code>, <code>reverse</code></p>
+            <p><strong>Immutable Approach:</strong> Use methods that return new arrays like <code>map</code>, <code>filter</code>, <code>slice</code>, <code>concat</code>, and the spread operator <code>...</code>.</p>
+             <pre><code><span class="code-keyword">const</span> <span class="code-variable">users</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span>{<span class="code-variable">id</span><span class="code-operator">:</span><span class="code-number">1</span><span class="code-punctuation">,</span> <span class="code-variable">name</span><span class="code-operator">:</span><span class="code-string">'Alice'</span>}<span class="code-punctuation">,</span> {<span class="code-variable">id</span><span class="code-operator">:</span><span class="code-number">2</span><span class="code-punctuation">,</span> <span class="code-variable">name</span><span class="code-operator">:</span><span class="code-string">'Bob'</span>}<span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Immutable way to add a user</span>
+<span class="code-keyword">const</span> <span class="code-variable">newUser</span> <span class="code-operator">=</span> {<span class="code-variable">id</span><span class="code-operator">:</span><span class="code-number">3</span><span class="code-punctuation">,</span> <span class="code-variable">name</span><span class="code-operator">:</span><span class="code-string">'Charlie'</span>}<span class="code-punctuation">;</span>
+<span class="code-keyword">const</span> <span class="code-variable">updatedUsers</span> <span class="code-operator">=</span> <span class="code-punctuation">[</span>...<span class="code-variable">users</span><span class="code-punctuation">,</span> <span class="code-variable">newUser</span><span class="code-punctuation">]</span><span class="code-punctuation">;</span>
+
+<span class="code-comment">// Immutable way to remove a user</span>
+<span class="code-keyword">const</span> <span class="code-variable">usersAfterRemoval</span> <span class="code-operator">=</span> <span class="code-variable">users</span><span class="code-punctuation">.</span><span class="code-function">filter</span><span class="code-punctuation">(</span><span class="code-variable">user</span> <span class="code-operator">=></span> <span class="code-variable">user</span><span class="code-punctuation">.</span><span class="code-variable">id</span> <span class="code-operator">!==</span> <span class="code-number">1</span><span class="code-punctuation">)</span><span class="code-punctuation">;</span></code></pre>
+
+            <h3>Performance Considerations</h3>
+            <ul>
+                <li><strong><code>push()</code> vs <code>unshift()</code>:</strong> Adding/removing from the end of an array (`push`/`pop`) is a very fast operation ($O(1)$). Adding/removing from the beginning (`unshift`/`shift`) is slow ($O(n)$) because every other element in the array must be re-indexed.</li>
+                <li><strong>Choosing the right method:</strong> For searching, `Set.has()` is much faster than `Array.includes()` on large datasets. Use the right data structure for the job.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><a href="index.html">&larr; Back to Main</a>&emsp;&copy; 2025 JavaScript Cheatsheet</p>
+    </footer>
+</body>
+</html>
