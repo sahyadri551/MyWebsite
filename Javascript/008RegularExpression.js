@@ -64,3 +64,15 @@ console.log(d.match(/[^!@#$%^&*()_+\-=\[\]{}|;':",.<>\/?]/g)); // [^!@#$%^&*()_+
  console.log(a.match(/[A-Z]/g));
  console.log(a.match(/[0-9]/g));
 
+ regex=/[abc]/ // finds any of the characters between the brackets
+ regex = /[^abc]/; // the caret (^) negates the set, finding any character NOT between the brackets
+ 
+ regex=/(a|b)/ // finds either 'a' or 'b'
+ regex=/(a|b|c)/ // finds either 'a', 'b', or 'c'
+
+ regex=/(a|b)*/ // finds zero or more of either 'a' or 'b'
+ regex=/(a|b)+/ // finds one or more of either 'a' or 'b'
+ regex=/(a|b)?/ // finds zero or one of either 'a' or 'b'
+ regex=/(a|b){3}/ // finds exactly 3 of either 'a' or 'b'
+ regex=/(a|b){3,}/ // finds 3 or more of either 'a' or 'b'
+ regex=/(a|b){3,5}/ // finds 3 to 5 of either 'a' or 'b'
