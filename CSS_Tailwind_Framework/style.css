@@ -25,5 +25,21 @@
 @layer components{
     .btn{
     @apply bg-green-500 hover:bg-green-700 text-white font-bold rounded w-56 h-12 mt-5 ml-4 active:bg-red-500 focus:bg-blue-500;
-}
+    }
+    .nav-btn{
+        @apply bg-pink-500 rounded-lg w-20 px-3 py-1 border-2 border-pink-600 hover:bg-pink-600 hover:scale-105 transition duration-300 ease-in-out;
+    }
+    .nav-item{
+        @apply hover:text-pink-600 hover:scale-105 transition duration-200 ease-out;
+    }
+    .nav-div1{
+        @apply absolute top-[64px] left-0 flex flex-col gap-6 items-end px-4 py-2 text-lg font-semibold w-full max-lg:bg-[#ad1c1c35] lg:static lg:flex-row lg:gap-15 lg:items-center lg:justify-center;
+    }
+    .nav-div2{
+        @apply flex flex-col gap-4 items-center lg:static lg:flex-row lg:gap-15 lg:justify-center;
+    }
+    .nav-logo{
+        @apply text-2xl font-bold border-2 border-red-500 px-2 py-1 w-48 text-center;
+    }
+    
 }
