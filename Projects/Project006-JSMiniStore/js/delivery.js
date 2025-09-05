@@ -1,4 +1,4 @@
-// Load delivery info from localStorage
+
 document.getElementById("userName").textContent = localStorage.getItem("deliveryName");
 document.getElementById("userPhone").textContent = localStorage.getItem("deliveryPhone");
 document.getElementById("userAddress").textContent = localStorage.getItem("deliveryAddress");

@@ -131,16 +131,15 @@ function showAddressForm() {
       return;
     }
 
-    // Save to localStorage
+
     localStorage.setItem('deliveryName', name);
     localStorage.setItem('deliveryPhone', phone);
     localStorage.setItem('deliveryAddress', address);
 
-    // Redirect to tracking page
+
     window.location.href = 'delivery.html';
   }
 
-// Initialize after DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   const form = document.querySelector("form");

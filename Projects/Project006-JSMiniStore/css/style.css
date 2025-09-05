@@ -1,4 +1,4 @@
-/* Global Styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,7 +6,7 @@ body {
   background: #f4f4f4;
 }
 
-/* 🔷 Navbar */
+
 .navbar {
   background: #333;
   color: white;
@@ -39,7 +39,7 @@ body {
   text-decoration: underline;
 }
 
-/* 🔷 Main Container */
+
 .container {
   max-width: 1200px;
   margin: auto;
@@ -52,7 +52,7 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* 🔷 Product Grid */
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -89,7 +89,7 @@ button:hover {
   background: #218838;
 }
 
-/* 🔷 Cart Section */
+
 #cart-section {
   margin-top: 40px;
 }
@@ -140,7 +140,7 @@ button:hover {
   margin-right: auto;
 }
 
-/* Cart item adjustments */
+
 .cart-item {
   display: flex;
   align-items: center;
@@ -180,7 +180,7 @@ button:hover {
   margin-top: 10px;
 }
 
-/* Cart item adjustments */
+
 .cart-item {
   display: flex;
   align-items: center;
@@ -210,7 +210,7 @@ button:hover {
   border-radius: 4px;
 }
 
-/* 🔷 Footer */
+
 footer {
   background: #333;
   color: white;
@@ -241,7 +241,7 @@ footer p {
 
 
 
-/* Scrolling Text Animation */
+
 .marquee {
   width: 100%;
   overflow: hidden;
