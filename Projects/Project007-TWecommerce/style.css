@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@layer components {
+    .nav-link {
+        @apply text-white px-2 hover:bg-gray-700 py-2 rounded-md;
+    }
+    .nav-list{
+        @apply list-none inline-block px-5;
+    }
+    .logo{
+        @apply w-36 cursor-pointer;
+    }
+    .cart{
+        @apply w-16 cursor-pointer;
+    }
+}

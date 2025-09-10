@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">    
-    <title>Document</title>
+    <title>E-Commerce Website</title>
 </head>
 <body>
-    <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <div class=" h-screen bg-[url('image/image.png')] bg-cover px-20 py-4">
+        <header class="bg-gray-500 px-8 rounded-sm">
+            <nav class="flex items-center justify-between">
+                <img src="image/logo.png" alt="logo" class="logo">
+                <ul>
+                    <li class="nav-list"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-list"><a href="about.html" class="nav-link">Product</a></li>
+                    <li class="nav-list"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-list"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+                <img src="image/cart.png" alt="cart" class="cart">
+            </nav>
+        </header>
+
+        <div class="text-white mt-52 max-w-2xl">
+            <h1 class="text-6xl font-bold leading-normal">GROCERIES <br> delivery in 20 minutes</h1>
+            <p class="text-xl font-mono">This is the ultimate grocery store. We offer the wide range of best quality products 
+                including meat,frash Vegetables and Fruits, Dairy, baked goods and more...
+            </p>
+            <div class="mt-8 px-2">
+                <button class="text-white bg-yellow-400 rounded-3xl py-3 px-8 mr-4 hover:bg-transparent hover:border-white hover:border">Order Now</button>
+                <button class="text-white bg-blue-600 rounded-3xl py-3 px-8 mr-4 hover:bg-transparent hover:border-white hover:border">Download App</button>
+            </div>
+            <img src="image/grocery.png" alt="grocery" class="w-full xl:w-1/2 xl:absolute bottom-0 top-2 right-20 mt-24">
+        </div>
+    </div>
 </body>
 </html>
