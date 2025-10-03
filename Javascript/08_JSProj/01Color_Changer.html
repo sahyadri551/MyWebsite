@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Changer</title>
+    <style>
+        .button{
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 10px;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+        #gray{
+            background-color: gray;
+        }
+        #white{
+            background-color: white;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #purple{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Color Scheme Switcher</h1>
+        <span class="button" id="gray"></span>
+        <span class="button" id="white"></span>
+        <span class="button" id="blue"></span>
+        <span class="button" id="yellow"></span>
+        <span class="button" id="purple"></span>
+    </div>
+</body>
+<script>
+    let btn = document.querySelectorAll(".button")
+    const body = document.querySelector("body")
+    const h1 = document.querySelector("h1")
+
+    btn.forEach((item) => {
+        item.addEventListener("click", (e) => {
+            body.style.backgroundColor = e.target.id 
+            if (item.id == "blue") {
+                h1.style.color = "white"
+            }
+            else {
+                h1.style.color = "black"
+            }
+        })
+        item.addEventListener("mouseover", (e) => {
+            item.style.transform = "scale(1.2)"
+            item.style.transition = "0.2s"
+        })
+        item.addEventListener("mouseout", (e) => {
+            item.style.transform = "scale(1)"
+            item.style.transition = "0.2s"
+        })
+        
+    })
+</script>
+</html>

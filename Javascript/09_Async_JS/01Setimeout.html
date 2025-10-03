@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS Basics</title>
+</head>
+<body>
+    <h1>Async JS Basics</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    // changeMe=setTimeout(() => {
+    //         alert("You do not clicked the button")
+    //     }, 2000)
+    // const btn = document.querySelector("button")
+    // btn.addEventListener("click", () => {
+    //     clearTimeout(changeMe)
+    //     clearTimeout(changeMe2)
+    // })
+    // changeMe2=setInterval(() => {
+    //     alert("You do not clicked the button")
+    // })
+
+    //set interval
+    start= document.getElementById("start")
+    stop= document.getElementById("stop")
+    start.addEventListener("click", () => {
+        intervalId=setInterval(sayDate, 1000, "Hello")
+    })
+    stop.addEventListener("click", () => {
+        clearInterval(intervalId)
+    })
+    const sayDate= function(message){
+        console.log(Date.now().toLocaleString(),message )
+    }
+</script>
+</html>

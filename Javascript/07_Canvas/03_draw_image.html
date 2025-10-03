@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #my-canvas{
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+        }
+        #s{
+            width: 400px;
+            height: 400px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="icon.png" alt="icon" id="s"> -->
+    <canvas id="my-canvas">
+
+    </canvas>
+</body>
+<script>
+    // window.onload=function(){
+    // let c=document.getElementById("my-canvas")
+    // let ctx=c.getContext("2d")
+    // c.width=500
+    // c.height=500
+    // i=document.getElementById("s")
+    // ctx.drawImage(i,25,25,450,450) // img,x,y,w,h
+    // }
+
+    let c=document.getElementById("my-canvas")
+    let ctx=c.getContext("2d")
+    c.width=500
+    c.height=500
+    i=new Image()
+    i.src="icon.png"
+    window.onload=function(){
+        ctx.drawImage(i,25,25,450,450) // img,x,y,w,h
+    }
+    // i.onload=function(){
+    //     ctx.drawImage(i,25,25,450,450) // img,x,y,w,h
+    // }
+</script>
+</html>

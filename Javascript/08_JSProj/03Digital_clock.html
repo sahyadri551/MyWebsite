@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        #clock{
+            font-size: 50px;
+            font-weight: bold;
+            width:350px;
+            height: 60px;
+            border: 1px solid black;
+            text-align: center;
+            margin: 200px auto;
+            background-color: #212121;
+            color: white
+        }
+        body{
+            background-color: #21212164;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+    <script>
+        function clock(){
+            let date=new Date()
+            // let h=date.getHours()
+            // let m=date.getMinutes()
+            // let s=date.getSeconds()
+            // let session="AM"
+            // if(h==0){
+            //     h=12
+            // }
+            // if(h>12){
+            //     h=h-12
+            //     session="PM"
+            // }
+            // h=h<10?"0"+h:h
+            // m=m<10?"0"+m:m
+            // s=s<10?"0"+s:s
+            // let time=h+":"+m+":"+s+" "+session
+            document.getElementById("clock").innerText=date.toLocaleTimeString()
+            setTimeout(clock,999)
+        }
+        clock()
+    </script>
+    
+</body>
+</html>

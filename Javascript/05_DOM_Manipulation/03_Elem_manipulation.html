@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove Element</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+        color: white;
+    }
+</style>
+<body>
+    <ul class="language">
+
+    </ul>
+</body>
+<script>
+    // function addLang(name) {
+    //     const li=document.createElement("li")
+    //     li.textContent=name
+    //     document.querySelector(".language").appendChild(li)
+    // }
+    // addLang("HTML")
+    // addLang("CSS")
+    // addLang("JAVASCRIPT")
+    // addLang("REACT")
+    // addLang("ANGULAR")
+    // addLang("VUE")
+
+    function addLang(name) {
+        const li=document.createElement("li")
+        li.appendChild(document.createTextNode(name))
+        document.querySelector(".language").appendChild(li)
+    }
+    addLang("HTML")
+    addLang("CSS")
+    addLang("JAVASCRIPT")
+    addLang("REACT")
+    addLang("ANGULAR")
+    addLang("VUE")
+
+    // Edit
+    const val=document.querySelector("li:nth-child(2)")
+    // val.innerHTML="CSS3"
+    const newli=document.createElement("li")
+    newli.textContent="CSS3"
+    val.replaceWith(newli)
+
+    // outerHTML
+    const val2=document.querySelector("li:nth-child(4)")
+    val2.outerHTML=`<li>Angular JS</li>`
+
+    // Remove
+    const val3=document.querySelector("li:nth-child(6)")
+    val3.remove()
+</script>
+</html>

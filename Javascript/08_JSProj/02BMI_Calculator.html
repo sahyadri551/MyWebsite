@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            margin: 10px;
+        }
+        button{
+            width: 200px;
+            height: 30px;
+            margin: 10px;
+            background-color: #212121;
+            color: white;
+            border: 1px solid white;
+            transition: 0.2s;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: white;
+            color: #212121;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form>
+    <input type="number" id="height" placeholder="Enter your height in cm">
+    <input type="number" id="weight" placeholder="Enter your weight in kg">
+    <button type="submit">Calculate BMI</button>
+    <p id="result"></p>
+    </form>
+    
+</body>
+<script>
+    function calculateBMI() {
+        const height = parseInt(document.getElementById("height").value) / 100;
+        const weight = parseInt(document.getElementById("weight").value);
+        const bmi = weight / (height * height);
+        const result = document.getElementById("result");
+
+        if (height <= 0 || weight <= 0 || isNaN(height) || isNaN(weight)) {
+            result.innerHTML = "Please enter valid values for height and weight.";
+            return;
+        }
+
+        result.innerHTML = "Your BMI is: " + bmi.toFixed(2);
+
+        if (bmi < 18.5) {
+            result.innerHTML += " (Underweight)";
+        } else if (bmi >= 18.5 && bmi < 25) {
+            result.innerHTML += " (Normal weight)";
+        } else {
+            result.innerHTML += " (Overweight)";
+        }
+    }
+
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        calculateBMI();
+    });
+    </script>
+</html>

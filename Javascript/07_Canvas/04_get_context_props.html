@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #my-canvas{
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+        }
+        #s{
+            width: 32px;
+            height: 32px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="icon.png" alt="icon" id="s">
+    <canvas id="my-canvas">
+    </canvas>
+    <button onclick="draw('repeat')">Repeat</button>
+    <button onclick="draw('repeat-x')">Repeat-x</button>
+    <button onclick="draw('repeat-y')">Repeat-y</button>
+    <button onclick="draw('no-repeat')">No-Repeat</button>
+</body>
+<script>
+    let c=document.getElementById("my-canvas")
+    let ctx=c.getContext("2d")
+    c.width=500
+    c.height=500
+
+    // grd=ctx.createLinearGradient(0,0,200,0)
+    // grd.addColorStop(0,"red");
+    // grd.addColorStop(0.5,"green");
+    // grd.addColorStop(1,"blue");
+    // ctx.strokeStyle=grd;
+    // ctx.lineWidth=10
+    // ctx.strokeRect(10,10,200,200) // x,y,w,h
+
+    // blur effect
+    ctx.shadowBlur=20
+    // ctx.offsetX=10
+    // ctx.shadowOffsetX=-10
+    // ctx.offsetY=10
+    // ctx.shadowOffsetY=-10
+    // ctx.shadowColor="red"
+    // ctx.fillStyle="green"
+    // ctx.strokeStyle="blue"
+    // ctx.lineWidth=2
+    // ctx.fillRect(10,10,200,200)
+    // ctx.strokeRect(10,10,200,200)
+
+    // function draw(value){
+    //     ctx.clearRect(0,0,500,500)
+    //     let i = document.getElementById("s")
+    //     let p=ctx.createPattern(i,value)
+    //     ctx.fillStyle=p
+    //     ctx.fillRect(50,50,400,400)
+    //     ctx.fill
+    // }
+
+    // fixing size of image
+    function draw(value){
+    ctx.clearRect(0,0,500,500);
+    let i = document.getElementById("s");
+    // 1. Create a temporary canvas in memory
+    const tempCanvas = document.createElement('canvas');
+    const tempCtx = tempCanvas.getContext('2d');
+    // 2. Set the size for your pattern tile (e.g., 32x32)
+    const patternSize = 100;
+    tempCanvas.width = patternSize;
+    tempCanvas.height = patternSize;
+    // 3. Draw your (potentially large) image onto the small temporary canvas, scaling it down
+    tempCtx.drawImage(i, 0, 0, patternSize, patternSize);
+    // 4. Create the pattern from the temporary canvas, NOT the original image
+    let p = ctx.createPattern(tempCanvas, value);
+    ctx.fillStyle = p;
+    ctx.fillRect(50, 50, 400, 400);
+}
+</script>
+</html>

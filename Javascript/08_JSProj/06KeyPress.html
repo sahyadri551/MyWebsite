@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Detection</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+        color: white;
+    }
+    .project{
+        text-align: center;
+        margin: 200px auto;
+        width: 500px;
+        height: 300px;
+        border: 1px solid white;
+        padding: 20px;
+        overflow: auto;
+    }
+    .key{
+        background-color: #212121;
+        color: white;
+        border: 1px solid white;
+        transition: 0.2s;
+        display: inline-block;
+        padding: 10px;
+        margin: 5px
+    }
+    .key:hover{
+        background-color: white;
+        color: #212121;
+    }
+    
+</style>
+<body>
+    <div class="project">
+        <div id="insert">
+            <div class="key">Press any key and seethe Magic</div>
+        </div>
+    </div>
+</body>
+<script>
+    const insert = document.getElementById('insert');
+    window.addEventListener('keydown', (e) => {
+        insert.innerHTML += `<br>
+            <div class="key">
+                ${e.key === ' ' ? 'Space' : e.key}
+                <small>e.key</small>
+            </div>
+            <div class="key">
+                ${e.keyCode}
+                <small>e.keyCode</small>
+            </div>
+            <div class="key">
+                ${e.code}
+                <small>e.code</small>
+            </div>
+        `
+    })
+</script>
+</html>

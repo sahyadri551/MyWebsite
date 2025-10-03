@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #my-canvas{
+            width: 500px;
+            height: 250px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="my-canvas">
+
+    </canvas>
+</body>
+<script>
+    // let c=document.getElementById("my-canvas")
+    // let ctx=c.getContext("2d")
+    // ctx.fillStyle='green'
+    // ctx.fillRect(10,10,100,50) // x,y,w,h
+    
+    // let c=document.getElementById("my-canvas")
+    // let ctx=c.getContext("2d")
+    // ctx.moveTo(10,10) // sets the starting point of the path
+    // ctx.lineTo(200,100) // lineTo(x,y) -> draw a line from current position to (x,y)
+    // ctx.stroke()
+
+    let c=document.getElementById("my-canvas")
+    let ctx=c.getContext("2d")
+    ctx.beginPath()
+    ctx.arc(95,50,40,0,2*Math.PI) // center_x,center_y,radius,start_angle,end_angle
+    ctx.stroke()
+</script>
+</html>

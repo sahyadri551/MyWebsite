@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #my-canvas{
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="my-canvas">
+
+    </canvas>
+</body>
+<script>
+    let c=document.getElementById("my-canvas")
+    let ctx=c.getContext("2d")
+    c.width=500
+    c.height=500
+    ctx.beginPath()
+    ctx.lineWidth=10
+    ctx.strokeStyle="green"
+    // ctx.lineJoin="round"
+    // ctx.lineCap="round" // butt square round 
+    ctx.lineJoin="miter"
+    ctx.miterLimit=5
+    ctx.moveTo(20,20)
+    ctx.lineTo(200,80)
+    ctx.lineTo(40,160)
+    ctx.stroke()
+    // ctx.strokeRect(10,10,400,400)
+</script>
+</html>

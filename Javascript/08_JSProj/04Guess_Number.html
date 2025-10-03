@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+        #wrapper{
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .subt{
+            background-color: #212121;
+            color: white;
+            border: 1px solid white;
+            transition: 0.2s;
+        }
+        .subt:hover{
+            background-color: white;
+            color: #212121;
+        }
+        form{
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+        #guess{
+            font-size: xx-large;
+        }
+        #guessField{
+            width: 200px;
+            height: 30px;
+            margin: 10px;
+            padding: 2px;
+            font-size: large;
+        }
+        #submit{
+            width: 200px;
+            height: 30px;
+            margin: 10px;
+            background-color: #212121;
+            color: white;
+            border: 1px solid white;
+            transition: 0.2s;
+            border-radius: 5px;
+        }
+        #submit:hover{
+            background-color: white;
+            color: #212121;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Guess the number</h1>
+        <p>Try to guess the number between 1 to 100</p>
+        <p>You have maximum 10 chances</p>
+        <form class="form">
+            <label for="guessField" id="guess">Enter your guess</label>
+            <input type="number" id="guessField" name="guess" min="1" max="100">
+            <button type="submit" id="submit" value="Submit" class="subt">Submit</button>
+        </form>
+        <div>
+            <p>Previous guesses:<span id="guesses"></span></p>
+            <p>Number of remaining chances:<span id="chances">10</span></p>
+            <p class="lowOrHigh"></p>
+        </div>
+    </div>
+</body>
+<script>
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    let guess = document.getElementById("guessField");
+    let submit = document.getElementById("submit");
+    let chances = document.getElementById("chances");
+    let guesses = document.getElementById("guesses");
+    let lowOrHigh = document.querySelector(".lowOrHigh");
+    let form = document.querySelector(".form");
+
+    submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (chances.innerHTML > 0) {
+            // randomNumber = Math.floor(Math.random() * 100) + 1;
+            // console.log(randomNumber);
+            checkGuess();
+        }
+        else {
+            alert("You lost the game. The number was " + randomNumber);
+            lowOrHigh.innerHTML = `You lost the game. The number was ${randomNumber}`;
+            lowOrHigh.style.color = "red";
+            guesses.innerHTML += guess.value + " ";
+            guess.value = "";
+            guessField.disabled = true;
+        }
+    });
+
+    function checkGuess() {
+        if (guess.value < randomNumber) {
+            lowOrHigh.innerHTML = "Your guess is too low";
+            chances.innerHTML = parseInt(chances.innerHTML) - 1;
+            lowOrHigh.style.color = "orange";
+        }
+        else if (guess.value > randomNumber) {
+            lowOrHigh.innerHTML = "Your guess is too high";
+            chances.innerHTML = parseInt(chances.innerHTML) - 1;
+            lowOrHigh.style.color = "orange";
+        }
+        else if (isNaN(guess.value)) {
+            lowOrHigh.innerHTML = "Please enter a valid number";
+            lowOrHigh.style.color = "red";
+        }
+        else {
+            lowOrHigh.innerHTML = "You guessed it right";
+            lowOrHigh.style.color = "green";
+            alert("You won the game");
+            guessField.disabled = true;
+            chances.innerHTML = 0;
+        }
+        guesses.innerHTML += guess.value + " ";
+        guess.value = "";
+    }
+</script>
+</html>

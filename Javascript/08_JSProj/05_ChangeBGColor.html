@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS Basics</title>
+</head>
+<body>
+    <h1>Async JS Basics</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    bg_color= function(){
+        r=Math.floor(Math.random()*256)
+        g=Math.floor(Math.random()*256)
+        b=Math.floor(Math.random()*256)
+        return `rgb(${r},${g},${b})`
+    }
+    let changeMe;
+    start= document.getElementById("start")
+    stop= document.getElementById("stop")
+    start.addEventListener("click",changeColor)
+    stop.addEventListener("click", stopChangeColor)
+    function changeColor(){
+        changeMe=setInterval(() => {
+            if (!changeMe) {
+                document.body.style.backgroundColor=bg_color()
+            }
+        }, 1000);
+    }
+    function stopChangeColor(){
+        clearInterval(changeMe)
+        changeMe=null
+    }
+</script>
+</html>
