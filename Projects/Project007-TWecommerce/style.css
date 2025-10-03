@@ -13,4 +13,13 @@
     .cart{
         @apply w-16 cursor-pointer;
     }
+    .prod-h1{
+        @apply text-2xl text-white mt-4 font-semibold text-center ;
+    }
+    .prod-img{
+        @apply w-56 h-56 object-cover rounded-[50%] ;
+    }
+    .prod-div{
+        @apply hover:scale-110 transition-all;
+    }
 }
